@@ -607,7 +607,11 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 12px;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
 }
 
 .mockup-chain-icon {
@@ -615,8 +619,8 @@ img {
 }
 
 .mockup-logo {
-    max-width: 85%;
-    max-height: 140px;
+    max-width: 90%;
+    max-height: 70%;
     object-fit: contain;
 }
 
