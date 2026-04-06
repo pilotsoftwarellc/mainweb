@@ -614,6 +614,12 @@ img {
     opacity: 0.8;
 }
 
+.mockup-logo {
+    max-width: 70%;
+    max-height: 80px;
+    object-fit: contain;
+}
+
 .mockup-label {
     font-family: var(--font-display);
     font-size: 1.4rem;
