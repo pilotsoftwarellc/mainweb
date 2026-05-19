@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support | Pilot Software LLC</title>
+  <meta name="description" content="Support for iDrac Fan Controller by Pilot Software LLC.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07111f;
+      --card: rgba(255,255,255,0.075);
+      --card-2: rgba(255,255,255,0.045);
+      --line: rgba(255,255,255,0.12);
+      --text: #f4f8ff;
+      --muted: #a7b5c8;
+      --blue: #1593ff;
+      --green: #35d07f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 70% 10%, rgba(21,147,255,0.28), transparent 34rem), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    main { width: min(920px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0; }
+    .hero { display: grid; gap: 16px; padding: 34px; border: 1px solid var(--line); background: var(--card); border-radius: 28px; box-shadow: 0 24px 90px rgba(0,0,0,0.3); }
+    .brand { color: var(--green); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: 13px; }
+    h1 { margin: 0; font-size: clamp(36px, 7vw, 72px); line-height: .95; letter-spacing: -0.04em; }
+    h2 { margin: 34px 0 12px; font-size: 24px; }
+    p, li { color: var(--muted); font-size: 17px; }
+    a { color: #7cc6ff; font-weight: 700; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 24px; }
+    .tile { padding: 20px; border-radius: 20px; border: 1px solid var(--line); background: var(--card-2); }
+    .tile strong { display: block; color: var(--text); font-size: 20px; margin-bottom: 6px; }
+    .nav { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+    .button { display: inline-flex; padding: 12px 16px; border-radius: 999px; background: rgba(21,147,255,0.18); border: 1px solid rgba(21,147,255,0.35); }
+    .footer { margin-top: 38px; color: #7f8da3; font-size: 14px; }
+    ul { padding-left: 22px; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+  <div class="brand">Support</div>
+  <h1>iDrac Fan Controller Support</h1>
+  <p>Need help with setup, connectivity, fan control, or hardware sensors? Use this page to check the basics or open a support issue.</p>
+  <div class="nav">
+    <a class="button" href="https://github.com/pilotsoftwarellc/mainweb/issues/new?title=iDrac%20Fan%20Controller%20Support">Open a support issue</a>
+    <a class="button" href="privacy.html">Privacy Policy</a>
+  </div>
+</section>
+<h2>Requirements</h2>
+<ul>
+  <li>A compatible Dell PowerEdge server with iDRAC enabled.</li>
+  <li>Your iPhone must reach the iDRAC IP address over the same Wi-Fi network or through VPN.</li>
+  <li>Fan control uses IPMI/RMCP+ on UDP port 623.</li>
+  <li>Hardware sensor details may use Redfish over HTTPS when supported by your iDRAC.</li>
+</ul>
+<h2>Troubleshooting</h2>
+<ul>
+  <li>Confirm the iDRAC IP address, username, and password are correct.</li>
+  <li>Make sure local network or VPN routing allows traffic from the iPhone to the iDRAC.</li>
+  <li>If fan control works but sensors are slow, check whether Redfish is enabled and responsive on the iDRAC.</li>
+  <li>If the app cannot connect, verify UDP 623 is not blocked by your router, firewall, or VPN policy.</li>
+</ul>
+    <p class="footer">iDrac Fan Controller is made by Pilot Software LLC. Dell, PowerEdge, and iDRAC are trademarks of Dell Inc. This app is not affiliated with or endorsed by Dell Inc.</p>
+  </main>
+</body>
+</html>
