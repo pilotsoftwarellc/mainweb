@@ -11,19 +11,19 @@
 }
 
 :root {
-    /* Palette — committed green, warm paper-white */
-    --bg: oklch(0.975 0.004 160);
-    --bg-alt: oklch(0.955 0.008 160);
+    /* Palette — committed blue, cool paper-white */
+    --bg: oklch(0.975 0.004 250);
+    --bg-alt: oklch(0.955 0.008 250);
     --surface: oklch(1 0 0);
-    --ink: oklch(0.18 0.02 170);
-    --ink-secondary: oklch(0.42 0.02 170);
-    --ink-muted: oklch(0.55 0.015 170);
-    --brand: oklch(0.42 0.11 168);
-    --brand-light: oklch(0.92 0.04 168);
-    --brand-dark: oklch(0.32 0.1 168);
+    --ink: oklch(0.18 0.02 255);
+    --ink-secondary: oklch(0.42 0.02 255);
+    --ink-muted: oklch(0.55 0.015 255);
+    --brand: oklch(0.45 0.12 255);
+    --brand-light: oklch(0.93 0.035 255);
+    --brand-dark: oklch(0.36 0.11 255);
     --accent: oklch(0.72 0.14 80);
-    --border: oklch(0.88 0.008 160);
-    --border-strong: oklch(0.78 0.012 160);
+    --border: oklch(0.88 0.008 250);
+    --border-strong: oklch(0.78 0.012 250);
 
     --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
     --font-body: 'Public Sans', system-ui, sans-serif;
@@ -32,9 +32,9 @@
     --radius-md: 10px;
     --radius-lg: 16px;
 
-    --shadow-sm: 0 1px 3px oklch(0.2 0.02 170 / 0.06);
-    --shadow-md: 0 4px 16px oklch(0.2 0.02 170 / 0.08);
-    --shadow-lg: 0 12px 40px oklch(0.2 0.02 170 / 0.1);
+    --shadow-sm: 0 1px 3px oklch(0.2 0.02 255 / 0.06);
+    --shadow-md: 0 4px 16px oklch(0.2 0.02 255 / 0.08);
+    --shadow-lg: 0 12px 40px oklch(0.2 0.02 255 / 0.1);
 }
 
 html {
@@ -80,7 +80,7 @@ img {
 
 .navbar.scrolled {
     padding: 12px 0;
-    background: oklch(0.975 0.004 160 / 0.92);
+    background: oklch(0.975 0.004 250 / 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: var(--shadow-sm);
@@ -247,12 +247,12 @@ img {
 .btn-primary {
     background: var(--brand);
     color: white;
-    box-shadow: 0 2px 8px oklch(0.42 0.11 168 / 0.25);
+    box-shadow: 0 2px 8px oklch(0.45 0.12 255 / 0.25);
 }
 
 .btn-primary:hover {
     background: var(--brand-dark);
-    box-shadow: 0 4px 16px oklch(0.42 0.11 168 / 0.3);
+    box-shadow: 0 4px 16px oklch(0.45 0.12 255 / 0.3);
     transform: translateY(-1px);
 }
 
@@ -477,89 +477,6 @@ img {
     max-width: 640px;
 }
 
-/* ---- Work ---- */
-
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 28px;
-}
-
-.work-card {
-    background: var(--surface);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border);
-    overflow: hidden;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.work-card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-3px);
-}
-
-.work-thumb {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.work-thumb--cafe {
-    background: linear-gradient(135deg, oklch(0.55 0.09 60), oklch(0.45 0.08 40));
-}
-
-.work-thumb--beauty {
-    background: linear-gradient(135deg, oklch(0.55 0.08 350), oklch(0.46 0.07 330));
-}
-
-.work-thumb--restaurant {
-    background: linear-gradient(135deg, oklch(0.45 0.08 168), oklch(0.38 0.06 190));
-}
-
-.work-thumb-inner {
-    text-align: center;
-}
-
-.work-thumb-label {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: white;
-    text-shadow: 0 2px 8px oklch(0 0 0 / 0.2);
-}
-
-.work-info {
-    padding: 24px;
-}
-
-.work-info h3 {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.work-info p {
-    font-size: 0.92rem;
-    color: var(--ink-secondary);
-    line-height: 1.6;
-    margin-bottom: 14px;
-}
-
-.work-tag {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--brand);
-    background: var(--brand-light);
-    padding: 4px 10px;
-    border-radius: 4px;
-}
-
 /* ---- Process ---- */
 
 .process {
@@ -654,7 +571,7 @@ img {
 
 .contact {
     background: var(--ink);
-    color: oklch(0.95 0.005 160);
+    color: oklch(0.95 0.005 250);
 }
 
 .contact .section-title {
@@ -669,7 +586,7 @@ img {
 }
 
 .contact-info > p {
-    color: oklch(0.75 0.01 160);
+    color: oklch(0.75 0.01 250);
     line-height: 1.7;
     margin-bottom: 32px;
     font-size: 1.02rem;
@@ -687,7 +604,7 @@ img {
     gap: 12px;
     font-size: 0.95rem;
     font-weight: 500;
-    color: oklch(0.85 0.01 160);
+    color: oklch(0.85 0.01 250);
     transition: color 0.2s ease;
 }
 
@@ -701,10 +618,10 @@ img {
 }
 
 .contact-form-wrapper {
-    background: oklch(0.22 0.02 170);
+    background: oklch(0.22 0.02 255);
     border-radius: var(--radius-lg);
     padding: 32px;
-    border: 1px solid oklch(0.3 0.02 170);
+    border: 1px solid oklch(0.3 0.02 255);
 }
 
 .form-row {
@@ -722,7 +639,7 @@ img {
     font-size: 0.85rem;
     font-weight: 600;
     margin-bottom: 6px;
-    color: oklch(0.8 0.01 160);
+    color: oklch(0.8 0.01 250);
 }
 
 .form-group input,
@@ -731,16 +648,16 @@ img {
     padding: 11px 14px;
     font-family: var(--font-body);
     font-size: 0.92rem;
-    background: oklch(0.16 0.015 170);
-    border: 1px solid oklch(0.32 0.02 170);
+    background: oklch(0.16 0.015 255);
+    border: 1px solid oklch(0.32 0.02 255);
     border-radius: var(--radius-sm);
-    color: oklch(0.92 0.005 160);
+    color: oklch(0.92 0.005 250);
     transition: border-color 0.2s ease;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: oklch(0.62 0.01 160);
+    color: oklch(0.62 0.01 250);
 }
 
 .form-group input:focus,
@@ -902,10 +819,6 @@ img {
         padding-top: 0;
     }
 
-    .work-grid {
-        grid-template-columns: 1fr;
-    }
-
     .why-points {
         grid-template-columns: 1fr;
     }
@@ -944,10 +857,6 @@ img {
 
     .browser-mockup {
         transform: none;
-        transition: none;
-    }
-
-    .work-card {
         transition: none;
     }
 

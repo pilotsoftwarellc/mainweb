@@ -51,7 +51,7 @@ function initScrollReveal() {
     document.documentElement.classList.add('js');
 
     const elements = document.querySelectorAll(
-        '.service-item, .work-card, .process-step, .why-point, .contact-layout, .section-intro'
+        '.service-item, .process-step, .why-point, .contact-layout, .section-intro'
     );
 
     elements.forEach(el => el.classList.add('reveal'));
