@@ -479,7 +479,7 @@
             </div>
 
             <div class="contact-form-wrapper">
-                <form class="contact-form" id="contactForm" action="https://formsubmit.co/javier@pilotsoftware.llc" method="POST">
+                <form class="contact-form" id="contactForm" action="/api/contact" method="POST">
                     <input type="hidden" name="_subject" value="New project inquiry — pilotsoftware.llc">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
@@ -568,5 +568,6 @@ window.FORM_I18N = {
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 <script src="/script.js"></script>
+<script src="/track.js" defer></script>
 </body>
 </html>
