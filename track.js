@@ -13,6 +13,11 @@
         lang: navigator.language || '',
         screen: window.innerWidth + 'x' + window.innerHeight,
     };
+    var q = new URLSearchParams(location.search);
+    ['source', 'medium', 'campaign'].forEach(function (k) {
+        var v = q.get('utm_' + k);
+        if (v) d['utm_' + k] = v.slice(0, 60);
+    });
     if (document.visibilityState === 'prerender') {
         document.addEventListener('visibilitychange', function once () {
             document.removeEventListener('visibilitychange', once);
