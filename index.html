@@ -277,9 +277,28 @@
                         <text x="410" y="48" font-size="17" font-weight="600" fill="#F2F6FA">98.9%</text>
                         <text x="410" y="66" font-size="8.5" fill="#4AE3B5">UPTIME</text>
                     </g>
+                    <defs>
+                        <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#00D9FF" stop-opacity="0.25"/>
+                            <stop offset="100%" stop-color="#00D9FF" stop-opacity="0.02"/>
+                        </linearGradient>
+                    </defs>
                     <rect x="152" y="98" width="352" height="140" rx="10" fill="#141926"/>
-                    <polyline points="172,214 200,196 228,204 256,182 284,190 312,164 340,174 368,148 396,158 424,136 452,144 480,122"
+                    <polygon points="172,214 200,196 228,204 256,182 284,190 312,164 340,174 368,148 396,158 424,136 452,144 480,122 480,240 172,240" fill="url(#areaGrad)"/>
+                    <polyline class="chart-line" data-points="172,214 200,196 228,204 256,182 284,190 312,164 340,174 368,148 396,158 424,136 452,144 480,122"
                               stroke="#00D9FF" stroke-width="2.2" fill="none" opacity=".85"/>
+                    <circle class="chart-dot" cx="172" cy="214" r="3.5" data-month="Jan" data-value="$3,200"/>
+                    <circle class="chart-dot" cx="200" cy="196" r="3.5" data-month="Feb" data-value="$3,450"/>
+                    <circle class="chart-dot" cx="228" cy="204" r="3.5" data-month="Mar" data-value="$3,310"/>
+                    <circle class="chart-dot" cx="256" cy="182" r="3.5" data-month="Apr" data-value="$3,580"/>
+                    <circle class="chart-dot" cx="284" cy="190" r="3.5" data-month="May" data-value="$3,480"/>
+                    <circle class="chart-dot" cx="312" cy="164" r="3.5" data-month="Jun" data-value="$3,750"/>
+                    <circle class="chart-dot" cx="340" cy="174" r="3.5" data-month="Jul" data-value="$3,640"/>
+                    <circle class="chart-dot" cx="368" cy="148" r="3.5" data-month="Aug" data-value="$3,920"/>
+                    <circle class="chart-dot" cx="396" cy="158" r="3.5" data-month="Sep" data-value="$3,810"/>
+                    <circle class="chart-dot" cx="424" cy="136" r="3.5" data-month="Oct" data-value="$4,050"/>
+                    <circle class="chart-dot" cx="452" cy="144" r="3.5" data-month="Nov" data-value="$3,960"/>
+                    <circle class="chart-dot" cx="480" cy="122" r="3.5" data-month="Dec" data-value="$4,280"/>
                     <circle cx="480" cy="122" r="3.5" fill="#00D9FF"/>
                     <g font-family="monospace" font-size="8" fill="#3A4656">
                         <text x="168" y="118">$5k</text>
@@ -297,6 +316,9 @@
                         <text x="342" y="292" font-size="8" fill="#5F6E7E">Invoice #1042 · tomorrow 9am</text>
                     </g>
                 </svg>
+                <div class="chart-tooltip" id="chartTooltip" style="display:none;position:absolute;">
+                    <span class="tt-month"></span> <span class="tt-value"></span>
+                </div>
             </div>
         </div>
     </section>

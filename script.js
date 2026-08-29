@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initContactForm();
     initParallax();
+    initChartTooltip();
 });
 
 // --- Navbar scroll effect ---
@@ -116,6 +117,55 @@ function initParallax() {
     }, { passive: true });
 
     update();
+}
+
+// --- Chart tooltip ---
+function initChartTooltip() {
+    const chartDots = document.querySelectorAll('.chart-dot');
+    if (!chartDots.length) return;
+
+    const tooltip = document.getElementById('chartTooltip');
+    if (!tooltip) return;
+
+    const ttMonth = tooltip.querySelector('.tt-month');
+    const ttValue = tooltip.querySelector('.tt-value');
+    const chartLine = document.querySelector('.chart-line');
+    const appFrame = document.querySelector('.app-frame');
+    if (!appFrame) return;
+
+    chartDots.forEach(dot => {
+        dot.addEventListener('mouseenter', (e) => {
+            const month = dot.dataset.month;
+            const value = dot.dataset.value;
+            if (month && value) {
+                ttMonth.textContent = month;
+                ttValue.textContent = value;
+
+                // Get position relative to app-frame
+                const dotRect = dot.getBoundingClientRect();
+                const frameRect = appFrame.getBoundingClientRect();
+                const x = dotRect.left - frameRect.left + dotRect.width / 2;
+                const y = dotRect.top - frameRect.top;
+
+                tooltip.style.left = `${x}px`;
+                tooltip.style.top = `${y - 14}px`;
+                tooltip.style.transform = 'translateX(-50%)';
+                tooltip.style.display = 'block';
+                tooltip.style.opacity = '1';
+
+                // Dim the line
+                chartLine.classList.add('dimmed');
+            }
+        });
+
+        dot.addEventListener('mouseleave', () => {
+            tooltip.style.opacity = '0';
+            setTimeout(() => {
+                tooltip.style.display = 'none';
+            }, 150);
+            chartLine.classList.remove('dimmed');
+        });
+    });
 }
 
 // --- Contact form (async FormSubmit with status states) ---
