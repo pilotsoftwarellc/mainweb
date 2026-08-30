@@ -176,12 +176,27 @@ function initContactForm() {
 
     const statusEl = document.getElementById('formStatus');
     const submitBtn = form.querySelector('button[type="submit"]');
+    const serviceSelect = document.getElementById('service');
     const t = window.FORM_I18N || {
         sending: 'Sending…',
         ok: 'Message sent — we will get back to you shortly.',
         err: 'Something went wrong. Please email us directly.',
         required: 'Please fill in all required fields.'
     };
+
+    // Pre-select service from URL query param (?service=ai-chatbot, ?service=new-website, etc.)
+    if (serviceSelect) {
+        const params = new URLSearchParams(window.location.search);
+        const svc = params.get('service');
+        if (svc) {
+            for (const opt of serviceSelect.options) {
+                if (opt.value === svc) {
+                    serviceSelect.value = svc;
+                    break;
+                }
+            }
+        }
+    }
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
