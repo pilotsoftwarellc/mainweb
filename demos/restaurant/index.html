@@ -94,7 +94,10 @@
         .wa{position:fixed;bottom:24px;right:24px;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 16px rgba(37,211,102,.3);z-index:99;transition:transform .2s;}
         .wa:hover{transform:scale(1.1);}
 
-        /* MOBILE */
+        /* Back to demos */
+        .back-btn{position:absolute;top:20px;left:28px;font-size:.82rem;font-weight:500;color:#2c2418;opacity:.7;transition:opacity .2s;z-index:10;}
+        .back-btn:hover{opacity:1;}
+
         @media(max-width:768px){
             .hero-inner{grid-template-columns:1fr;text-align:center;}
             .hero h1{font-size:2.4rem;}
@@ -124,6 +127,7 @@
 
     <section class="hero">
         <div class="hero-inner">
+            <a href="/demos/" class="back-btn">← Back to Demos</a>
             <div>
                 <p class="hero-tag">Authentic Puerto Rican Cuisine</p>
                 <h1>Where Every Dish<br>Feels Like <em>Home</em></h1>
