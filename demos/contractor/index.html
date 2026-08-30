@@ -3,85 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProFix Home Services — Licensed Plumbing, Electrical & Repairs</title>
-    <meta name="description" content="ProFix Home Services — Licensed & insured plumbing, electrical, painting, repairs & maintenance. Free estimates. Serving San Juan metro.">
+    <title>ProFix Home Services — Licensed Repairs & Maintenance</title>
+    <meta name="description" content="ProFix Home Services — Licensed plumbing, electrical, painting, repairs. Free estimates. Serving San Juan metro.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
-        body{font-family:'Inter',system-ui,sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;}
+        body{font-family:'Inter',system-ui,sans-serif;color:#111827;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;}
         a{text-decoration:none;color:inherit;}
+        img{max-width:100%;display:block;}
 
-        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all .3s;}
-        nav.scrolled{background:rgba(255,255,255,.97);box-shadow:0 1px 0 rgba(0,0,0,.06);}
-        .nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;}
-        .logo{font-weight:800;font-size:1.1rem;display:flex;align-items:center;gap:8px;}
-        .logo span{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:#0c2d6b;color:#fff;border-radius:6px;font-size:.9rem;}
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #e5e7eb;}
+        .nav{max-width:1140px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;}
+        .logo{font-weight:800;font-size:1.05rem;display:flex;align-items:center;gap:8px;}
+        .logo-mark{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;background:#1e40af;color:#fff;border-radius:6px;font-size:.8rem;}
         .nav-links{display:flex;align-items:center;gap:28px;}
-        .nav-links a{font-size:.88rem;font-weight:500;color:#666;}
-        .nav-links a:hover{color:#0c2d6b;}
-        .btn{display:inline-flex;align-items:center;padding:11px 24px;border-radius:6px;font-size:.88rem;font-weight:600;transition:all .2s;}
-        .btn-blue{background:#0c2d6b;color:#fff;}
-        .btn-blue:hover{background:#1a3f8f;}
-        .btn-outline{border:1.5px solid #0c2d6b;color:#0c2d6b;background:transparent;}
-        .btn-outline:hover{background:#0c2d6b;color:#fff;}
+        .nav-links a{font-size:.85rem;font-weight:500;color:#6b7280;}
+        .nav-links a:hover{color:#111827;}
+        .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 22px;border-radius:6px;font-size:.85rem;font-weight:600;transition:all .2s;border:none;cursor:pointer;}
+        .btn-blue{background:#1e40af;color:#fff;}
+        .btn-blue:hover{background:#1e3a8a;}
+        .btn-outline{border:1.5px solid #1e40af;color:#1e40af;background:transparent;}
+        .btn-outline:hover{background:#1e40af;color:#fff;}
 
-        .hero{padding:150px 0 80px;background:#0c2d6b;color:#fff;position:relative;overflow:hidden;}
-        .hero::after{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;border-radius:50%;background:rgba(0,180,255,.08);}
-        .hero-inner{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;}
-        .hero .label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:12px;}
-        .hero h1{font-size:3.2rem;font-weight:800;line-height:1.05;margin-bottom:16px;}
-        .hero p{font-size:1.05rem;color:rgba(255,255,255,.6);max-width:500px;margin-bottom:28px;}
-        .hero-actions{display:flex;gap:12px;}
+        .hero{padding:140px 0 80px;background:linear-gradient(180deg,#eff6ff 0%,#fff 100%);position:relative;overflow:hidden;}
+        .hero-inner{max-width:1140px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+        .hero .tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1e40af;margin-bottom:10px;}
+        .hero h1{font-size:3rem;font-weight:800;line-height:1.05;color:#111827;margin-bottom:16px;}
+        .hero p{font-size:1rem;color:#6b7280;line-height:1.7;max-width:440px;margin-bottom:28px;}
+        .hero-btns{display:flex;gap:12px;}
 
-        .trust{display:flex;gap:40px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);}
-        .trust-item{text-align:center;}
-        .trust-item .num{font-size:2rem;font-weight:800;color:#fff;}
-        .trust-item .lbl{font-size:.82rem;color:rgba(255,255,255,.45);}
+        .hero-img{border-radius:12px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.08);max-width:480px;align-self:center;}
+        .hero-img img{width:100%;aspect-ratio:4/3;object-fit:cover;}
 
-        .section{padding:80px 0;}
-        .inner{max-width:1200px;margin:0 auto;padding:0 32px;}
-        .section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0c2d6b;margin-bottom:12px;}
-        .section-title{font-size:2rem;font-weight:800;margin-bottom:12px;}
-        .section-desc{color:#777;max-width:460px;}
+        .trust{display:flex;gap:40px;margin-top:36px;padding-top:28px;border-top:1px solid #e5e7eb;}
+        .trust-i{text-align:center;}
+        .trust-i .n{font-size:1.8rem;font-weight:800;color:#1e40af;}
+        .trust-i .l{font-size:.78rem;color:#6b7280;margin-top:2px;}
 
-        .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
-        .card{padding:28px 24px;border:1px solid #eee;border-radius:12px;transition:border-color .2s,box-shadow .2s;}
-        .card:hover{border-color:#0c2d6b;box-shadow:0 8px 24px rgba(12,45,107,.06);}
-        .card-icon{width:44px;height:44px;border-radius:10px;background:#e8edf5;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:16px;}
-        .card h3{font-size:1.05rem;font-weight:700;margin-bottom:6px;}
-        .card p{font-size:.9rem;color:#888;}
+        .sec{padding:80px 0;}
+        .sec-inner{max-width:1140px;margin:0 auto;padding:0 28px;}
+        .tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1e40af;margin-bottom:10px;}
+        .stitle{font-size:2rem;font-weight:800;color:#111827;margin-bottom:10px;}
+        .sdesc{color:#6b7280;max-width:440px;}
 
-        .form-box{max-width:520px;margin:40px auto 0;background:#f8f9fb;border-radius:14px;padding:36px;border:1px solid #eee;}
-        .form-box input,.form-box select,.form-box textarea{width:100%;padding:13px 16px;border:1px solid #ddd;border-radius:8px;font-size:.92rem;margin-bottom:14px;font-family:inherit;background:#fff;transition:border-color .2s;}
-        .form-box input:focus,.form-box select:focus,.form-box textarea:focus{outline:none;border-color:#0c2d6b;}
-        .form-box select{cursor:pointer;}
+        .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
+        .card{padding:28px 24px;border:1px solid #e5e7eb;border-radius:10px;transition:all .25s;}
+        .card:hover{border-color:#1e40af;box-shadow:0 8px 24px rgba(30,64,175,.06);transform:translateY(-2px);}
+        .card-icon{width:40px;height:40px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:14px;}
+        .card h3{font-size:1rem;font-weight:700;margin-bottom:6px;color:#111827;}
+        .card p{font-size:.88rem;color:#6b7280;line-height:1.55;}
 
-        .cta{padding:80px 0;text-align:center;background:#0c2d6b;color:#fff;}
-        .cta h2{font-size:2rem;font-weight:800;margin-bottom:12px;}
-        .cta p{color:rgba(255,255,255,.5);margin-bottom:28px;}
-        .cta .btn{background:#fff;color:#0c2d6b;}
+        .form-wrap{max-width:520px;margin:40px auto 0;background:#f9fafb;border-radius:12px;padding:36px;border:1px solid #e5e7eb;}
+        .form-wrap input,.form-wrap select,.form-wrap textarea{width:100%;padding:12px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:.9rem;margin-bottom:14px;font-family:inherit;background:#fff;}
+        .form-wrap input:focus,.form-wrap select:focus,.form-wrap textarea:focus{outline:none;border-color:#1e40af;box-shadow:0 0 0 3px rgba(30,64,175,.08);}
+        .form-wrap select{cursor:pointer;}
+        .form-wrap select option{background:#fff;}
 
-        footer{background:#f8f9fb;color:#aaa;text-align:center;padding:24px 0;font-size:.85rem;}
+        .img-block{border-radius:12px;overflow:hidden;margin-top:40px;}
+        .img-block img{width:100%;height:340px;object-fit:cover;}
 
-        .wa{position:fixed;bottom:24px;right:24px;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;z-index:99;box-shadow:0 4px 16px rgba(37,211,102,.35);transition:transform .2s;}
+        .cta{padding:80px 0;text-align:center;background:#111827;color:#fff;}
+        .cta .stitle{color:#fff;margin-bottom:12px;}
+        .cta p{color:rgba(255,255,255,.45);margin-bottom:28px;}
+        .cta .btn{background:#fff;color:#111827;}
+        .cta .btn:hover{background:#e5e7eb;}
+
+        footer{background:#f9fafb;color:#9ca3af;text-align:center;padding:24px 0;font-size:.82rem;}
+
+        .wa{position:fixed;bottom:24px;right:24px;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 16px rgba(37,211,102,.3);z-index:99;transition:transform .2s;}
         .wa:hover{transform:scale(1.1);}
 
         @media(max-width:768px){
+            .hero-inner{grid-template-columns:1fr;text-align:center;}
             .hero h1{font-size:2.2rem;}
+            .hero p{margin:0 auto 24px;}
+            .hero-btns{justify-content:center;}
+            .hero-img{max-width:360px;margin:20px auto 0;}
+            .trust{justify-content:center;}
             .grid{grid-template-columns:1fr;}
-            .trust{flex-wrap:wrap;gap:24px;}
             .nav-links{display:none;}
         }
     </style>
 </head>
 <body>
-    <nav id="nav">
-        <div class="nav-inner">
-            <div class="logo"><span>🔧</span> ProFix Home Services</div>
+    <nav>
+        <div class="nav">
+            <div class="logo"><div class="logo-mark">🔧</div> ProFix Home Services</div>
             <div class="nav-links">
                 <a href="#services">Services</a>
-                <a href="#why">Why Us</a>
                 <a href="#quote" class="btn btn-blue">Free Estimate</a>
             </div>
         </div>
@@ -89,72 +99,66 @@
 
     <section class="hero">
         <div class="hero-inner">
-            <p class="label">Licensed & Insured</p>
-            <h1>Your Home.<br>Our Expertise.</h1>
-            <p>Plumbing, electrical, painting, and all home repairs. Licensed, insured, and trusted by 300+ homeowners.</p>
-            <div class="hero-actions">
-                <a href="#services" class="btn btn-blue" style="background:#fff;color:#0c2d6b;">Our Services</a>
-                <a href="#quote" class="btn btn-outline" style="border-color:rgba(255,255,255,.3);color:#fff;">Get Free Quote</a>
+            <div>
+                <p class="tag">Licensed & Insured</p>
+                <h1>Your Home.<br>Our Expertise.</h1>
+                <p>Plumbing, electrical, painting, and all home repairs. Licensed, insured, and trusted by 300+ homeowners in the San Juan area.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn btn-blue">Our Services</a>
+                    <a href="#quote" class="btn btn-outline">Get Free Quote</a>
+                </div>
+                <div class="trust">
+                    <div class="trust-i"><div class="n">300+</div><div class="l">Happy Clients</div></div>
+                    <div class="trust-i"><div class="n">15+</div><div class="l">Years</div></div>
+                    <div class="trust-i"><div class="n">4.9★</div><div class="l">Google Rating</div></div>
+                </div>
             </div>
-            <div class="trust">
-                <div class="trust-item"><div class="num">300+</div><div class="lbl">Happy Clients</div></div>
-                <div class="trust-item"><div class="num">15+</div><div class="lbl">Years</div></div>
-                <div class="trust-item"><div class="num">4.9★</div><div class="lbl">Google Rating</div></div>
+            <div class="hero-img">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Home repair" loading="eager">
             </div>
         </div>
     </section>
 
-    <section class="section" id="services">
-        <div class="inner">
-            <p class="section-label">What We Do</p>
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-desc">Everything your home needs, one call away</p>
+    <section class="sec" id="services">
+        <div class="sec-inner">
+            <p class="tag">What We Do</p>
+            <h2 class="stitle">Our Services</h2>
+            <p class="sdesc">Everything your home needs, one call away</p>
             <div class="grid">
                 <div class="card"><div class="card-icon">🔧</div><h3>Plumbing</h3><p>Leak repairs, pipe installation, water heaters, drain cleaning & emergency service</p></div>
                 <div class="card"><div class="card-icon">⚡</div><h3>Electrical</h3><p>Wiring, outlets, lighting, panels, ceiling fans & electrical inspections</p></div>
                 <div class="card"><div class="card-icon">🎨</div><h3>Painting</h3><p>Interior & exterior painting, drywall repair & staining</p></div>
                 <div class="card"><div class="card-icon">❄️</div><h3>HVAC</h3><p>AC installation, repair, maintenance & duct cleaning</p></div>
                 <div class="card"><div class="card-icon">🚪</div><h3>Doors & Windows</h3><p>Installation, repair, weather stripping & locking systems</p></div>
-                <div class="card"><div class="card-icon">🏗️</div><h3>General Repairs</h3><p>Furniture assembly, shelving, mounting & renovations</p></div>
+                <div class="card"><div class="card-icon">🏗️</div><h3>General Repairs</h3><p>Furniture assembly, shelving, mounting & small renovations</p></div>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background:#f8f9fb;">
-        <div class="inner">
-            <div style="border-radius:16px;overflow:hidden;max-width:1000px;margin:0 auto;">
-                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80" alt="Home repair" style="width:100%;height:360px;object-fit:cover;">
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="quote">
-        <div class="inner" style="text-align:center;">
-            <p class="section-label">Get Started</p>
-            <h2 class="section-title">Get a Free Estimate</h2>
-            <p class="section-desc" style="margin:0 auto;">Tell us what you need and we'll get back to you within the hour</p>
-            <div class="form-box">
+    <section class="sec" id="quote" style="background:#f9fafb;">
+        <div class="sec-inner" style="text-align:center;">
+            <p class="tag">Get Started</p>
+            <h2 class="stitle">Get a Free Estimate</h2>
+            <p class="sdesc" style="margin:0 auto 8px;">Tell us what you need — we respond within the hour</p>
+            <div class="form-wrap">
                 <input type="text" placeholder="Your name">
                 <input type="tel" placeholder="Phone number">
                 <select><option value="" disabled selected>What do you need?</option><option>Plumbing</option><option>Electrical</option><option>Painting</option><option>HVAC / AC</option><option>Doors & Windows</option><option>General Repairs</option><option>Other</option></select>
                 <textarea rows="3" placeholder="Describe what you need..."></textarea>
-                <button class="btn btn-blue" style="width:100%;justify-content:center;min-height:46px;">Request Free Estimate</button>
+                <button class="btn btn-blue" style="width:100%;min-height:46px;">Request Free Estimate</button>
             </div>
         </div>
     </section>
 
     <section class="cta">
-        <div class="inner">
-            <h2>Need Help Right Now?</h2>
+        <div class="sec-inner">
+            <h2 class="stitle">Need Help Right Now?</h2>
             <p>Emergency service available 7 days a week.</p>
-            <a href="tel:+17875553456" class="btn" style="padding:14px 32px;font-size:.95rem;">📞 (787) 555-3456</a>
+            <a href="tel:+17875553456" class="btn" style="padding:14px 32px;">📞 (787) 555-3456</a>
         </div>
     </section>
 
     <footer><p>&copy; 2026 ProFix Home Services — Demo by <a href="https://pilotsoftware.llc">Pilot Software</a></p></footer>
-    <a href="https://wa.me/17875553456" class="wa">💬</a>
-    <script>
-        window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);});
-    </script>
+    <a href="https://wa.me/17875553456" class="wa" target="_blank" rel="noopener">💬</a>
 </body>
 </html>

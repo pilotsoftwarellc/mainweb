@@ -3,178 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CleanPro — Professional Cleaning Services in San Juan</title>
-    <meta name="description" content="CleanPro — Professional house cleaning, office cleaning, deep cleaning & move-in/out. Eco-friendly products.">
+    <title>PureClean — Professional Cleaning Services</title>
+    <meta name="description" content="PureClean — House cleaning, office cleaning & deep cleaning. Eco-friendly products. Book online.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
-        body{font-family:'Inter',system-ui,sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;}
+        body{font-family:'Inter',system-ui,sans-serif;color:#0f4c3a;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;}
         a{text-decoration:none;color:inherit;}
+        img{max-width:100%;display:block;}
 
-        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #f0f0f0;}
-        .nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;}
-        .logo{font-weight:800;font-size:1.15rem;}
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #e8f5f1;}
+        .nav{max-width:1140px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;}
+        .logo{font-weight:800;font-size:1.05rem;color:#0f4c3a;display:flex;align-items:center;gap:8px;}
         .nav-links{display:flex;align-items:center;gap:28px;}
-        .nav-links a{font-size:.88rem;font-weight:500;color:#777;}
-        .nav-links a:hover{color:#0284c7;}
-        .btn{display:inline-flex;align-items:center;padding:11px 24px;border-radius:6px;font-size:.88rem;font-weight:600;transition:all .2s;}
-        .btn-blue{background:#0284c7;color:#fff;}
-        .btn-blue:hover{background:#0369a1;}
-        .btn-outline{border:1.5px solid #0284c7;color:#0284c7;background:transparent;}
-        .btn-outline:hover{background:#0284c7;color:#fff;}
+        .nav-links a{font-size:.85rem;font-weight:500;color:#667;}
+        .nav-links a:hover{color:#0f4c3a;}
+        .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 22px;border-radius:8px;font-size:.85rem;font-weight:600;transition:all .2s;border:none;cursor:pointer;}
+        .btn-green{background:#0f4c3a;color:#fff;}
+        .btn-green:hover{background:#0a3d2e;}
+        .btn-outline{border:1.5px solid #0f4c3a;color:#0f4c3a;background:transparent;}
+        .btn-outline:hover{background:#0f4c3a;color:#fff;}
 
-        .hero{padding:150px 0 80px;background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 100%);position:relative;overflow:hidden;}
-        .hero::after{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:rgba(2,132,199,.06);}
-        .hero-inner{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;}
-        .hero .label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0284c7;margin-bottom:12px;}
-        .hero h1{font-size:3rem;font-weight:800;line-height:1.05;margin-bottom:16px;}
-        .hero p{font-size:1.05rem;color:#64748b;max-width:500px;margin-bottom:28px;}
-        .hero-actions{display:flex;gap:12px;}
+        .hero{padding:140px 0 80px;background:linear-gradient(135deg,#e8f5f1 0%,#fff 100%);}
+        .hero-inner{max-width:1140px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+        .hero .tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1a8a5f;margin-bottom:10px;}
+        .hero h1{font-size:2.8rem;font-weight:800;line-height:1.08;color:#0f4c3a;margin-bottom:16px;}
+        .hero p{font-size:1rem;color:#5a7a6a;line-height:1.7;max-width:420px;margin-bottom:28px;}
+        .hero-btns{display:flex;gap:12px;}
 
-        .section{padding:80px 0;}
-        .inner{max-width:1200px;margin:0 auto;padding:0 32px;}
-        .section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0284c7;margin-bottom:12px;}
-        .section-title{font-size:2rem;font-weight:800;margin-bottom:12px;}
-        .section-desc{color:#888;max-width:460px;}
+        .hero-img{border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(15,76,58,.08);}
+        .hero-img img{width:100%;aspect-ratio:4/3;object-fit:cover;}
 
-        .services{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px;}
-        .svc{display:flex;gap:18px;padding:24px;border:1px solid #e8f0fe;border-radius:12px;background:#fafcff;transition:all .25s;}
-        .svc:hover{border-color:#0284c7;box-shadow:0 4px 16px rgba(2,132,199,.06);}
-        .svc-icon{width:48px;height:48px;min-width:48px;border-radius:12px;background:linear-gradient(135deg,#0284c7,#38bdf8);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;}
-        .svc h3{font-size:1.05rem;font-weight:700;margin-bottom:4px;}
-        .svc p{font-size:.9rem;color:#888;}
+        .sec{padding:80px 0;}
+        .sec-inner{max-width:1140px;margin:0 auto;padding:0 28px;}
+        .tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1a8a5f;margin-bottom:10px;}
+        .stitle{font-size:2rem;font-weight:800;color:#0f4c3a;margin-bottom:10px;}
+        .sdesc{color:#5a7a6a;max-width:420px;}
 
-        .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;max-width:900px;}
-        .plan{background:#fff;border:1px solid #e8f0fe;border-radius:14px;padding:30px 26px;text-align:center;transition:all .25s;}
-        .plan:hover{border-color:#0284c7;box-shadow:0 8px 32px rgba(2,132,199,.08);}
-        .plan.featured{border-color:#0284c7;box-shadow:0 8px 32px rgba(2,132,199,.12);}
-        .plan h3{font-size:1.05rem;font-weight:700;margin-bottom:6px;}
-        .plan .price{font-size:1.8rem;font-weight:800;color:#0284c7;margin-bottom:14px;}
-        .plan .price span{font-size:.88rem;color:#999;font-weight:400;}
-        .plan ul{list-style:none;margin-bottom:16px;text-align:left;}
-        .plan li{padding:5px 0;font-size:.88rem;color:#666;}
-        .plan li::before{content:'✓ ';color:#0284c7;font-weight:700;}
+        .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+        .svc{background:#f8fcfb;border:1px solid #e0f2ec;border-radius:14px;padding:32px 24px;text-align:center;transition:all .25s;}
+        .svc:hover{border-color:#1a8a5f;box-shadow:0 8px 32px rgba(15,76,58,.06);transform:translateY(-3px);}
+        .svc-ico{width:48px;height:48px;border-radius:12px;background:#e8f5f1;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto 16px;}
+        .svc h3{font-size:1rem;font-weight:700;margin-bottom:6px;color:#0f4c3a;}
+        .svc p{font-size:.88rem;color:#5a7a6a;line-height:1.55;}
 
-        .steps{display:flex;gap:40px;justify-content:center;margin-top:40px;}
-        .step{text-align:center;flex:1;max-width:200px;}
-        .step-num{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0284c7,#38bdf8);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;margin:0 auto 14px;}
-        .step h4{font-size:1rem;font-weight:700;margin-bottom:4px;}
-        .step p{font-size:.88rem;color:#888;}
+        .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:50px;padding-top:40px;border-top:1px solid #e8f5f1;}
+        .trust-i{text-align:center;}
+        .trust-i .n{font-size:2rem;font-weight:800;color:#0f4c3a;}
+        .trust-i .l{font-size:.82rem;color:#5a7a6a;margin-top:4px;}
 
-        .hero-img{border-radius:16px;overflow:hidden;max-width:700px;margin:50px auto 0;}
-        .hero-img img{width:100%;height:360px;object-fit:cover;}
+        .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+        .review{background:#f8fcfb;border:1px solid #e0f2ec;border-radius:14px;padding:28px 24px;}
+        .review .stars{color:#f59e0b;margin-bottom:8px;font-size:.9rem;}
+        .review .txt{font-size:.92rem;color:#446;line-height:1.6;margin-bottom:12px;font-style:italic;}
+        .review .author{font-size:.82rem;font-weight:600;color:#0f4c3a;}
 
-        .cta{padding:80px 0;text-align:center;background:#0284c7;color:#fff;}
-        .cta h2{font-size:2rem;font-weight:800;margin-bottom:12px;}
-        .cta p{color:rgba(255,255,255,.6);margin-bottom:28px;}
-        .cta .btn{background:#fff;color:#0284c7;}
+        .img-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;}
+        .img-strip img{width:100%;height:240px;object-fit:cover;border-radius:12px;}
 
-        footer{background:#fafafa;color:#aaa;text-align:center;padding:24px 0;font-size:.85rem;}
+        .form-wrap{max-width:520px;margin:40px auto 0;background:#f8fcfb;border-radius:16px;padding:36px;border:1px solid #e0f2ec;}
+        .form-wrap input,.form-wrap select,.form-wrap textarea{width:100%;padding:12px 14px;border:1px solid #d1e7e0;border-radius:8px;font-size:.9rem;margin-bottom:14px;font-family:inherit;background:#fff;}
+        .form-wrap input:focus,.form-wrap select:focus,.form-wrap textarea:focus{outline:none;border-color:#1a8a5f;box-shadow:0 0 0 3px rgba(26,138,95,.1);}
 
-        .wa{position:fixed;bottom:24px;right:24px;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;z-index:99;box-shadow:0 4px 16px rgba(37,211,102,.35);transition:transform .2s;}
+        .cta{padding:80px 0;text-align:center;background:#0f4c3a;color:#fff;}
+        .cta .stitle{color:#fff;margin-bottom:12px;}
+        .cta p{color:rgba(255,255,255,.5);margin-bottom:28px;}
+        .cta .btn{background:#fff;color:#0f4c3a;}
+        .cta .btn:hover{background:#e8f5f1;}
+
+        footer{background:#f8fcfb;color:#8a9a90;text-align:center;padding:24px 0;font-size:.82rem;}
+
+        .wa{position:fixed;bottom:24px;right:24px;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 16px rgba(37,211,102,.3);z-index:99;transition:transform .2s;}
         .wa:hover{transform:scale(1.1);}
 
         @media(max-width:768px){
-            .hero h1{font-size:2.2rem;}
-            .services{grid-template-columns:1fr;}
-            .plans{grid-template-columns:1fr;max-width:360px;}
-            .steps{flex-direction:column;align-items:center;}
+            .hero-inner{grid-template-columns:1fr;text-align:center;}
+            .hero h1{font-size:2rem;}
+            .hero p{margin:0 auto 24px;}
+            .hero-btns{justify-content:center;}
+            .hero-img{max-width:400px;margin:20px auto 0;}
+            .services,.reviews,.trust{grid-template-columns:1fr;}
+            .img-strip{grid-template-columns:1fr;}
             .nav-links{display:none;}
         }
     </style>
 </head>
 <body>
     <nav>
-        <div class="nav-inner">
-            <div class="logo">✨ CleanPro</div>
+        <div class="nav">
+            <div class="logo">🧹 PureClean</div>
             <div class="nav-links">
                 <a href="#services">Services</a>
-                <a href="#plans">Plans</a>
-                <a href="#how">How It Works</a>
-                <a href="#book" class="btn btn-blue">Book Now</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#quote" class="btn btn-green">Free Quote</a>
             </div>
         </div>
     </nav>
 
     <section class="hero">
         <div class="hero-inner">
-            <p class="label">Eco-Friendly Cleaning</p>
-            <h1>Your Home,<br>Sparkling Clean.</h1>
-            <p>Professional house & office cleaning with eco-friendly products. Trusted by 200+ clients in San Juan metro.</p>
-            <div class="hero-actions">
-                <a href="#plans" class="btn btn-blue">View Plans</a>
-                <a href="#book" class="btn btn-outline">Free Quote</a>
+            <div>
+                <p class="tag">Eco-Friendly Cleaning</p>
+                <h1>A Cleaner Space.<br>A Happier Home.</h1>
+                <p>Professional house, office & deep cleaning with eco-friendly products. Trusted by 500+ clients in San Juan.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn btn-green">Our Services</a>
+                    <a href="#quote" class="btn btn-outline">Get Free Quote</a>
+                </div>
             </div>
             <div class="hero-img">
-                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80" alt="Clean home">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Clean home" loading="eager">
             </div>
         </div>
     </section>
 
-    <section class="section" id="services">
-        <div class="inner">
-            <p class="section-label">Services</p>
-            <h2 class="section-title">Cleaning Solutions for Every Need</h2>
-            <p class="section-desc">From regular maintenance to deep cleans — we've got you covered.</p>
+    <section class="sec" id="services">
+        <div class="sec-inner">
+            <p class="tag">What We Offer</p>
+            <h2 class="stitle">Our Services</h2>
+            <p class="sdesc">Every space deserves a deep clean</p>
             <div class="services">
-                <div class="svc"><div class="svc-icon">🏠</div><div><h3>Regular Cleaning</h3><p>Weekly, bi-weekly or monthly home cleaning. Dusting, vacuuming, mopping, bathrooms & kitchen.</p></div></div>
-                <div class="svc"><div class="svc-icon">🏢</div><div><h3>Office Cleaning</h3><p>Professional office & workspace cleaning. Desks, common areas, restrooms, break rooms.</p></div></div>
-                <div class="svc"><div class="svc-icon">🧹</div><div><h3>Deep Cleaning</h3><p>Intensive top-to-bottom clean. Perfect for seasonal deep cleaning or first-time service.</p></div></div>
-                <div class="svc"><div class="svc-icon">📦</div><div><h3>Move In/Out</h3><p>Complete cleaning for moving. Get your deposit back or start fresh in your new place.</p></div></div>
+                <div class="svc"><div class="svc-ico">🏠</div><h3>House Cleaning</h3><p>Regular cleaning — kitchen, bathrooms, bedrooms & living areas</p></div>
+                <div class="svc"><div class="svc-ico">🏢</div><h3>Office Cleaning</h3><p>Desk, floor, bathroom & common areas — daily or weekly</p></div>
+                <div class="svc"><div class="svc-ico">✨</div><h3>Deep Cleaning</h3><p>Full deep clean — inside appliances, baseboards & more</p></div>
+                <div class="svc"><div class="svc-ico">🏗️</div><h3>Post-Construction</h3><p>Construction debris, dust & residue cleanup</p></div>
+                <div class="svc"><div class="svc-ico">🧽</div><h3>Move-In/Out</h3><p>Get your full deposit back — leave it spotless</p></div>
+                <div class="svc"><div class="svc-ico">🌿</div><h3>Eco-Friendly</h3><p>100% eco-friendly products — safe for pets & kids</p></div>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background:#fafcff;">
-        <div class="inner" style="text-align:center;">
-            <p class="section-label">Pricing</p>
-            <h2 class="section-title">Cleaning Plans</h2>
-            <p class="section-desc" style="margin:0 auto;">No contracts. No hidden fees. Cancel anytime.</p>
-            <div class="plans">
-                <div class="plan">
-                    <h3>Basic Clean</h3>
-                    <div class="price">$99 <span>/visit</span></div>
-                    <ul><li>Kitchen & bathrooms</li><li>Dusting & vacuuming</li><li>Mopping floors</li><li>Trash removal</li></ul>
-                    <a href="#book" class="btn btn-outline" style="width:100%;justify-content:center;">Book Now</a>
-                </div>
-                <div class="plan featured">
-                    <h3>Deep Clean</h3>
-                    <div class="price">$179 <span>/visit</span></div>
-                    <ul><li>Everything in Basic</li><li>Inside appliances</li><li>Baseboards & windowsills</li><li>Cabinet exteriors</li><li>Light fixtures</li></ul>
-                    <a href="#book" class="btn btn-blue" style="width:100%;justify-content:center;">Best Value</a>
-                </div>
-                <div class="plan">
-                    <h3>Monthly</h3>
-                    <div class="price">$349 <span>/mo</span></div>
-                    <ul><li>4 visits per month</li><li>Same cleaner every time</li><li>Supplies included</li><li>10% discount</li></ul>
-                    <a href="#book" class="btn btn-outline" style="width:100%;justify-content:center;">Start Saving</a>
-                </div>
+    <section class="sec" style="background:#f8fcfb;">
+        <div class="sec-inner">
+            <h2 class="stitle" style="text-align:center;">Trusted by Hundreds</h2>
+            <div class="trust">
+                <div class="trust-i"><div class="n">500+</div><div class="l">Happy Clients</div></div>
+                <div class="trust-i"><div class="n">4.9★</div><div class="l">Google Rating</div></div>
+                <div class="trust-i"><div class="n">10+</div><div class="l">Years</div></div>
+                <div class="trust-i"><div class="n">100%</div><div class="l">Eco-Friendly</div></div>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="inner" style="text-align:center;">
-            <p class="section-label">How It Works</p>
-            <h2 class="section-title">Clean Home in 3 Steps</h2>
-            <div class="steps">
-                <div class="step"><div class="step-num">1</div><h4>Book Online</h4><p>Choose your plan and pick a time</p></div>
-                <div class="step"><div class="step-num">2</div><h4>We Clean</h4><p>Team arrives with all supplies</p></div>
-                <div class="step"><div class="step-num">3</div><h4>You Relax</h4><p>Come home to a sparkling space</p></div>
+    <section class="sec" id="reviews">
+        <div class="sec-inner">
+            <p class="tag">Testimonials</p>
+            <h2 class="stitle">What Clients Say</h2>
+            <div class="reviews">
+                <div class="review"><div class="stars">★★★★★</div><div class="txt">"Incredible service. My house hasn't been this clean in years. Professional, on time, and friendly."</div><div class="author">— María R. • San Juan</div></div>
+                <div class="review"><div class="stars">★★★★★</div><div class="txt">"We hired them for our office every week. Always on time, always spotless. Best decision ever."</div><div class="author">— Carlos L. • Condado</div></div>
+                <div class="review"><div class="stars">★★★★★</div><div class="txt">"Used them for a move-out clean. Got my full deposit back! Highly recommend."</div><div class="author">— Ana M. • Dorado</div></div>
             </div>
         </div>
     </section>
 
-    <section class="cta" id="book">
-        <div class="inner">
-            <h2>Ready for a Cleaner Home?</h2>
-            <p>Book your first cleaning and get 20% off. No commitment, cancel anytime.</p>
-            <a href="tel:+17875556543" class="btn" style="padding:14px 32px;font-size:.95rem;">📞 (787) 555-6543</a>
+    <section class="sec" id="quote" style="background:#f8fcfb;">
+        <div class="sec-inner" style="text-align:center;">
+            <p class="tag">Get Started</p>
+            <h2 class="stitle">Free Quote in Minutes</h2>
+            <p class="sdesc" style="margin:0 auto 8px;">Tell us about your space — we'll be back within 24 hours</p>
+            <div class="form-wrap">
+                <input type="text" placeholder="Your name">
+                <input type="tel" placeholder="Phone number">
+                <input type="email" placeholder="Email address">
+                <select><option value="" disabled selected>Service type?</option><option>House Cleaning</option><option>Office Cleaning</option><option>Deep Cleaning</option><option>Post-Construction</option><option>Move-In/Out</option></select>
+                <select><option value="" disabled selected>Property size?</option><option>Studio / 1 Bedroom</option><option>2–3 Bedrooms</option><option>4+ Bedrooms</option><option>Office / Commercial</option></select>
+                <button class="btn btn-green" style="width:100%;min-height:46px;">Request Free Quote</button>
+            </div>
         </div>
     </section>
 
-    <footer><p>&copy; 2026 CleanPro — Demo by <a href="https://pilotsoftware.llc">Pilot Software</a></p></footer>
-    <a href="https://wa.me/17875556543" class="wa">💬</a>
+    <section class="cta">
+        <div class="sec-inner">
+            <h2 class="stitle">Ready for a Spotless Space?</h2>
+            <p>Book today and get 20% off your first clean.</p>
+            <a href="tel:+17875556789" class="btn" style="padding:14px 32px;">📞 (787) 555-6789</a>
+        </div>
+    </section>
+
+    <footer><p>&copy; 2026 PureClean — Demo by <a href="https://pilotsoftware.llc">Pilot Software</a></p></footer>
+    <a href="https://wa.me/17875556789" class="wa" target="_blank" rel="noopener">💬</a>
 </body>
 </html>
