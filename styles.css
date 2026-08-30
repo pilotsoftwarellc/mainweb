@@ -1001,9 +1001,268 @@ h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
     .footer-grid { grid-template-columns: 1fr; gap: 30px; }
 }
 
+/* New services responsive */
+@media (max-width: 1024px) {
+    .new-services-grid { grid-template-columns: repeat(2, 1fr); }
+    .infra-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 880px) {
+    .new-services-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .infra-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .ai-diff-grid { grid-template-columns: 1fr; }
+    .ai-diff { padding: 28px; }
+    .consulting-box { padding: 32px 24px; }
+}
+
 @media (min-width: 641px) {
     .lang-switch-mobile, .nav-links .nav-cta { display: none; }
     .nav-desktop-actions { display: flex; }
+}
+
+/* ============================================================
+   NEW SERVICES — Website Refresh, Business Website, AI Chatbot
+   ============================================================ */
+.new-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+}
+.new-service-card {
+    padding: 32px 28px;
+    background: linear-gradient(175deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    transition: border-color 220ms ease, transform 220ms ease;
+    display: flex;
+    flex-direction: column;
+}
+.new-service-card:hover {
+    border-color: rgba(0,217,255,0.35);
+    transform: translateY(-3px);
+}
+.new-service-card .ns-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: rgba(0,217,255,0.07);
+    border: 1px solid rgba(0,217,255,0.2);
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+.new-service-card .ns-icon svg { stroke: var(--cyan); width: 22px; height: 22px; }
+.new-service-card h3 {
+    font-size: 1.12rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.new-service-card .ns-desc {
+    font-size: 0.88rem;
+    color: var(--text-2);
+    line-height: 1.55;
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+.new-service-card .ns-features {
+    list-style: none;
+    margin-bottom: 20px;
+}
+.new-service-card .ns-features li {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--text-2);
+    margin-bottom: 8px;
+}
+.new-service-card .ns-features li::before {
+    content: '✓';
+    color: var(--cyan);
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+}
+.new-service-card .ns-price {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--cyan);
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    margin-top: auto;
+}
+.new-service-card .ns-price .price-big {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.new-service-card .ns-cta {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+}
+
+/* AI differentiation callout */
+.ai-diff {
+    margin-top: 48px;
+    background: rgba(16,21,31,0.6);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    padding: 36px;
+}
+.ai-diff-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text);
+}
+.ai-diff-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+.ai-diff-card {
+    padding: 24px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+}
+.ai-diff-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--cyan);
+}
+.ai-diff-card p {
+    font-size: 0.87rem;
+    color: var(--text-2);
+    line-height: 1.55;
+}
+
+/* FAQ */
+.faq-list {
+    max-width: 720px;
+    margin: 48px auto 0;
+}
+.faq-item {
+    border-bottom: 1px solid var(--line);
+}
+.faq-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 0;
+    cursor: pointer;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--text);
+    user-select: none;
+}
+.faq-q::after {
+    content: '+';
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--cyan);
+    flex-shrink: 0;
+    transition: transform 200ms ease;
+}
+.faq-item.open .faq-q::after {
+    content: '−';
+}
+.faq-a {
+    display: none;
+    font-size: 0.92rem;
+    color: var(--text-2);
+    line-height: 1.6;
+    padding-bottom: 22px;
+}
+.faq-item.open .faq-a {
+    display: block;
+}
+
+/* Infrastructure section */
+.infra-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+}
+.infra-card {
+    padding: 28px 24px;
+    background: linear-gradient(175deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    transition: border-color 220ms ease, transform 220ms ease;
+}
+.infra-card:hover {
+    border-color: rgba(0,217,255,0.35);
+    transform: translateY(-3px);
+}
+.infra-card .ic-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: rgba(0,217,255,0.07);
+    border: 1px solid rgba(0,217,255,0.2);
+    display: grid;
+    place-items: center;
+    margin-bottom: 16px;
+}
+.infra-card .ic-icon svg { stroke: var(--cyan); width: 18px; height: 18px; }
+.infra-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.infra-card p {
+    font-size: 0.84rem;
+    color: var(--text-2);
+    line-height: 1.5;
+}
+
+/* Consulting section */
+.consulting-box {
+    margin-top: 48px;
+    padding: 48px;
+    background: linear-gradient(175deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    text-align: center;
+}
+.consulting-box h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.consulting-box p {
+    color: var(--text-2);
+    font-size: 0.95rem;
+    max-width: 560px;
+    margin: 0 auto 24px;
+    line-height: 1.6;
+}
+.consulting-box ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 24px;
+    margin-bottom: 28px;
+}
+.consulting-box ul li {
+    font-size: 0.88rem;
+    color: var(--text-2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.consulting-box ul li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--cyan);
+    flex-shrink: 0;
 }
 
 /* ============================================================

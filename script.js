@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initParallax();
     initChartTooltip();
+    initFaq();
 });
 
 // --- Navbar scroll effect ---
@@ -49,7 +50,7 @@ function initScrollReveal() {
     document.documentElement.classList.add('js');
 
     const elements = document.querySelectorAll(
-        '.split-copy, .split-media, .benefit, .pillar, .section-head'
+        '.split-copy, .split-media, .benefit, .pillar, .section-head, .new-service-card, .infra-card, .ai-diff-card'
     );
     elements.forEach(el => el.classList.add('reveal'));
 
@@ -213,5 +214,17 @@ function initContactForm() {
         } finally {
             if (submitBtn) submitBtn.disabled = false;
         }
+    });
+}
+
+// --- FAQ accordion ---
+function initFaq() {
+    document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        });
     });
 }
