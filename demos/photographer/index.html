@@ -6,18 +6,18 @@
     <title>Solís Photography — Capturing Life's Most Beautiful Moments</title>
     <meta name="description" content="Solís Photography — Weddings, portraits, events, and product photography. Professional photographer in San Juan, PR.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
         body{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;}
         a{text-decoration:none;color:inherit;}
         img{max-width:100%;display:block;}
 
-        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;}
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #f0f0f0;}
         .nav{max-width:1140px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;}
         .logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:500;color:#1a1a1a;}
         .nav-links{display:flex;align-items:center;gap:32px;}
-        .nav-links a{font-size:.85rem;font-weight:500;color:#666;transition:color .2s;}
+        .nav-links a{font-size:.85rem;font-weight:500;color:#888;transition:color .2s;}
         .nav-links a:hover{color:#1a1a1a;}
         .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 24px;border-radius:0;font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:all .2s;border:none;cursor:pointer;}
         .btn-fill{background:#1a1a1a;color:#fff;}
@@ -26,22 +26,23 @@
         .btn-outline:hover{background:#1a1a1a;color:#fff;}
 
         .hero{padding:140px 0 60px;background:#fafaf9;}
-        .hero-inner{max-width:1140px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
-        .hero .tag{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:12px;}
-        .hero h1{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:400;line-height:1.12;color:#1a1a1a;margin-bottom:16px;}
-        .hero p{font-size:.98rem;color:#777;line-height:1.75;max-width:400px;margin-bottom:28px;}
+        .hero-inner{max-width:1140px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:85vh;}
+        .hero-tag{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#aaa;margin-bottom:12px;}
+        .hero h1{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:400;line-height:1.1;color:#1a1a1a;margin-bottom:16px;}
+        .hero p{font-size:.98rem;color:#888;line-height:1.75;max-width:400px;margin-bottom:28px;}
         .hero-btns{display:flex;gap:12px;}
 
-        .hero-img{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-        .hero-img .big{grid-row:span 2;aspect-ratio:3/4;overflow:hidden;}
-        .hero-img .big img,.hero-img .sm img{width:100%;height:100%;object-fit:cover;}
-        .hero-img .sm{aspect-ratio:1;overflow:hidden;}
+        .hero-gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+        .hero-gallery .big{grid-row:span 2;aspect-ratio:3/4;overflow:hidden;}
+        .hero-gallery .sm{aspect-ratio:1;overflow:hidden;}
+        .hero-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s;}
+        .hero-gallery img:hover{transform:scale(1.03);}
 
         .sec{padding:80px 0;}
         .sec-inner{max-width:1140px;margin:0 auto;padding:0 28px;}
-        .tag{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:10px;}
-        .stitle{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:500;color:#1a1a1a;margin-bottom:10px;}
-        .sdesc{color:#777;max-width:420px;}
+        .section-tag{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#aaa;margin-bottom:10px;}
+        .section-title{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:400;color:#1a1a1a;margin-bottom:10px;}
+        .section-desc{color:#888;max-width:420px;}
 
         .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;}
         .port{aspect-ratio:3/4;overflow:hidden;position:relative;}
@@ -50,20 +51,31 @@
         .port-label{position:absolute;bottom:16px;left:16px;font-size:.78rem;font-weight:500;color:#fff;background:rgba(0,0,0,.6);padding:6px 12px;border-radius:4px;}
 
         .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px;}
-        .price-card{border:1px solid #e5e5e5;padding:36px 28px;text-align:center;}
+        .price-card{border:1px solid #e5e5e5;padding:36px 28px;text-align:center;transition:all .25s;}
+        .price-card:hover{border-color:#1a1a1a;box-shadow:0 8px 32px rgba(0,0,0,.06);}
+        .price-card.featured{border-color:#1a1a1a;background:#1a1a1a;color:#fff;}
+        .price-card.featured .price{color:#fff;}
+        .price-card.featured li{border-color:rgba(255,255,255,.1);}
         .price-card h4{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:6px;}
-        .price-card .price{font-size:2.4rem;font-weight:600;color:#1a1a1a;margin:16px 0 4px;}
-        .price-card .note{font-size:.82rem;color:#999;margin-bottom:20px;}
+        .price-card .price{font-size:2.6rem;font-weight:600;color:#1a1a1a;margin:16px 0 4px;}
+        .price-card .note{font-size:.82rem;color:#aaa;margin-bottom:20px;}
         .price-card ul{list-style:none;text-align:left;margin-bottom:24px;}
-        .price-card li{padding:6px 0;font-size:.88rem;color:#555;border-bottom:1px solid #f0f0f0;}
+        .price-card li{padding:8px 0;font-size:.88rem;color:#555;border-bottom:1px solid #f0f0f0;}
+        .price-card .btn{width:100%;}
+
+        .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;}
+        .review{padding:24px;background:#fafaf9;border:1px solid #f0f0f0;}
+        .review .stars{color:#f59e0b;margin-bottom:8px;font-size:.9rem;}
+        .review .txt{font-size:.92rem;color:#556;line-height:1.6;margin-bottom:12px;font-style:italic;}
+        .review .author{font-size:.82rem;font-weight:600;color:#1a1a1a;}
 
         .cta{padding:80px 0;text-align:center;background:#1a1a1a;color:#fff;}
-        .cta .stitle{color:#fff;margin-bottom:12px;}
+        .cta .section-title{color:#fff;margin-bottom:12px;}
         .cta p{color:rgba(255,255,255,.4);margin-bottom:28px;}
         .cta .btn{background:#fff;color:#1a1a1a;}
         .cta .btn:hover{background:#ccc;}
 
-        footer{background:#f5f5f5;color:#999;text-align:center;padding:24px 0;font-size:.82rem;}
+        footer{background:#f5f5f5;color:#aaa;text-align:center;padding:24px 0;font-size:.82rem;}
 
         .wa{position:fixed;bottom:24px;right:24px;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 16px rgba(37,211,102,.3);z-index:99;transition:transform .2s;}
         .wa:hover{transform:scale(1.1);}
@@ -73,8 +85,8 @@
             .hero h1{font-size:2.2rem;}
             .hero p{margin:0 auto 24px;}
             .hero-btns{justify-content:center;}
-            .hero-img{max-width:320px;margin:20px auto 0;}
-            .portfolio,.pricing{grid-template-columns:1fr;}
+            .hero-gallery{max-width:320px;margin:20px auto 0;}
+            .portfolio,.pricing,.reviews{grid-template-columns:1fr;}
             .nav-links{display:none;}
         }
     </style>
@@ -86,6 +98,7 @@
             <div class="nav-links">
                 <a href="#portfolio">Portfolio</a>
                 <a href="#pricing">Pricing</a>
+                <a href="#reviews">Reviews</a>
                 <a href="#contact" class="btn btn-fill">Book Now</a>
             </div>
         </div>
@@ -94,16 +107,16 @@
     <section class="hero">
         <div class="hero-inner">
             <div>
-                <p class="tag">Professional Photographer</p>
+                <p class="hero-tag">Professional Photographer</p>
                 <h1>Your Story.<br>Beautifully Told.</h1>
-                <p>Weddings, portraits, events & product photography. Every moment captured with artistry.</p>
+                <p>Weddings, portraits, events & product photography. Every moment captured with artistry and care.</p>
                 <div class="hero-btns">
                     <a href="#portfolio" class="btn btn-fill">View Portfolio</a>
                     <a href="#pricing" class="btn btn-outline">Pricing</a>
                 </div>
             </div>
-            <div class="hero-img">
-                <div class="big"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding" loading="eager"></div>
+            <div class="hero-gallery">
+                <div class="big"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding photography" loading="eager"></div>
                 <div class="sm"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=80" alt="Event" loading="lazy"></div>
                 <div class="sm"><img src="https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?w=600&q=80" alt="Portrait" loading="lazy"></div>
             </div>
@@ -112,36 +125,48 @@
 
     <section class="sec" id="portfolio">
         <div class="sec-inner">
-            <p class="tag">My Work</p>
-            <h2 class="stitle">Portfolio</h2>
-            <p class="sdesc">A glimpse of moments I've captured</p>
+            <p class="section-tag">My Work</p>
+            <h2 class="section-title">Portfolio</h2>
+            <p class="section-desc">A glimpse of moments I've captured</p>
             <div class="portfolio">
                 <div class="port"><img src="https://images.unsplash.com/photo-1606216794079-73f85a1e24bf?w=600&q=80" alt="Wedding" loading="lazy"><span class="port-label">Weddings</span></div>
                 <div class="port"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80" alt="Portrait" loading="lazy"><span class="port-label">Portraits</span></div>
                 <div class="port"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80" alt="Nature" loading="lazy"><span class="port-label">Nature</span></div>
                 <div class="port"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding detail" loading="lazy"><span class="port-label">Events</span></div>
                 <div class="port"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Product" loading="lazy"><span class="port-label">Product</span></div>
-                <div class="port"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80" alt="Event" loading="lazy"><span class="port-label">Events</span></div>
+                <div class="port"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80" alt="Event" loading="lazy"><span class="port-label">Celebrations</span></div>
             </div>
         </div>
     </section>
 
     <section class="sec" id="pricing" style="background:#fafaf9;">
         <div class="sec-inner">
-            <p class="tag">Investment</p>
-            <h2 class="stitle">Pricing</h2>
-            <p class="sdesc">Packages designed for your needs</p>
+            <p class="section-tag">Investment</p>
+            <h2 class="section-title">Pricing</h2>
+            <p class="section-desc">Packages designed for your needs</p>
             <div class="pricing">
-                <div class="price-card"><h4>Portrait</h4><div class="price">$299</div><div class="note">One session</div><ul><li>✓ 2-hour session</li><li>✓ 20+ edited photos</li><li>✓ Online gallery</li></ul><a href="#contact" class="btn btn-outline" style="width:100%;">Book</a></div>
-                <div class="price-card"><h4>Wedding</h4><div class="price">$1,499</div><div class="note">Full coverage</div><ul><li>✓ 8 hours coverage</li><li>✓ 300+ edited photos</li><li>✓ Engagement session</li></ul><a href="#contact" class="btn btn-fill" style="width:100%;">Book</a></div>
-                <div class="price-card"><h4>Premium</h4><div class="price">$2,499</div><div class="note">Complete package</div><ul><li>✓ 12 hours coverage</li><li>✓ 500+ edited photos</li><li>✓ Album + digital</li></ul><a href="#contact" class="btn btn-outline" style="width:100%;">Book</a></div>
+                <div class="price-card"><h4>Portrait</h4><div class="price">$299</div><div class="note">One session</div><ul><li>✓ 2-hour session</li><li>✓ 20+ edited photos</li><li>✓ Online gallery</li><li>✓ 1 outfit change</li></ul><a href="#contact" class="btn btn-outline" style="width:100%;">Book</a></div>
+                <div class="price-card featured"><h4>Wedding</h4><div class="price">$1,499</div><div class="note" style="color:rgba(255,255,255,.45)">Full coverage</div><ul><li>✓ 8 hours coverage</li><li>✓ 300+ edited photos</li><li>✓ Engagement session</li><li>✓ Second shooter</li></ul><a href="#contact" class="btn btn-fill" style="background:#fff;color:#1a1a1a;" class="btn btn-fill">Book</a></div>
+                <div class="price-card"><h4>Premium</h4><div class="price">$2,499</div><div class="note">Complete package</div><ul><li>✓ 12 hours coverage</li><li>✓ 500+ edited photos</li><li>✓ Premium album</li><li>✓ Drone footage</li></ul><a href="#contact" class="btn btn-outline" style="width:100%;">Book</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec" id="reviews">
+        <div class="sec-inner">
+            <p class="section-tag">Testimonials</p>
+            <h2 class="section-title">What Clients Say</h2>
+            <div class="reviews">
+                <div class="review"><div class="stars">★★★★★</div><div class="txt">"Our wedding photos are absolutely stunning. Every emotion, every detail — perfect."</div><div class="author">— Carlos & Ana</div></div>
+                <div class="review"><div class="stars">★★★★★</div><div class="txt">"Professional and creative. My product photos sold out in a week."</div><div class="author">— María L.</div></div>
+                <div class="review"><div class="stars">★★★★★</div><div class="txt">"He made me feel so comfortable during my portrait session. The results are incredible."</div><div class="author">— Luis R.</div></div>
             </div>
         </div>
     </section>
 
     <section class="cta" id="contact">
         <div class="sec-inner">
-            <h2 class="stitle">Let's Work Together</h2>
+            <h2 class="section-title">Let's Work Together</h2>
             <p>Ready to capture your moment? Let's talk.</p>
             <a href="tel:+17875552345" class="btn" style="padding:14px 32px;">📞 (787) 555-2345</a>
         </div>
