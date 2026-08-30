@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexFit Studio — Tu Camino Fitness Empieza Aquí</title>
+    <meta name="description" content="FlexFit Studio — Entrenamiento personal, yoga, HIIT y clases grupales. Todos los niveles. Primera clase gratis.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="demo-base.css">
+    <style>
+        :root { --primary: #059669; --primary-dark: #047857; --secondary: #f59e0b; --accent: #10b981; --dark: #0c2d1b; --light: #ecfdf5; --warm: #d1fae5; }
+        .hero { background: linear-gradient(135deg, #0c2d1b 0%, #1a4a2e 100%); color: white; }
+        .hero h1, .hero p { color: white; } .hero p { color: rgba(255,255,255,.7); }
+        .hero-badge { background: var(--secondary); color: var(--dark); }
+        .feature-icon { background: var(--secondary); color: var(--dark); }
+        .class-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+        .class-card { background: white; border-radius: var(--radius); padding: 24px; text-align: center; box-shadow: var(--shadow); }
+        .class-emoji { font-size: 2.5rem; margin-bottom: 12px; }
+        .class-card h4 { font-size: 1rem; margin-bottom: 6px; }
+        .class-card .time { color: var(--gray); font-size: 0.85rem; margin-bottom: 8px; }
+        .class-card .class-price { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
+        .schedule-table { max-width: 700px; margin: 0 auto; width: 100%; border-collapse: collapse; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+        .schedule-table th { background: var(--primary); color: white; padding: 14px; font-size: 0.9rem; }
+        .schedule-table td { padding: 12px 14px; text-align: center; border-bottom: 1px solid var(--light); font-size: 0.88rem; }
+        .schedule-table tr:hover td { background: var(--warm); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto; }
+        .pricing-card { background: white; border-radius: var(--radius); padding: 28px; text-align: center; box-shadow: var(--shadow); position: relative; border: 2px solid transparent; }
+        .pricing-card.popular { border-color: var(--secondary); }
+        .pricing-card.popular::after { content: 'MÁS POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--secondary); color: var(--dark); padding: 4px 14px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; }
+        .pricing-card h4 { font-size: 1.1rem; margin-bottom: 8px; }
+        .pricing-card .price { font-size: 2rem; font-weight: 800; color: var(--primary); }
+        .pricing-card .price span { font-size: 0.9rem; color: var(--gray); font-weight: 400; }
+        .pricing-card ul { list-style: none; margin: 16px 0; text-align: left; }
+        .pricing-card li { padding: 6px 0; font-size: 0.88rem; color: var(--gray); }
+        .pricing-card li::before { content: '✓ '; color: var(--accent); font-weight: 700; }
+    </style>
+</head>
+<body>
+    <nav class="demo-nav"><div class="container"><a href="#" class="demo-logo">💪 FlexFit Studio</a><div class="demo-nav-links"><a href="#classes">Clases</a><a href="#schedule">Horarios</a><a href="#pricing">Precios</a><a href="#join" class="demo-cta-btn">Únete</a></div></div></nav>
+
+    <section class="hero"><div class="container">
+        <span class="hero-badge">Primera Clase GRATIS</span>
+        <h1>Hazte Fuerte.<br>Siente Increíble.</h1>
+        <p>Entrenamiento personal, clases grupales y todos los niveles bienvenidos. Tu camino fitness empieza con un paso.</p>
+        <div class="hero-buttons"><a href="#classes" class="demo-cta-btn large">Ver Clases</a><a href="#join" class="demo-cta-btn large secondary" style="border-color: var(--secondary); color: var(--secondary) !important;">Clase Gratis</a></div>
+        <div class="hero-image" style="margin-top:40px; background: linear-gradient(135deg, #1a4a2e, #0c2d1b); border-radius: var(--radius); padding: 60px 20px; font-size: 5rem;">🏋️</div>
+    </div></section>
+
+    <section class="section" id="classes"><div class="container">
+        <div class="section-title"><h2>Nuestras Clases</h2><p>Encuentra el entrenamiento que va contigo</p></div>
+        <div class="class-grid">
+            <div class="class-card"><div class="class-emoji">🧘</div><h4>Yoga y Flexibilidad</h4><p class="time">Lun/Mié/Vie — 7am, 12pm, 6pm</p><p class="class-price">$50/mes</p></div>
+            <div class="class-card"><div class="class-emoji">🔥</div><h4>HIIT y Cardio</h4><p class="time">Mar/Jue/Sáb — 8am, 5:30pm</p><p class="class-price">$65/mes</p></div>
+            <div class="class-card"><div class="class-emoji">💪</div><h4>Fuerza</h4><p class="time">Lun/Mié/Jue/Vie — 6am, 6pm</p><p class="class-price">$75/mes</p></div>
+            <div class="class-card"><div class="class-emoji">🥊</div><h4>Boxeo</h4><p class="time">Mié/Sáb — 9am, 4pm</p><p class="class-price">$60/mes</p></div>
+        </div>
+    </div></section>
+
+    <section class="section section-alt" id="schedule"><div class="container">
+        <div class="section-title"><h2>Horario Semanal</h2><p>Planifica tu semana</p></div>
+        <table class="schedule-table">
+            <thead><tr><th>Hora</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th><th>Sábado</th></tr></thead>
+            <tbody>
+                <tr><td>7:00 AM</td><td>Yoga</td><td>—</td><td>Yoga</td><td>—</td><td>Yoga</td><td>HIIT</td></tr>
+                <tr><td>8:00 AM</td><td>HIIT</td><td>HIIT</td><td>—</td><td>HIIT</td><td>—</td><td>Boxeo</td></tr>
+                <tr><td>12:00 PM</td><td>Yoga</td><td>—</td><td>Yoga</td><td>—</td><td>Yoga</td><td>—</td></tr>
+                <tr><td>4:00 PM</td><td>—</td><td>Fuerza</td><td>—</td><td>Fuerza</td><td>—</td><td>Boxeo</td></tr>
+                <tr><td>5:30 PM</td><td>HIIT</td><td>—</td><td>—</td><td>HIIT</td><td>HIIT</td><td>—</td></tr>
+                <tr><td>6:00 PM</td><td>Fuerza</td><td>Fuerza</td><td>Yoga</td><td>Fuerza</td><td>Fuerza</td><td>—</td></tr>
+            </tbody>
+        </table>
+    </div></section>
+
+    <section class="section" id="pricing"><div class="container">
+        <div class="section-title"><h2>Planes</h2><p>Elige el plan que te funciona</p></div>
+        <div class="pricing-grid">
+            <div class="pricing-card"><h4>Suelto</h4><div class="price">$12 <span>/clase</span></div><ul><li>Cualquier clase</li><li>Sin compromiso</li><li>Todos los niveles</li></ul><a href="#join" class="demo-cta-btn" style="width:100%">Reservar</a></div>
+            <div class="pricing-card popular"><h4>Mensual</h4><div class="price">$85 <span>/mes</span></div><ul><li>Clases ilimitadas</li><li>2 sesiones PT/mes</li><li>Acceso a todos los studios</li></ul><a href="#join" class="demo-cta-btn" style="width:100%; background: var(--secondary); color: var(--dark) !important;">Clase Gratis</a></div>
+            <div class="pricing-card"><h4>Anual</h4><div class="price">$75 <span>/mes</span></div><ul><li>$900/año</li><li>Clases ilimitadas</li><li>4 sesiones PT/mes</li><li>Ahorra $120</li></ul><a href="#join" class="demo-cta-btn" style="width:100%">Anual</a></div>
+        </div>
+    </div></section>
+
+    <section class="cta-section" id="join"><div class="container">
+        <h2>Tu Primera Clase es GRATIS</h2>
+        <p>Sin tarjeta. Sin compromiso. Solo ven y siente la energía.</p>
+        <a href="tel:+17875557777" class="demo-cta-btn large">📞 (787) 555-7777</a>
+    </div></section>
+
+    <footer class="demo-footer"><div class="container"><p>&copy; 2026 FlexFit Studio — Demo por <a href="https://pilotsoftware.llc">Pilot Software</a></p></div></footer>
+    <a href="https://wa.me/17875557777" class="whatsapp-float" title="Chat en WhatsApp">💬</a>
+</body>
+</html>

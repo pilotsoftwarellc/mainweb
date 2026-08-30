@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Demos — Static Websites from $69.99 | Pilot Software</title>
+    <meta name="description" content="Professional static landing pages for small businesses starting at $69.99. See live demos for restaurants, salons, contractors & more. Ready in 3-5 days.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .demos-hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+        }
+        .demos-hero .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+        }
+        .demos-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+        .demos-hero p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            max-width: 550px;
+            margin: 0 auto 30px;
+        }
+        .demos-price-banner {
+            background: var(--primary);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .demos-price-banner .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .demos-price-item {
+            text-align: center;
+        }
+        .demos-price-item .val {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+        .demos-price-item .lbl {
+            font-size: 0.85rem;
+            opacity: .8;
+        }
+        .demos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            padding: 60px 0;
+        }
+        .demo-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform .2s, box-shadow .2s;
+        }
+        .demo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .demo-card-preview {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .demo-card-preview.restaurant { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+        .demo-card-preview.salon { background: linear-gradient(135deg, #f3e8ff, #e9d5ff); }
+        .demo-card-preview.contractor { background: linear-gradient(135deg, #1e3a5f, #0f172a); }
+        .demo-card-preview.fitness { background: linear-gradient(135deg, #1a4a2e, #0c2d1b); }
+        .demo-card-preview.photographer { background: linear-gradient(135deg, #292524, #1c1917); }
+        .demo-card-preview.cleaning { background: linear-gradient(135deg, #0369a1, #0c4a6e); }
+        .demo-card-body {
+            padding: 24px;
+        }
+        .demo-card-body h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .demo-card-body .category {
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+        .demo-card-body p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .demo-card-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .demo-card-actions a {
+            flex: 1;
+            text-align: center;
+            padding: 10px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all .2s;
+        }
+        .demo-card-actions .view-live {
+            background: var(--primary);
+            color: white;
+        }
+        .demo-card-actions .view-live:hover { background: var(--primary-dark); }
+        .demo-card-actions .view-code {
+            background: var(--light);
+            color: var(--dark);
+        }
+        .demo-card-actions .view-code:hover { background: #e2e8f0; }
+        .demos-includes {
+            padding: 60px 0;
+            background: var(--light);
+        }
+        .includes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .include-item {
+            background: white;
+            padding: 24px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .include-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .include-item h4 {
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .include-item p {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+        .demos-cta {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+        .demos-cta h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .demos-cta p {
+            opacity: .85;
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+        }
+        .demos-cta .demo-cta-btn {
+            background: white;
+            color: var(--primary) !important;
+            padding: 14px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-block;
+        }
+        .demos-cta .demo-cta-btn:hover { background: var(--light); }
+
+        @media (max-width: 768px) {
+            .demos-hero { padding: 130px 0 60px; }
+            .demos-hero h1 { font-size: 2rem; }
+            .demos-grid { grid-template-columns: 1fr; padding: 40px 0; }
+            .demos-price-banner .container { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="demo-nav">
+        <div class="container">
+            <a href="/" class="demo-logo">Pilot Software</a>
+            <div class="demo-nav-links">
+                <a href="/">Home</a>
+                <a href="/services/">Services</a>
+                <a href="/demos/">Demos</a>
+                <a href="/contact/" class="demo-cta-btn">Start a Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="demos-hero">
+        <div class="container">
+            <span class="badge">Static Websites</span>
+            <h1>Websites from $69.99</h1>
+            <p>Professional landing pages for small businesses. Live demos below — pick a style, tell us your info, and we'll build yours in 3-5 days.</p>
+            <a href="/contact/" class="demo-cta-btn large">Start My Website</a>
+        </div>
+    </section>
+
+    <section class="demos-price-banner">
+        <div class="container">
+            <div class="demos-price-item">
+                <div class="val">$69.99</div>
+                <div class="lbl">One-time setup</div>
+            </div>
+            <div class="demos-price-item">
+                <div class="val">FREE</div>
+                <div class="lbl">First month hosting</div>
+            </div>
+            <div class="demos-price-item">
+                <div class="val">$14.99</div>
+                <div class="lbl">Monthly after trial</div>
+            </div>
+            <div class="demos-price-item">
+                <div class="val">3-5 days</div>
+                <div class="lbl">Delivery time</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-title" style="padding-top: 40px;">
+                <h2>Live Demos</h2>
+                <p>Click any demo to see the full live website. These are real examples of what you'll get.</p>
+            </div>
+            <div class="demos-grid">
+                <div class="demo-card">
+                    <div class="demo-card-preview restaurant">🍛</div>
+                    <div class="demo-card-body">
+                        <div class="category">Restaurant & Café</div>
+                        <h3>La Casita Café</h3>
+                        <p>Full restaurant site with menu, hours, location, and online ordering. Perfect for restaurants, bakeries, and food trucks.</p>
+                        <div class="demo-card-actions">
+                            <a href="restaurant/" class="view-live">View Live Demo</a>
+                            <a href="/contact/" class="view-code">Get This Site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-card-preview salon">💇‍♀️</div>
+                    <div class="demo-card-body">
+                        <div class="category">Beauty & Salon</div>
+                        <h3>Bella Hair Studio</h3>
+                        <p>Salon site with services, pricing, gallery, and booking. Great for hair salons, spas, nail salons, and barbershops.</p>
+                        <div class="demo-card-actions">
+                            <a href="salon/" class="view-live">View Live Demo</a>
+                            <a href="/contact/" class="view-code">Get This Site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-card-preview contractor">🔧</div>
+                    <div class="demo-card-body">
+                        <div class="category">Home Services</div>
+                        <h3>ProFix Home Services</h3>
+                        <p>Contractor site with services list, trust badges, and quote form. Ideal for plumbers, electricians, and handymen.</p>
+                        <div class="demo-card-actions">
+                            <a href="contractor/" class="view-live">View Live Demo</a>
+                            <a href="/contact/" class="view-code">Get This Site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-card-preview fitness">💪</div>
+                    <div class="demo-card-body">
+                        <div class="category">Fitness & Wellness</div>
+                        <h3>FlexFit Studio</h3>
+                        <p>Fitness studio with class schedule, pricing plans, and member signup. Perfect for gyms, yoga studios, and trainers.</p>
+                        <div class="demo-card-actions">
+                            <a href="fitness/" class="view-live">View Live Demo</a>
+                            <a href="/contact/" class="view-code">Get This Site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-card-preview photographer">📷</div>
+                    <div class="demo-card-body">
+                        <div class="category">Photography</div>
+                        <h3>Luz Photography</h3>
+                        <p>Photography portfolio with gallery, packages, and booking. Great for photographers, videographers, and creatives.</p>
+                        <div class="demo-card-actions">
+                            <a href="photographer/" class="view-live">View Live Demo</a>
+                            <a href="/contact/" class="view-code">Get This Site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-card-preview cleaning">✨</div>
+                    <div class="demo-card-body">
+                        <div class="category">Cleaning Services</div>
+                        <h3>CleanPro Services</h3>
+                        <p>Cleaning service with plans, how-it-works, and booking form. Perfect for house cleaning, offices, and janitorial.</p>
+                        <div class="demo-card-actions">
+                            <a href="cleaning/" class="view-live">View Live Demo</a>
+                            <a href="/contact/" class="view-code">Get This Site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demos-includes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Everything Included</h2>
+                <p>What you get for $69.99</p>
+            </div>
+            <div class="includes-grid">
+                <div class="include-item">
+                    <div class="include-icon">📱</div>
+                    <h4>Mobile Responsive</h4>
+                    <p>Looks great on every device</p>
+                </div>
+                <div class="include-item">
+                    <div class="include-icon">🔍</div>
+                    <h4>SEO Optimized</h4>
+                    <p>Meta tags & structured data</p>
+                </div>
+                <div class="include-item">
+                    <div class="include-icon">⚡</div>
+                    <h4>Fast Loading</h4>
+                    <p>Lightning-fast static site</p>
+                </div>
+                <div class="include-item">
+                    <div class="include-icon">📞</div>
+                    <h4>Contact Ready</h4>
+                    <p>Forms, calls & WhatsApp</p>
+                </div>
+                <div class="include-item">
+                    <div class="include-icon">🌐</div>
+                    <h4>Your Domain</h4>
+                    <p>Hosting included first month</p>
+                </div>
+                <div class="include-item">
+                    <div class="include-icon">🎨</div>
+                    <h4>Your Branding</h4>
+                    <p>Your logo, colors & content</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demos-cta">
+        <div class="container">
+            <h2>Ready for Your Own Website?</h2>
+            <p>Pick a demo style, send us your info, and we'll have your site live in 3-5 days.</p>
+            <a href="/contact/" class="demo-cta-btn">Start My Website →</a>
+        </div>
+    </section>
+
+    <footer class="demo-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> <a href="/">Pilot Software LLC</a> — Websites from <strong>$69.99</strong></p>
+        </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="/script.js"></script>
+</body>
+</html>

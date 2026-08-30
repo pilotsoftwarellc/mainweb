@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Casita Café — Comida Puertorriqueña Auténtica</title>
+    <meta name="description" content="La Casita Café — Comida puertorriqueña auténtica, ingredientes frescos, recetas de familia. Para llevar y delivery. Visítanos en Hato Rey.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="demo-base.css">
+    <style>
+        :root {
+            --primary: #d97706;
+            --primary-dark: #b45309;
+            --secondary: #f59e0b;
+            --accent: #16a34a;
+            --dark: #1c1917;
+            --warm: #fffbeb;
+            --light: #fef3c7;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .demo-logo { font-family: 'Playfair Display', serif; }
+        .hero { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); }
+        .hero h1 { font-family: 'Playfair Display', serif; }
+        .feature-icon { background: var(--primary); }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .menu-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+        .menu-img {
+            height: 180px;
+            background: linear-gradient(135deg, var(--light), var(--warm));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        .menu-info { padding: 20px; }
+        .menu-info h4 { font-size: 1.05rem; margin-bottom: 4px; }
+        .menu-info p { font-size: 0.85rem; color: var(--gray); margin-bottom: 8px; }
+        .menu-price { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hours-item {
+            text-align: center;
+            background: var(--white);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        .hours-item .day { font-weight: 600; margin-bottom: 6px; }
+        .hours-item .time { color: var(--gray); font-size: 0.9rem; }
+        .map-placeholder {
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+            border-radius: var(--radius);
+            padding: 40px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .map-placeholder .address { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .map-placeholder .directions { color: var(--primary); text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <nav class="demo-nav">
+        <div class="container">
+            <a href="#" class="demo-logo">🏠 La Casita Café</a>
+            <div class="demo-nav-links">
+                <a href="#menu">Menú</a>
+                <a href="#about">Nosotros</a>
+                <a href="#hours">Horario</a>
+                <a href="#location">Ubicación</a>
+                <a href="#contact" class="demo-cta-btn">Ordenar Ahora</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <span class="hero-badge">Comida Puertorriqueña Auténtica</span>
+            <h1>Recetas de Familia,<br>Ingredientes Frescos</h1>
+            <p>Cocina puertorriqueña tradicional hecha con amor. Para llevar, delivery y en el local.</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="demo-cta-btn large">Ver Menú</a>
+                <a href="#contact" class="demo-cta-btn large secondary">Ordenar Ahora</a>
+            </div>
+            <div class="hero-image" style="margin-top:40px; background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: var(--radius); padding: 60px 20px; font-size: 5rem;">🍽️</div>
+        </div>
+    </section>
+
+    <section class="section" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestro Menú</h2>
+                <p>Sabores tradicionales hechos frescos cada día</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-img">🍛</div>
+                    <div class="menu-info">
+                        <h4>Mofongo</h4>
+                        <p>Plátano majado con ajo, aceite de oliva y proteína a elegir</p>
+                        <span class="menu-price">$14.99</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img">🍗</div>
+                    <div class="menu-info">
+                        <h4>Pollo Guisado</h4>
+                        <p>Pollo guisado en salsa criolla con arroz y habichuelas</p>
+                        <span class="menu-price">$13.99</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img">🥩</div>
+                    <div class="menu-info">
+                        <h4>Churrasco</h4>
+                        <p>Carne a la parrilla con sofrito, tostones y ensalada</p>
+                        <span class="menu-price">$18.99</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img">🦐</div>
+                    <div class="menu-info">
+                        <h4>Camarones al Ajillo</h4>
+                        <p>Camarones salteados en ajo con fritanga de yuca</p>
+                        <span class="menu-price">$17.99</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img">🫔</div>
+                    <div class="menu-info">
+                        <h4>Alcapurrias</h4>
+                        <p>Rebozos rellenos — mariscos o carne, 3 uds</p>
+                        <span class="menu-price">$8.99</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img">🍹</div>
+                    <div class="menu-info">
+                        <h4>Chicharrón de Guayaba</h4>
+                        <p>Pasta de guayaba con queso crema — nuestra especialidad</p>
+                        <span class="menu-price">$5.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Por qué La Casita?</h2>
+                <p>Tres generaciones de cocina puertorriqueña</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Ingredientes Frescos</h3>
+                    <p>Compramos productos locales todos los días del mercado</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👩‍🍳</div>
+                    <h3>Recetas de Familia</h3>
+                    <p>Recetas tradicionales transmitidas por tres generaciones</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <h3>Hecho con Amor</h3>
+                    <p>Cada plato se prepara fresquito con sabor criollo auténtico</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="hours">
+        <div class="container">
+            <div class="section-title">
+                <h2>Horario</h2>
+                <p>Ven a comer con nosotros</p>
+            </div>
+            <div class="hours-grid">
+                <div class="hours-item">
+                    <div class="day">Lunes – Viernes</div>
+                    <div class="time">11:00 AM – 9:00 PM</div>
+                </div>
+                <div class="hours-item">
+                    <div class="day">Sábado</div>
+                    <div class="time">10:00 AM – 10:00 PM</div>
+                </div>
+                <div class="hours-item">
+                    <div class="day">Domingo</div>
+                    <div class="time">10:00 AM – 8:00 PM</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="location">
+        <div class="container">
+            <div class="section-title">
+                <h2>Encuéntranos</h2>
+                <p>En el corazón de Hato Rey</p>
+            </div>
+            <div class="map-placeholder">
+                <div class="address">📍 245 Calle Montero, Hato Rey, PR 00918</div>
+                <p style="margin-bottom: 16px;">Al lado del Banco Popular — Estacionamiento gratis</p>
+                <a href="#" class="directions">Cómo Llegar →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>¿Se Te Antojó?</h2>
+            <p>Llámanos o ven a visitarnos. Para llevar, delivery y en el local.</p>
+            <a href="tel:+17875551234" class="demo-cta-btn large">📞 (787) 555-1234</a>
+        </div>
+    </section>
+
+    <footer class="demo-footer">
+        <div class="container">
+            <p>&copy; 2026 La Casita Café — Demo por <a href="https://pilotsoftware.llc">Pilot Software</a></p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/17875551234" class="whatsapp-float" title="Chat en WhatsApp">💬</a>
+</body>
+</html>

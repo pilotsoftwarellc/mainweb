@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanPro Servicios de Limpieza Profesional</title>
+    <meta name="description" content="CleanPro Servicios de Limpieza — Limpieza de casas, oficinas, limpieza profunda y mudanza. Productos ecológicos. Reserva online.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="demo-base.css">
+    <style>
+        :root { --primary: #0ea5e9; --primary-dark: #0284c7; --secondary: #06b6d4; --accent: #22d3ee; --dark: #0c4a6e; --light: #f0f9ff; --warm: #e0f2fe; }
+        .hero { background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 100%); color: white; }
+        .hero h1, .hero p { color: white; } .hero p { color: rgba(255,255,255,.7); }
+        .hero-badge { background: var(--accent); color: var(--dark); }
+        .feature-icon { background: var(--primary); }
+        .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto; }
+        .plan-card { background: white; border-radius: var(--radius); padding: 32px 28px; text-align: center; box-shadow: var(--shadow); border: 2px solid transparent; }
+        .plan-card.featured { border-color: var(--primary); position: relative; }
+        .plan-card.featured::before { content: 'MEJOR VALOR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 16px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; }
+        .plan-card h4 { font-size: 1.1rem; margin-bottom: 8px; }
+        .plan-card .plan-price { font-size: 2rem; font-weight: 800; color: var(--primary); }
+        .plan-card .plan-price span { font-size: 0.9rem; color: var(--gray); font-weight: 400; }
+        .plan-card ul { list-style: none; margin: 16px 0; text-align: left; }
+        .plan-card li { padding: 6px 0; font-size: 0.88rem; color: var(--gray); }
+        .plan-card li::before { content: '✓ '; color: var(--accent); font-weight: 700; }
+        .process-steps { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
+        .process-step { text-align: center; flex: 1; min-width: 160px; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800; margin: 0 auto 12px; }
+        .process-step h4 { font-size: 1rem; margin-bottom: 4px; }
+        .process-step p { font-size: 0.85rem; color: var(--gray); }
+    </style>
+</head>
+<body>
+    <nav class="demo-nav"><div class="container"><a href="#" class="demo-logo">✨ CleanPro Servicios</a><div class="demo-nav-links"><a href="#services">Servicios</a><a href="#plans">Planes</a><a href="#process">Cómo Funciona</a><a href="#book" class="demo-cta-btn">Reservar</a></div></div></nav>
+
+    <section class="hero"><div class="container">
+        <span class="hero-badge">Limpieza Ecológica</span>
+        <h1>Tu Hogar,<br>Impecable</h1>
+        <p>Limpieza profesional de casas y oficinas con productos ecológicos. Confiable para 200+ clientes en San Juan.</p>
+        <div class="hero-buttons"><a href="#plans" class="demo-cta-btn large">Ver Planes</a><a href="#book" class="demo-cta-btn large secondary" style="border-color: var(--accent); color: var(--accent) !important;">Cotización Gratis</a></div>
+        <div class="hero-image" style="margin-top:40px; background: linear-gradient(135deg, #0369a1, #0c4a6e); border-radius: var(--radius); padding: 60px 20px; font-size: 5rem;">🏠</div>
+    </div></section>
+
+    <section class="section" id="services"><div class="container">
+        <div class="section-title"><h2>Nuestros Servicios</h2><p>Soluciones de limpieza para cada necesidad</p></div>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon">🏠</div><h3>Limpieza Regular</h3><p>Semanal, quincenal o mensual. Barrido, trapeado, baños y cocina</p></div>
+            <div class="feature-card"><div class="feature-icon">🏢</div><h3>Oficinas</h3><p>Limpieza profesional de espacios de trabajo. Escritorios, áreas comunes, baños</p></div>
+            <div class="feature-card"><div class="feature-icon">🧹</div><h3>Limpieza Profunda</h3><p>Limpieza intensa de arriba abajo. Perfecta para limpieza de temporada</p></div>
+            <div class="feature-card"><div class="feature-icon">📦</div><h3>Mudanza</h3><p>Limpieza completa para mudanza. Recupera tu depósito o empieza fresco</p></div>
+        </div>
+    </div></section>
+
+    <section class="section section-alt" id="plans"><div class="container">
+        <div class="section-title"><h2>Planes de Limpieza</h2><p>Elige el plan para tu hogar</p></div>
+        <div class="plans-grid">
+            <div class="plan-card"><h4>Limpieza Básica</h4><div class="plan-price">$99 <span>/visita</span></div><ul><li>Cocina y baños</li><li>Barrido y trapeado</li><li>Aspirado</li><li>Basura</li></ul><a href="#book" class="demo-cta-btn" style="width:100%">Reservar</a></div>
+            <div class="plan-card featured"><h4>Limpieza Profunda</h4><div class="plan-price">$179 <span>/visita</span></div><ul><li>Todo lo básico</li><li>Interior electrodomésticos</li><li>Rodapiés y marcos</li><li>Exteriores de gabinetes</li></ul><a href="#book" class="demo-cta-btn" style="width:100%; background: var(--secondary); color: var(--dark) !important;">Mejor Valor</a></div>
+            <div class="plan-card"><h4>Plan Mensual</h4><div class="plan-price">$349 <span>/mes</span></div><ul><li>4 visitas al mes</li><li>Misma limpieza siempre</li><li>Productos incluidos</li><li>10% descuento</li></ul><a href="#book" class="demo-cta-btn" style="width:100%">Empezar</a></div>
+        </div>
+    </div></section>
+
+    <section class="section" id="process"><div class="container">
+        <div class="section-title"><h2>¿Cómo Funciona?</h2><p>Hogar limpio en 3 pasos</p></div>
+        <div class="process-steps">
+            <div class="process-step"><div class="step-num">1</div><h4>Reserva</h4><p>Elige tu plan y horario</p></div>
+            <div class="process-step"><div class="step-num">2</div><p>Nosotros limpiamos</p></div>
+            <div class="process-step"><div class="step-num">3</div><h4>Relájate</h4><p>Vuelve a un hogar impecable</p></div>
+        </div>
+    </div></section>
+
+    <section class="cta-section" id="book"><div class="container">
+        <h2>¿Lista para un Hogar Más Limpio?</h2>
+        <p>Reserva tu primera limpieza y obtén 20% de descuento. Sin compromiso.</p>
+        <a href="tel:+17875556543" class="demo-cta-btn large">📞 (787) 555-6543</a>
+    </div></section>
+
+    <footer class="demo-footer"><div class="container"><p>&copy; 2026 CleanPro Servicios — Demo por <a href="https://pilotsoftware.llc">Pilot Software</a></p></div></footer>
+    <a href="https://wa.me/17875556543" class="whatsapp-float" title="Chat en WhatsApp">💬</a>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luz Photography — Capturing Your Best Moments</title>
+    <meta name="description" content="Luz Photography — Weddings, portraits, events & family sessions. Professional photography in San Juan, PR. Book your session today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="demo-base.css">
+    <style>
+        :root {
+            --primary: #78716c;
+            --primary-dark: #57534e;
+            --secondary: #d4a574;
+            --accent: #a8a29e;
+            --dark: #1c1917;
+            --light: #fafaf9;
+            --warm: #f5f5f4;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .demo-logo { font-family: 'Playfair Display', serif; }
+        .hero { background: linear-gradient(135deg, #1c1917 0%, #292524 100%); color: white; }
+        .hero h1 { font-family: 'Playfair Display', serif; color: white; }
+        .hero p { color: rgba(255,255,255,.65); }
+        .hero-badge { background: var(--secondary); color: var(--dark); }
+        .feature-icon { background: var(--secondary); color: var(--dark); }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        .portfolio-item {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            transition: transform .3s;
+        }
+        .portfolio-item:hover { transform: scale(1.03); }
+        .portfolio-item:nth-child(1) { background: linear-gradient(135deg, #d4a574, #c4956a); grid-column: span 2; grid-row: span 2; font-size: 4rem; }
+        .portfolio-item:nth-child(5) { grid-column: span 2; }
+        .portfolio-label {
+            position: absolute;
+            bottom: 0;
+            left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,.7));
+            color: white;
+            padding: 20px 12px 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .portfolio-item { position: relative; }
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .package-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--secondary);
+        }
+        .package-card h4 { font-size: 1.05rem; margin-bottom: 8px; }
+        .package-card .pkg-price { font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-bottom: 14px; }
+        .package-card ul { list-style: none; text-align: left; margin-bottom: 16px; }
+        .package-card li { padding: 5px 0; font-size: 0.85rem; color: var(--gray); }
+        .package-card li::before { content: '✓ '; color: var(--secondary); font-weight: 700; }
+    </style>
+</head>
+<body>
+    <nav class="demo-nav">
+        <div class="container">
+            <a href="#" class="demo-logo">📷 Luz Photography</a>
+            <div class="demo-nav-links">
+                <a href="#portfolio">Portfolio</a>
+                <a href="#packages">Packages</a>
+                <a href="#about">About</a>
+                <a href="#book" class="demo-cta-btn">Book Session</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <span class="hero-badge">San Juan, Puerto Rico</span>
+            <h1>Capturing Your<br>Best Moments</h1>
+            <p>Weddings, portraits, events & family sessions. Professional photography that tells your story.</p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="demo-cta-btn large">View Portfolio</a>
+                <a href="#book" class="demo-cta-btn large secondary" style="border-color: var(--secondary); color: var(--secondary) !important;">Book a Session</a>
+            </div>
+            <div class="hero-image" style="margin-top:40px; background: linear-gradient(135deg, #292524, #1c1917); border-radius: var(--radius); padding: 60px 20px; font-size: 5rem;">📸</div>
+        </div>
+    </section>
+
+    <section class="section" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portfolio</h2>
+                <p>A selection of our favorite shots</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" style="background: linear-gradient(135deg, #d4a574, #c4956a);">💑<div class="portfolio-label">Weddings</div></div>
+                <div class="portfolio-item" style="background: linear-gradient(135deg, #a8a29e, #96918d);">👤<div class="portfolio-label">Portraits</div></div>
+                <div class="portfolio-item" style="background: linear-gradient(135deg, #78716c, #6b6661);">👨‍👩‍👧‍👦<div class="portfolio-label">Families</div></div>
+                <div class="portfolio-item" style="background: linear-gradient(135deg, #d4a574, #b8925e);">🎉<div class="portfolio-label">Events</div></div>
+                <div class="portfolio-item" style="background: linear-gradient(135deg, #57534e, #44403c);">🌅<div class="portfolio-label">Landscapes</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Packages</h2>
+                <p>Choose the perfect package for your session</p>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h4>Mini Session</h4>
+                    <div class="pkg-price">$149</div>
+                    <ul>
+                        <li>30-minute session</li>
+                        <li>1 location</li>
+                        <li>10 edited photos</li>
+                        <li>Online gallery</li>
+                    </ul>
+                    <a href="#book" class="demo-cta-btn" style="width:100%">Book Now</a>
+                </div>
+                <div class="package-card">
+                    <h4>Standard</h4>
+                    <div class="pkg-price">$349</div>
+                    <ul>
+                        <li>1.5-hour session</li>
+                        <li>2 locations</li>
+                        <li>30 edited photos</li>
+                        <li>Online gallery + prints</li>
+                        <li>1 outfit change</li>
+                    </ul>
+                    <a href="#book" class="demo-cta-btn" style="width:100%; background: var(--secondary); color: var(--dark) !important;">Most Popular</a>
+                </div>
+                <div class="package-card">
+                    <h4>Wedding</h4>
+                    <div class="pkg-price">$1,499</div>
+                    <ul>
+                        <li>Full day coverage</li>
+                        <li>2 photographers</li>
+                        <li>300+ edited photos</li>
+                        <li>Engagement session included</li>
+                        <li>Photo album</li>
+                    </ul>
+                    <a href="#book" class="demo-cta-btn" style="width:100%">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Luz</h2>
+                <p>Photographer, storyteller, San Juan local</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📷</div>
+                    <h3>5+ Years Experience</h3>
+                    <p>Over 200 sessions captured — weddings, families, brands and events</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your edited photos within 7-14 business days</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <h3>Local Expert</h3>
+                    <p>I know the best spots in San Juan for stunning photos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="book">
+        <div class="container">
+            <h2>Let's Create Something Beautiful</h2>
+            <p>Book your session today and we'll handle the rest.</p>
+            <a href="tel:+17875554321" class="demo-cta-btn large">📞 (787) 555-4321</a>
+        </div>
+    </section>
+
+    <footer class="demo-footer">
+        <div class="container">
+            <p>&copy; 2026 Luz Photography — Demo by <a href="https://pilotsoftware.llc">Pilot Software</a></p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/17875554321" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+</body>
+</html>

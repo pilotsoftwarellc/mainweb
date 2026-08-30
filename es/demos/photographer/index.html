@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luz Photography — Capturando tus Mejores Momentos</title>
+    <meta name="description" content="Luz Photography — Bodas, retratos, eventos y sesiones familiares. Fotografía profesional en San Juan, PR. Reserva tu sesión.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="demo-base.css">
+    <style>
+        :root { --primary: #78716c; --primary-dark: #57534e; --secondary: #d4a574; --accent: #a8a29e; --dark: #1c1917; --light: #fafaf9; --warm: #f5f5f4; }
+        .demo-logo { font-family: 'Playfair Display', serif; }
+        .hero { background: linear-gradient(135deg, #1c1917 0%, #292524 100%); color: white; }
+        .hero h1 { font-family: 'Playfair Display', serif; color: white; }
+        .hero p { color: rgba(255,255,255,.65); }
+        .hero-badge { background: var(--secondary); color: var(--dark); }
+        .feature-icon { background: var(--secondary); color: var(--dark); }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+        .portfolio-item { aspect-ratio: 1; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+        .portfolio-item:nth-child(1) { background: linear-gradient(135deg, #d4a574, #c4956a); grid-column: span 2; grid-row: span 2; font-size: 4rem; }
+        .portfolio-item:nth-child(5) { grid-column: span 2; }
+        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto; }
+        .package-card { background: white; border-radius: var(--radius); padding: 28px; text-align: center; box-shadow: var(--shadow); border-top: 4px solid var(--secondary); }
+        .package-card h4 { font-size: 1.05rem; margin-bottom: 8px; }
+        .package-card .pkg-price { font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-bottom: 14px; }
+        .package-card ul { list-style: none; margin: 16px 0; text-align: left; }
+        .package-card li { padding: 5px 0; font-size: 0.85rem; color: var(--gray); }
+        .package-card li::before { content: '✓ '; color: var(--secondary); font-weight: 700; }
+    </style>
+</head>
+<body>
+    <nav class="demo-nav"><div class="container"><a href="#" class="demo-logo">📷 Luz Photography</a><div class="demo-nav-links"><a href="#portfolio">Portafolio</a><a href="#packages">Paquetes</a><a href="#about">Nosotros</a><a href="#book" class="demo-cta-btn">Reservar</a></div></div></nav>
+
+    <section class="hero"><div class="container">
+        <span class="hero-badge">San Juan, Puerto Rico</span>
+        <h1>Capturando<br>tus Mejores Momentos</h1>
+        <p>Bodas, retratos, eventos y sesiones familiares. Fotografía profesional que cuenta tu historia.</p>
+        <div class="hero-buttons"><a href="#portfolio" class="demo-cta-btn large">Ver Portafolio</a><a href="#book" class="demo-cta-btn large secondary" style="border-color: var(--secondary); color: var(--secondary) !important;">Reservar Sesión</a></div>
+        <div class="hero-image" style="margin-top:40px; background: linear-gradient(135deg, #292524, #1c1917); border-radius: var(--radius); padding: 60px 20px; font-size: 5rem;">📸</div>
+    </div></section>
+
+    <section class="section" id="portfolio"><div class="container">
+        <div class="section-title"><h2>Portafolio</h2><p>Una selección de nuestros favoritos</p></div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" style="background: linear-gradient(135deg, #d4a574, #c4956a);">💑</div>
+            <div class="portfolio-item" style="background: linear-gradient(135deg, #a8a29e, #96918d);">👤</div>
+            <div class="portfolio-item" style="background: linear-gradient(135deg, #78716c, #6b6661);">👨‍👩‍👧‍👦</div>
+            <div class="portfolio-item" style="background: linear-gradient(135deg, #d4a574, #b8925e);">🎉</div>
+            <div class="portfolio-item" style="background: linear-gradient(135deg, #57534e, #44403c);">🌅</div>
+        </div>
+    </div></section>
+
+    <section class="section section-alt" id="packages"><div class="container">
+        <div class="section-title"><h2>Paquetes</h2><p>Elige el paquete perfecto para tu sesión</p></div>
+        <div class="packages-grid">
+            <div class="package-card"><h4>Mini Sesión</h4><div class="pkg-price">$149</div><ul><li>30 minutos</li><li>1 ubicación</li><li>10 fotos editadas</li><li>Galería online</li></ul><a href="#book" class="demo-cta-btn" style="width:100%">Reservar</a></div>
+            <div class="package-card"><h4>Estándar</h4><div class="pkg-price">$349</div><ul><li>1.5 horas</li><li>2 ubicaciones</li><li>30 fotos editadas</li><li>Galería + impresiones</li></ul><a href="#book" class="demo-cta-btn" style="width:100%; background: var(--secondary); color: var(--dark) !important;">Más Popular</a></div>
+            <div class="package-card"><h4>Boda</h4><div class="pkg-price">$1,499</div><ul><li>Cobertura completa</li><li>2 fotógrafos</li><li>300+ fotos editadas</li><li>Sesión de compromiso</li><li>Álbum fotográfico</li></ul><a href="#book" class="demo-cta-btn" style="width:100%">Pedir Cotización</a></div>
+        </div>
+    </div></section>
+
+    <section class="section" id="about"><div class="container">
+        <div class="section-title"><h2>Sobre Luz</h2><p>Fotógrafa, narradora, local de San Juan</p></div>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon">📷</div><h3>+5 Años Experiencia</h3><p>Más de 200 sesiones — bodas, familias, marcas y eventos</p></div>
+            <div class="feature-card"><div class="feature-icon">⚡</div><h3>Entrega Rápida</h3><p>Recibe tus fotos editadas en 7-14 días hábiles</p></div>
+            <div class="feature-card"><div class="feature-icon">❤️</div><h3>Experto Local</h3><p>Conozco los mejores spots de San Juan para fotos increíbles</p></div>
+        </div>
+    </div></section>
+
+    <section class="cta-section" id="book"><div class="container">
+        <h2>Vamos a Crear Algo Bonito</h2>
+        <p>Reserva tu sesión hoy y nosotros nos encargamos del resto.</p>
+        <a href="tel:+17875554321" class="demo-cta-btn large">📞 (787) 555-4321</a>
+    </div></section>
+
+    <footer class="demo-footer"><div class="container"><p>&copy; 2026 Luz Photography — Demo por <a href="https://pilotsoftware.llc">Pilot Software</a></p></div></footer>
+    <a href="https://wa.me/17875554321" class="whatsapp-float" title="Chat en WhatsApp">💬</a>
+</body>
+</html>
