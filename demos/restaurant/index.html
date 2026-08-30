@@ -4,248 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Casita Café — Authentic Puerto Rican Cuisine</title>
-    <meta name="description" content="La Casita Café — Authentic Puerto Rican food, fresh ingredients, family recipes. Dine-in, takeout & delivery. Visit us in Hato Rey.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="demo-base.css">
+    <meta name="description" content="La Casita Café — Authentic Puerto Rican food, fresh ingredients, family recipes. Dine-in, takeout & delivery in Hato Rey.">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="demo-style.css">
     <style>
-        :root {
-            --primary: #d97706;
-            --primary-dark: #b45309;
-            --secondary: #f59e0b;
-            --accent: #16a34a;
-            --dark: #1c1917;
-            --warm: #fffbeb;
-            --light: #fef3c7;
+        .menu-thumb { background: linear-gradient(135deg, #1a1508, #2a1f08); }
+        .hero-visual {
+            margin-top: 40px; border-radius: var(--r-lg); overflow: hidden;
+            background: var(--surface); border: 1px solid var(--line);
+            box-shadow: 0 32px 80px rgba(0,0,0,0.5);
         }
-        body { font-family: 'Inter', sans-serif; }
-        .demo-logo { font-family: 'Playfair Display', serif; }
-        .hero {
-            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        .hero-visual-inner {
+            padding: 60px 20px; text-align: center; font-size: 4rem;
+            background: linear-gradient(135deg, #1a1508, #2a1f08);
         }
-        .hero h1 { font-family: 'Playfair Display', serif; }
-        .feature-icon { background: var(--primary); }
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .menu-item {
-            background: var(--white);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-        }
-        .menu-img {
-            height: 180px;
-            background: linear-gradient(135deg, var(--light), var(--warm));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-        .menu-info { padding: 20px; }
-        .menu-info h4 { font-size: 1.05rem; margin-bottom: 4px; }
-        .menu-info p { font-size: 0.85rem; color: var(--gray); margin-bottom: 8px; }
-        .menu-price { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
-        .hours-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .hours-item {
-            text-align: center;
-            background: var(--white);
-            padding: 24px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-        .hours-item .day { font-weight: 600; margin-bottom: 6px; }
-        .hours-item .time { color: var(--gray); font-size: 0.9rem; }
-        .map-placeholder {
-            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
-            border-radius: var(--radius);
-            padding: 40px;
-            text-align: center;
-            margin-top: 30px;
-        }
-        .map-placeholder .address { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
-        .map-placeholder .directions { color: var(--primary); text-decoration: none; font-weight: 600; }
+        .map-box { margin-top: 20px; }
     </style>
 </head>
 <body>
-    <nav class="demo-nav">
-        <div class="container">
-            <a href="#" class="demo-logo">🏠 La Casita Café</a>
+    <nav class="demo-nav" data-scroll-nav>
+        <div class="nav-inner">
+            <a href="#" class="demo-logo">
+                <div class="demo-logo-icon">🏠</div>
+                La Casita Café
+            </a>
             <div class="demo-nav-links">
                 <a href="#menu">Menu</a>
                 <a href="#about">About</a>
                 <a href="#hours">Hours</a>
                 <a href="#location">Location</a>
-                <a href="#contact" class="demo-cta-btn">Order Now</a>
+                <a href="#contact" class="btn btn-cyan">Order Now</a>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="demo-hero">
+        <div class="demo-hero-bg"></div>
+        <div class="demo-hero-grid"></div>
         <div class="container">
-            <span class="hero-badge">Authentic Puerto Rican Food</span>
-            <h1>Family Recipes,<br>Fresh Ingredients</h1>
-            <p>Traditional Puerto Rican cuisine made with love. Dine-in, takeout, and delivery in Hato Rey.</p>
-            <div class="hero-buttons">
-                <a href="#menu" class="demo-cta-btn large">View Our Menu</a>
-                <a href="#contact" class="demo-cta-btn large secondary">Order Now</a>
+            <div class="demo-kicker"><span class="pulse"></span> Authentic Puerto Rican Food</div>
+            <h1>Family Recipes,<br><span class="grad">Fresh Ingredients</span></h1>
+            <p class="sub">Traditional Puerto Rican cuisine made with love. Dine-in, takeout, and delivery in Hato Rey.</p>
+            <div class="demo-hero-actions">
+                <a href="#menu" class="btn btn-cyan">View Our Menu</a>
+                <a href="#contact" class="btn btn-outline">Order Now</a>
             </div>
-            <div class="hero-image" style="margin-top:40px; background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: var(--radius); padding: 60px 20px; font-size: 5rem;">🍽️</div>
+            <div class="hero-visual">
+                <div class="hero-visual-inner">🍽️</div>
+            </div>
         </div>
     </section>
 
-    <section class="section" id="menu">
+    <section class="demo-section" id="menu">
         <div class="container">
-            <div class="section-title">
+            <div class="demo-section-title">
                 <h2>Our Menu</h2>
                 <p>Traditional flavors made fresh every day</p>
             </div>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <div class="menu-img">🍛</div>
-                    <div class="menu-info">
+                    <div class="menu-thumb">🍛</div>
+                    <div class="menu-body">
                         <h4>Mofongo</h4>
-                        <p>Mashed plantains with garlic, olive oil & choice of protein</p>
-                        <span class="menu-price">$14.99</span>
+                        <div class="desc">Mashed plantains with garlic, olive oil & choice of protein</div>
+                        <div class="mprice">$14.99</div>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <div class="menu-img">🍗</div>
-                    <div class="menu-info">
+                    <div class="menu-thumb">🍗</div>
+                    <div class="menu-body">
                         <h4>Pollo Guisado</h4>
-                        <p>Braised chicken in rich Puerto Rican sauce with rice & beans</p>
-                        <span class="menu-price">$13.99</span>
+                        <div class="desc">Braised chicken in rich Puerto Rican sauce with rice & beans</div>
+                        <div class="mprice">$13.99</div>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <div class="menu-img">🥩</div>
-                    <div class="menu-info">
+                    <div class="menu-thumb">🥩</div>
+                    <div class="menu-body">
                         <h4>Churrasco</h4>
-                        <p>Grilled steak with sofrito, plantains & salad</p>
-                        <span class="menu-price">$18.99</span>
+                        <div class="desc">Grilled steak with sofrito, plantains & salad</div>
+                        <div class="mprice">$18.99</div>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <div class="menu-img">🦐</div>
-                    <div class="menu-info">
+                    <div class="menu-thumb">🦐</div>
+                    <div class="menu-body">
                         <h4>Camarones al Ajillo</h4>
-                        <p>Shrimp sautéed in garlic butter with yuca fries</p>
-                        <span class="menu-price">$17.99</span>
+                        <div class="desc">Shrimp sautéed in garlic butter with yuca fries</div>
+                        <div class="mprice">$17.99</div>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <div class="menu-img">🫔</div>
-                    <div class="menu-info">
+                    <div class="menu-thumb">🫔</div>
+                    <div class="menu-body">
                         <h4>Alcapurrias</h4>
-                        <p>Stuffed fritters — seafood or meat, 3 pcs</p>
-                        <span class="menu-price">$8.99</span>
+                        <div class="desc">Stuffed fritters — seafood or meat, 3 pcs</div>
+                        <div class="mprice">$8.99</div>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <div class="menu-img">🍹</div>
-                    <div class="menu-info">
+                    <div class="menu-thumb">🍹</div>
+                    <div class="menu-body">
                         <h4>Chicharrón de Guayaba</h4>
-                        <p>Guava paste with cream cheese — our signature</p>
-                        <span class="menu-price">$5.99</span>
+                        <div class="desc">Guava paste with cream cheese — our signature</div>
+                        <div class="mprice">$5.99</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section-alt" id="about">
+    <section class="demo-section demo-section-alt" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>Why La Casita?</h2>
-                <p>Three generations of Puerto Rican cooking</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🌿</div>
+            <div class="demo-section-title"><h2>Why La Casita?</h2><p>Three generations of Puerto Rican cooking</p></div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">🌿</div>
                     <h3>Fresh Ingredients</h3>
                     <p>We source local produce daily from the Puerto Rican market</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👩‍🍳</div>
+                <div class="card">
+                    <div class="card-icon">👩‍🍳</div>
                     <h3>Family Recipes</h3>
                     <p>Traditional recipes passed down for three generations</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">❤️</div>
+                <div class="card">
+                    <div class="card-icon">❤️</div>
                     <h3>Made with Love</h3>
-                    <p>Every dish is prepared fresh with authentic Puerto Rican flavors</p>
+                    <p>Every dish prepared fresh with authentic Puerto Rican flavors</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="hours">
+    <section class="demo-section" id="hours">
         <div class="container">
-            <div class="section-title">
-                <h2>Hours</h2>
-                <p>Come eat with us</p>
-            </div>
+            <div class="demo-section-title"><h2>Hours</h2><p>Come eat with us</p></div>
             <div class="hours-grid">
-                <div class="hours-item">
-                    <div class="day">Monday – Friday</div>
-                    <div class="time">11:00 AM – 9:00 PM</div>
-                </div>
-                <div class="hours-item">
-                    <div class="day">Saturday</div>
-                    <div class="time">10:00 AM – 10:00 PM</div>
-                </div>
-                <div class="hours-item">
-                    <div class="day">Sunday</div>
-                    <div class="time">10:00 AM – 8:00 PM</div>
-                </div>
+                <div class="hours-item"><div class="day">Monday – Friday</div><div class="time">11:00 AM – 9:00 PM</div></div>
+                <div class="hours-item"><div class="day">Saturday</div><div class="time">10:00 AM – 10:00 PM</div></div>
+                <div class="hours-item"><div class="day">Sunday</div><div class="time">10:00 AM – 8:00 PM</div></div>
             </div>
         </div>
     </section>
 
-    <section class="section section-alt" id="location">
+    <section class="demo-section demo-section-alt" id="location">
         <div class="container">
-            <div class="section-title">
-                <h2>Find Us</h2>
-                <p>In the heart of Hato Rey</p>
-            </div>
-            <div class="map-placeholder">
-                <div class="address">📍 245 Calle Montero, Hato Rey, PR 00918</div>
-                <p style="margin-bottom: 16px;">Next to Banco Popular — Free parking available</p>
-                <a href="#" class="directions">Get Directions →</a>
+            <div class="demo-section-title"><h2>Find Us</h2><p>In the heart of Hato Rey</p></div>
+            <div class="map-box">
+                <div class="addr">📍 245 Calle Montero, Hato Rey, PR 00918</div>
+                <p style="color:var(--text-2); margin-bottom: 10px; font-size:0.9rem;">Next to Banco Popular — Free parking available</p>
+                <a href="#" class="dir">Get Directions →</a>
             </div>
         </div>
     </section>
 
-    <section class="cta-section" id="contact">
+    <section class="demo-cta" id="contact">
         <div class="container">
             <h2>Ready to Eat?</h2>
             <p>Call us or visit us today. Dine-in, takeout, and delivery available.</p>
-            <a href="tel:+17875551234" class="demo-cta-btn large">📞 (787) 555-1234</a>
+            <a href="tel:+17875551234" class="btn btn-cyan" style="padding:14px 36px; font-size:1rem;">📞 (787) 555-1234</a>
         </div>
     </section>
 
     <footer class="demo-footer">
-        <div class="container">
-            <p>&copy; 2026 La Casita Café — Demo by <a href="https://pilotsoftware.llc">Pilot Software</a></p>
-        </div>
+        <p>&copy; 2026 La Casita Café — Demo by <a href="https://pilotsoftware.llc">Pilot Software</a></p>
     </footer>
 
-    <a href="https://wa.me/17875551234" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+    <a href="https://wa.me/17875551234" class="wa-float">💬</a>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // Scroll nav background
+        const nav = document.querySelector('[data-scroll-nav]');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        });
     </script>
 </body>
 </html>

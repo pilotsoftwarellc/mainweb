@@ -4,235 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CleanPro Services — Professional Cleaning Solutions</title>
-    <meta name="description" content="CleanPro Services — Professional house cleaning, office cleaning, deep cleaning & move-in/out cleaning. Eco-friendly products. Book online.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="demo-base.css">
-    <style>
-        :root {
-            --primary: #0ea5e9;
-            --primary-dark: #0284c7;
-            --secondary: #06b6d4;
-            --accent: #22d3ee;
-            --dark: #0c4a6e;
-            --light: #f0f9ff;
-            --warm: #e0f2fe;
-        }
-        .hero { background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 100%); color: white; }
-        .hero h1 { color: white; }
-        .hero p { color: rgba(255,255,255,.7); }
-        .hero-badge { background: var(--accent); color: var(--dark); }
-        .feature-icon { background: var(--primary); }
-        .plans-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .plan-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 32px 28px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            border: 2px solid transparent;
-            transition: border-color .2s;
-        }
-        .plan-card:hover { border-color: var(--primary); }
-        .plan-card.featured { border-color: var(--primary); position: relative; }
-        .plan-card.featured::before {
-            content: 'BEST VALUE';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: white;
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 700;
-        }
-        .plan-card h4 { font-size: 1.1rem; margin-bottom: 8px; }
-        .plan-card .plan-price { font-size: 2rem; font-weight: 800; color: var(--primary); }
-        .plan-card .plan-price span { font-size: 0.9rem; color: var(--gray); font-weight: 400; }
-        .plan-card ul { list-style: none; margin: 16px 0; text-align: left; }
-        .plan-card li { padding: 6px 0; font-size: 0.88rem; color: var(--gray); }
-        .plan-card li::before { content: '✓ '; color: var(--accent); font-weight: 700; }
-        .process-steps {
-            display: flex;
-            gap: 24px;
-            justify-content: center;
-            flex-wrap: wrap;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .process-step {
-            text-align: center;
-            flex: 1;
-            min-width: 160px;
-        }
-        .step-num {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: 800;
-            margin: 0 auto 12px;
-        }
-        .process-step h4 { font-size: 1rem; margin-bottom: 4px; }
-        .process-step p { font-size: 0.85rem; color: var(--gray); }
-    </style>
+    <meta name="description" content="CleanPro Services — Professional house cleaning, office cleaning, deep cleaning & move-in/out cleaning. Eco-friendly products.">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="demo-style.css">
 </head>
 <body>
-    <nav class="demo-nav">
-        <div class="container">
-            <a href="#" class="demo-logo">✨ CleanPro Services</a>
+    <nav class="demo-nav" data-scroll-nav>
+        <div class="nav-inner">
+            <a href="#" class="demo-logo"><div class="demo-logo-icon">✨</div> CleanPro Services</a>
             <div class="demo-nav-links">
                 <a href="#services">Services</a>
                 <a href="#plans">Plans</a>
                 <a href="#process">How It Works</a>
-                <a href="#book" class="demo-cta-btn">Book Now</a>
+                <a href="#book" class="btn btn-cyan">Book Now</a>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="demo-hero">
+        <div class="demo-hero-bg"></div>
+        <div class="demo-hero-grid"></div>
         <div class="container">
-            <span class="hero-badge">Eco-Friendly Cleaning</span>
-            <h1>Your Home,<br>Sparkling Clean</h1>
-            <p>Professional house & office cleaning with eco-friendly products. Trusted by 200+ clients in San Juan metro.</p>
-            <div class="hero-buttons">
-                <a href="#plans" class="demo-cta-btn large">View Plans</a>
-                <a href="#book" class="demo-cta-btn large secondary" style="border-color: var(--accent); color: var(--accent) !important;">Book Free Quote</a>
+            <div class="demo-kicker"><span class="pulse"></span> Eco-Friendly Cleaning</div>
+            <h1>Your Home,<br><span class="grad">Sparkling Clean</span></h1>
+            <p class="sub">Professional house & office cleaning with eco-friendly products. Trusted by 200+ clients.</p>
+            <div class="demo-hero-actions">
+                <a href="#plans" class="btn btn-cyan">View Plans</a>
+                <a href="#book" class="btn btn-outline">Book Free Quote</a>
             </div>
-            <div class="hero-image" style="margin-top:40px; background: linear-gradient(135deg, #0369a1, #0c4a6e); border-radius: var(--radius); padding: 60px 20px; font-size: 5rem;">🏠</div>
+            <div class="hero-visual"><div class="hero-visual-inner">🏠</div></div>
         </div>
     </section>
 
-    <section class="section" id="services">
+    <section class="demo-section" id="services">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>Cleaning solutions for every need</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🏠</div>
-                    <h3>Regular Cleaning</h3>
-                    <p>Weekly, bi-weekly or monthly home cleaning. Dusting, vacuuming, mopping, bathrooms & kitchen</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏢</div>
-                    <h3>Office Cleaning</h3>
-                    <p>Professional office & workspace cleaning. Desks, common areas, restrooms, break rooms</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🧹</div>
-                    <h3>Deep Cleaning</h3>
-                    <p>Intensive top-to-bottom clean. Perfect for seasonal deep cleaning or first-time service</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📦</div>
-                    <h3>Move In/Out</h3>
-                    <p>Complete cleaning for moving. Get your deposit back or start fresh in your new place</p>
-                </div>
+            <div class="demo-section-title"><h2>Our Services</h2><p>Cleaning solutions for every need</p></div>
+            <div class="card-grid">
+                <div class="card"><div class="card-icon">🏠</div><h3>Regular Cleaning</h3><p>Weekly, bi-weekly or monthly home cleaning. Dusting, vacuuming, mopping, bathrooms & kitchen</p></div>
+                <div class="card"><div class="card-icon">🏢</div><h3>Office Cleaning</h3><p>Professional office & workspace cleaning. Desks, common areas, restrooms, break rooms</p></div>
+                <div class="card"><div class="card-icon">🧹</div><h3>Deep Cleaning</h3><p>Intensive top-to-bottom clean. Perfect for seasonal deep cleaning or first-time service</p></div>
+                <div class="card"><div class="card-icon">📦</div><h3>Move In/Out</h3><p>Complete cleaning for moving. Get your deposit back or start fresh in your new place</p></div>
             </div>
         </div>
     </section>
 
-    <section class="section section-alt" id="plans">
+    <section class="demo-section demo-section-alt" id="plans">
         <div class="container">
-            <div class="section-title">
-                <h2>Cleaning Plans</h2>
-                <p>Choose the plan that fits your home</p>
-            </div>
-            <div class="plans-grid">
-                <div class="plan-card">
+            <div class="demo-section-title"><h2>Cleaning Plans</h2><p>Choose the plan that fits your home</p></div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
                     <h4>Basic Clean</h4>
-                    <div class="plan-price">$99 <span>/visit</span></div>
-                    <ul>
-                        <li>Kitchen & bathrooms</li>
-                        <li>Dusting & vacuuming</li>
-                        <li>Mopping floors</li>
-                        <li>Trash removal</li>
-                    </ul>
-                    <a href="#book" class="demo-cta-btn" style="width:100%">Book Now</a>
+                    <div class="pprice">$99 <span>/visit</span></div>
+                    <ul><li>Kitchen & bathrooms</li><li>Dusting & vacuuming</li><li>Mopping floors</li><li>Trash removal</li></ul>
+                    <a href="#book" class="btn btn-outline btn-full">Book Now</a>
                 </div>
-                <div class="plan-card featured">
+                <div class="pricing-card featured">
                     <h4>Deep Clean</h4>
-                    <div class="plan-price">$179 <span>/visit</span></div>
-                    <ul>
-                        <li>Everything in Basic</li>
-                        <li>Inside appliances</li>
-                        <li>Baseboards & windowsills</li>
-                        <li>Cabinet exteriors</li>
-                        <li>Light fixtures</li>
-                    </ul>
-                    <a href="#book" class="demo-cta-btn" style="width:100%; background: var(--secondary); color: var(--dark) !important;">Best Value</a>
+                    <div class="pprice">$179 <span>/visit</span></div>
+                    <ul><li>Everything in Basic</li><li>Inside appliances</li><li>Baseboards & windowsills</li><li>Cabinet exteriors</li><li>Light fixtures</li></ul>
+                    <a href="#book" class="btn btn-cyan btn-full">Best Value</a>
                 </div>
-                <div class="plan-card">
+                <div class="pricing-card">
                     <h4>Monthly Plan</h4>
-                    <div class="plan-price">$349 <span>/mo</span></div>
-                    <ul>
-                        <li>4 visits per month</li>
-                        <li>Same cleaner every time</li>
-                        <li>Supplies included</li>
-                        <li>10% discount</li>
-                        <li>Flexible scheduling</li>
-                    </ul>
-                    <a href="#book" class="demo-cta-btn" style="width:100%">Start Saving</a>
+                    <div class="pprice">$349 <span>/mo</span></div>
+                    <ul><li>4 visits per month</li><li>Same cleaner every time</li><li>Supplies included</li><li>10% discount</li><li>Flexible scheduling</li></ul>
+                    <a href="#book" class="btn btn-outline btn-full">Start Saving</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="process">
+    <section class="demo-section" id="process">
         <div class="container">
-            <div class="section-title">
-                <h2>How It Works</h2>
-                <p>Clean home in 3 simple steps</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-num">1</div>
-                    <h4>Book Online</h4>
-                    <p>Choose your plan and pick a time that works</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-num">2</div>
-                    <h4>We Clean</h4>
-                    <p>Our team arrives with all supplies and equipment</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-num">3</div>
-                    <h4>You Relax</h4>
-                    <p>Come home to a sparkling clean space</p>
-                </div>
+            <div class="demo-section-title"><h2>How It Works</h2><p>Clean home in 3 simple steps</p></div>
+            <div class="steps-row">
+                <div class="step"><div class="step-num">1</div><h4>Book Online</h4><p>Choose your plan and pick a time</p></div>
+                <div class="step"><div class="step-num">2</div><h4>We Clean</h4><p>Team arrives with all supplies</p></div>
+                <div class="step"><div class="step-num">3</div><h4>You Relax</h4><p>Come home to a sparkling space</p></div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section" id="book">
+    <section class="demo-cta" id="book">
         <div class="container">
             <h2>Ready for a Cleaner Home?</h2>
             <p>Book your first cleaning and get 20% off. No commitment, cancel anytime.</p>
-            <a href="tel:+17875556543" class="demo-cta-btn large">📞 (787) 555-6543</a>
+            <a href="tel:+17875556543" class="btn btn-cyan" style="padding:14px 36px; font-size:1rem;">📞 (787) 555-6543</a>
         </div>
     </section>
 
-    <footer class="demo-footer">
-        <div class="container">
-            <p>&copy; 2026 CleanPro Services — Demo by <a href="https://pilotsoftware.llc">Pilot Software</a></p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/17875556543" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+    <footer class="demo-footer"><p>&copy; 2026 CleanPro Services — Demo by <a href="https://pilotsoftware.llc">Pilot Software</a></p></footer>
+    <a href="https://wa.me/17875556543" class="wa-float">💬</a>
+    <script>
+        const nav = document.querySelector('[data-scroll-nav]');
+        window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+    </script>
 </body>
 </html>

@@ -5,163 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlexFit Studio — Your Fitness Journey Starts Here</title>
     <meta name="description" content="FlexFit Studio — Personal training, yoga, HIIT, and group fitness classes. All levels welcome. First class free.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="demo-base.css">
-    <style>
-        :root {
-            --primary: #059669;
-            --primary-dark: #047857;
-            --secondary: #f59e0b;
-            --accent: #10b981;
-            --dark: #0c2d1b;
-            --light: #ecfdf5;
-            --warm: #d1fae5;
-        }
-        .hero { background: linear-gradient(135deg, #0c2d1b 0%, #1a4a2e 100%); color: white; }
-        .hero h1 { color: white; }
-        .hero p { color: rgba(255,255,255,.7); }
-        .hero-badge { background: var(--secondary); color: var(--dark); }
-        .feature-icon { background: var(--secondary); color: var(--dark); }
-        .class-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-        }
-        .class-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 24px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: transform .2s;
-        }
-        .class-card:hover { transform: translateY(-4px); }
-        .class-emoji { font-size: 2.5rem; margin-bottom: 12px; }
-        .class-card h4 { font-size: 1rem; margin-bottom: 6px; }
-        .class-card .time { color: var(--gray); font-size: 0.85rem; margin-bottom: 8px; }
-        .class-card .class-price { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
-        .schedule-table {
-            max-width: 700px;
-            margin: 0 auto;
-            width: 100%;
-            border-collapse: collapse;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        .schedule-table th { background: var(--primary); color: white; padding: 14px; font-size: 0.9rem; }
-        .schedule-table td { padding: 12px 14px; text-align: center; border-bottom: 1px solid var(--light); font-size: 0.88rem; }
-        .schedule-table tr:hover td { background: var(--warm); }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .pricing-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 28px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            position: relative;
-            border: 2px solid transparent;
-        }
-        .pricing-card.popular { border-color: var(--secondary); }
-        .pricing-card.popular::after {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--secondary);
-            color: var(--dark);
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 700;
-        }
-        .pricing-card h4 { font-size: 1.1rem; margin-bottom: 8px; }
-        .pricing-card .price { font-size: 2rem; font-weight: 800; color: var(--primary); }
-        .pricing-card .price span { font-size: 0.9rem; color: var(--gray); font-weight: 400; }
-        .pricing-card ul { list-style: none; margin: 16px 0; text-align: left; }
-        .pricing-card li { padding: 6px 0; font-size: 0.88rem; color: var(--gray); }
-        .pricing-card li::before { content: '✓ '; color: var(--accent); font-weight: 700; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="demo-style.css">
 </head>
 <body>
-    <nav class="demo-nav">
-        <div class="container">
-            <a href="#" class="demo-logo">💪 FlexFit Studio</a>
+    <nav class="demo-nav" data-scroll-nav>
+        <div class="nav-inner">
+            <a href="#" class="demo-logo"><div class="demo-logo-icon">💪</div> FlexFit Studio</a>
             <div class="demo-nav-links">
                 <a href="#classes">Classes</a>
                 <a href="#schedule">Schedule</a>
                 <a href="#pricing">Pricing</a>
-                <a href="#join" class="demo-cta-btn">Join Now</a>
+                <a href="#join" class="btn btn-cyan">Join Now</a>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="demo-hero">
+        <div class="demo-hero-bg"></div>
+        <div class="demo-hero-grid"></div>
         <div class="container">
-            <span class="hero-badge">First Class FREE</span>
-            <h1>Get Strong.<br>Feel Amazing.</h1>
-            <p>Personal training, group classes, and all levels welcome. Your fitness journey starts with one step.</p>
-            <div class="hero-buttons">
-                <a href="#classes" class="demo-cta-btn large">View Classes</a>
-                <a href="#join" class="demo-cta-btn large secondary" style="border-color: var(--secondary); color: var(--secondary) !important;">Claim Free Class</a>
+            <div class="demo-kicker"><span class="pulse"></span> First Class FREE</div>
+            <h1>Get Strong.<br><span class="grad">Feel Amazing.</span></h1>
+            <p class="sub">Personal training, group classes, and all levels welcome. Your fitness journey starts with one step.</p>
+            <div class="demo-hero-actions">
+                <a href="#classes" class="btn btn-cyan">View Classes</a>
+                <a href="#join" class="btn btn-outline">Claim Free Class</a>
             </div>
-            <div class="hero-image" style="margin-top:40px; background: linear-gradient(135deg, #1a4a2e, #0c2d1b); border-radius: var(--radius); padding: 60px 20px; font-size: 5rem;">🏋️</div>
+            <div class="hero-visual"><div class="hero-visual-inner">🏋️</div></div>
         </div>
     </section>
 
-    <section class="section" id="classes">
+    <section class="demo-section" id="classes">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Classes</h2>
-                <p>Find the workout that fits your style</p>
-            </div>
-            <div class="class-grid">
-                <div class="class-card">
-                    <div class="class-emoji">🧘</div>
-                    <h4>Yoga & Flexibility</h4>
-                    <p class="time">Mon/Wed/Fri — 7am, 12pm, 6pm</p>
-                    <p class="class-price">$50/mo</p>
-                </div>
-                <div class="class-card">
-                    <div class="class-emoji">🔥</div>
-                    <h4>HIIT & Cardio</h4>
-                    <p class="time">Tue/Thu/Sat — 8am, 5:30pm</p>
-                    <p class="class-price">$65/mo</p>
-                </div>
-                <div class="class-card">
-                    <div class="class-emoji">💪</div>
-                    <h4>Strength Training</h4>
-                    <p class="time">Mon/Tue/Thu/Fri — 6am, 6pm</p>
-                    <p class="class-price">$75/mo</p>
-                </div>
-                <div class="class-card">
-                    <div class="class-emoji">🥊</div>
-                    <h4>Boxing & Kickboxing</h4>
-                    <p class="time">Wed/Sat — 9am, 4pm</p>
-                    <p class="class-price">$60/mo</p>
-                </div>
+            <div class="demo-section-title"><h2>Our Classes</h2><p>Find the workout that fits your style</p></div>
+            <div class="card-grid">
+                <div class="card"><div class="card-icon">🧘</div><h3>Yoga & Flexibility</h3><p>Mon/Wed/Fri — 7am, 12pm, 6pm — <strong style="color:var(--cyan)">$50/mo</strong></p></div>
+                <div class="card"><div class="card-icon">🔥</div><h3>HIIT & Cardio</h3><p>Tue/Thu/Sat — 8am, 5:30pm — <strong style="color:var(--cyan)">$65/mo</strong></p></div>
+                <div class="card"><div class="card-icon">💪</div><h3>Strength Training</h3><p>Mon/Tue/Thu/Fri — 6am, 6pm — <strong style="color:var(--cyan)">$75/mo</strong></p></div>
+                <div class="card"><div class="card-icon">🥊</div><h3>Boxing & Kickboxing</h3><p>Wed/Sat — 9am, 4pm — <strong style="color:var(--cyan)">$60/mo</strong></p></div>
             </div>
         </div>
     </section>
 
-    <section class="section section-alt" id="schedule">
+    <section class="demo-section demo-section-alt" id="schedule">
         <div class="container">
-            <div class="section-title">
-                <h2>Weekly Schedule</h2>
-                <p>Plan your week</p>
-            </div>
+            <div class="demo-section-title"><h2>Weekly Schedule</h2><p>Plan your week</p></div>
             <table class="schedule-table">
-                <thead>
-                    <tr><th>Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>
-                </thead>
+                <thead><tr><th>Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr></thead>
                 <tbody>
                     <tr><td>7:00 AM</td><td>Yoga</td><td>—</td><td>Yoga</td><td>—</td><td>Yoga</td><td>HIIT</td></tr>
                     <tr><td>8:00 AM</td><td>HIIT</td><td>HIIT</td><td>—</td><td>HIIT</td><td>—</td><td>Boxing</td></tr>
@@ -174,62 +65,45 @@
         </div>
     </section>
 
-    <section class="section" id="pricing">
+    <section class="demo-section" id="pricing">
         <div class="container">
-            <div class="section-title">
-                <h2>Membership Plans</h2>
-                <p>Choose the plan that works for you</p>
-            </div>
+            <div class="demo-section-title"><h2>Membership Plans</h2><p>Choose the plan that works for you</p></div>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h4>Drop-In</h4>
-                    <div class="price">$12 <span>/class</span></div>
-                    <ul>
-                        <li>Any single class</li>
-                        <li>No commitment</li>
-                        <li>All levels welcome</li>
-                    </ul>
-                    <a href="#join" class="demo-cta-btn" style="width:100%">Book Class</a>
+                    <div class="pprice">$12 <span>/class</span></div>
+                    <ul><li>Any single class</li><li>No commitment</li><li>All levels welcome</li></ul>
+                    <a href="#join" class="btn btn-outline btn-full">Book Class</a>
                 </div>
-                <div class="pricing-card popular">
+                <div class="pricing-card featured">
                     <h4>Monthly</h4>
-                    <div class="price">$85 <span>/mo</span></div>
-                    <ul>
-                        <li>Unlimited classes</li>
-                        <li>2 PT sessions/mo</li>
-                        <li>Access to all studios</li>
-                    </ul>
-                    <a href="#join" class="demo-cta-btn" style="width:100%; background: var(--secondary); color: var(--dark) !important;">Start Free Trial</a>
+                    <div class="pprice">$85 <span>/mo</span></div>
+                    <ul><li>Unlimited classes</li><li>2 PT sessions/mo</li><li>Access to all studios</li></ul>
+                    <a href="#join" class="btn btn-cyan btn-full">Start Free Trial</a>
                 </div>
                 <div class="pricing-card">
                     <h4>Annual</h4>
-                    <div class="price">$75 <span>/mo</span></div>
-                    <ul>
-                        <li>Billed $900/year</li>
-                        <li>Unlimited classes</li>
-                        <li>4 PT sessions/mo</li>
-                        <li>Save $120</li>
-                    </ul>
-                    <a href="#join" class="demo-cta-btn" style="width:100%">Go Annual</a>
+                    <div class="pprice">$75 <span>/mo</span></div>
+                    <ul><li>Billed $900/year</li><li>Unlimited classes</li><li>4 PT sessions/mo</li><li>Save $120</li></ul>
+                    <a href="#join" class="btn btn-outline btn-full">Go Annual</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section" id="join">
+    <section class="demo-cta" id="join">
         <div class="container">
             <h2>Your First Class is FREE</h2>
             <p>No credit card. No commitment. Just show up and feel the energy.</p>
-            <a href="tel:+17875557777" class="demo-cta-btn large">📞 (787) 555-7777</a>
+            <a href="tel:+17875557777" class="btn btn-cyan" style="padding:14px 36px; font-size:1rem;">📞 (787) 555-7777</a>
         </div>
     </section>
 
-    <footer class="demo-footer">
-        <div class="container">
-            <p>&copy; 2026 FlexFit Studio — Demo by <a href="https://pilotsoftware.llc">Pilot Software</a></p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/17875557777" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+    <footer class="demo-footer"><p>&copy; 2026 FlexFit Studio — Demo by <a href="https://pilotsoftware.llc">Pilot Software</a></p></footer>
+    <a href="https://wa.me/17875557777" class="wa-float">💬</a>
+    <script>
+        const nav = document.querySelector('[data-scroll-nav]');
+        window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+    </script>
 </body>
 </html>
