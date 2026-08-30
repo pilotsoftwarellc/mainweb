@@ -524,6 +524,36 @@ h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
     background: #232D3D;
 }
 
+/* ============================================================
+   DEMOS CARDS
+   ============================================================ */
+.demos-card {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 4px;
+    transition: border-color 250ms ease, transform 250ms var(--ease), box-shadow 250ms ease;
+    text-decoration: none !important;
+}
+.demos-card:hover {
+    border-color: rgba(0,217,255,0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,217,255,0.1);
+}
+.demos-card-img {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+.demos-card-cat {
+    font-family: var(--font-mono);
+}
+.demos-card-desc {
+    font-size: .82rem;
+    line-height: 1.4;
+}
+
 .mock-phone {
     position: absolute;
     right: -8px;
