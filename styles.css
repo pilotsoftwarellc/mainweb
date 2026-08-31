@@ -1194,6 +1194,19 @@ h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
     text-align: center;
     margin-top: 16px;
 }
+.new-service-card .ns-cta-sec {
+    display: block;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    padding: 9px 18px;
+    color: var(--text-2);
+    border-color: var(--line);
+}
+.new-service-card .ns-cta-sec:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
 
 /* AI differentiation callout */
 .ai-diff {
