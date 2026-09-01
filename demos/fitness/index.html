@@ -1,185 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Haven Gym — Strength Training & Fitness Classes</title>
-    <meta name="description" content="Iron Haven Gym — Strength training, CrossFit, HIIT & personal training. Join the best gym in San Juan.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box;}
-        body{font-family:'Inter',system-ui,sans-serif;color:#fff;background:#0a0a0a;line-height:1.6;}
-        a{text-decoration:none;color:inherit;}
-        img{max-width:100%;display:block;}
-
-        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(10,10,10,.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);}
-        .nav{max-width:1140px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;}
-        .logo{font-weight:900;font-size:1.1rem;text-transform:uppercase;letter-spacing:-.02em;}
-        .nav-links{display:flex;align-items:center;gap:28px;}
-        .nav-links a{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.5);}
-        .nav-links a:hover{color:#fff;}
-        .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 22px;border-radius:6px;font-size:.85rem;font-weight:700;transition:all .2s;border:none;cursor:pointer;}
-        .btn-yellow{background:#eab308;color:#000;}
-        .btn-yellow:hover{background:#facc15;}
-        .btn-outline{border:1.5px solid rgba(255,255,255,.15);color:#fff;background:transparent;}
-        .btn-outline:hover{border-color:#eab308;color:#eab308;}
-
-        .hero{padding:140px 0 80px;background:url('/demos/assets/fitness/hero.webp?w=1920&q=80') center/cover no-repeat;position:relative;min-height:85vh;display:flex;align-items:center;}
-        .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.93) 0%,rgba(10,10,10,.7) 55%,rgba(10,10,10,.4) 100%);}
-        .hero-inner{max-width:1140px;margin:0 auto;padding:0 28px;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:85vh;}
-        .hero-tag{font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#eab308;margin-bottom:12px;}
-        .hero h1{font-size:3.5rem;font-weight:900;line-height:1;text-transform:uppercase;letter-spacing:-.03em;margin-bottom:16px;}
-        .hero h1 span{display:block;color:#eab308;}
-        .hero p{font-size:1rem;color:rgba(255,255,255,.5);line-height:1.7;max-width:400px;margin-bottom:28px;}
-        .hero-btns{display:flex;gap:12px;}
-
-        .hero-stats{display:flex;gap:36px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);}
-        .hero-stats .n{font-size:1.8rem;font-weight:900;color:#eab308;}
-        .hero-stats .l{font-size:.78rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.06em;}
-
-        .hero-img{border-radius:12px;overflow:hidden;max-width:420px;box-shadow:0 32px 80px rgba(0,0,0,.5);}
-        .hero-img img{width:100%;aspect-ratio:3/4;object-fit:cover;}
-
-        .sec{padding:80px 0;}
-        .sec-inner{max-width:1140px;margin:0 auto;padding:0 28px;}
-        .section-tag{font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#eab308;margin-bottom:10px;}
-        .section-title{font-size:2rem;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:10px;}
-        .section-desc{color:rgba(255,255,255,.4);}
-
-        .classes{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px;}
-        .class-item{aspect-ratio:1;overflow:hidden;position:relative;}
-        .class-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s;}
-        .class-item:hover img{transform:scale(1.06);}
-        .class-label{position:absolute;bottom:12px;left:12px;font-size:.78rem;font-weight:600;color:#fff;background:rgba(0,0,0,.6);padding:5px 10px;border-radius:4px;}
-
-        .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;}
-        .plan{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:32px 24px;text-align:center;transition:all .25s;}
-        .plan.popular{border-color:#eab308;background:rgba(234,179,8,.06);}
-        .plan:hover{transform:translateY(-4px);}
-        .plan .badge{background:#eab308;color:#000;font-size:.65rem;font-weight:800;text-transform:uppercase;padding:3px 10px;border-radius:4px;letter-spacing:.08em;display:inline-block;margin-bottom:14px;}
-        .plan .pname{font-size:1.1rem;font-weight:800;margin-bottom:4px;}
-        .plan .pprice{font-size:2.8rem;font-weight:900;color:#eab308;margin-bottom:16px;}
-        .plan .pprice span{font-size:.88rem;color:rgba(255,255,255,.4);}
-        .plan ul{list-style:none;text-align:left;margin-bottom:24px;}
-        .plan li{padding:8px 0;font-size:.88rem;color:rgba(255,255,255,.5);border-bottom:1px solid rgba(255,255,255,.04);}
-        .plan .btn{width:100%;}
-
-        .cta{padding:80px 0;text-align:center;background:#eab308;color:#000;}
-        .cta .section-title{color:#000;margin-bottom:12px;}
-        .cta p{color:rgba(0,0,0,.5);margin-bottom:28px;}
-        .cta .btn{background:#000;color:#fff;}
-        .cta .btn:hover{background:#222;}
-
-        footer{background:#050505;color:rgba(255,255,255,.2);text-align:center;padding:24px 0;font-size:.82rem;}
-
-        .wa{position:fixed;bottom:24px;right:24px;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 16px rgba(37,211,102,.3);z-index:99;transition:transform .2s;}
-        .wa:hover{transform:scale(1.1);}
-
-                .back-btn{position:absolute;top:24px;left:28px;font-size:.85rem;font-weight:600;color:#ffffff;opacity:.8;transition:opacity .25s;text-decoration:none;z-index:100;display:inline-flex;align-items:center;gap:6px;}
-        .back-btn:hover{opacity:1;}
-        .back-btn::before{content:'←';font-size:1.05rem;}
-
-        @media(max-width:768px){
-            .hero-inner{grid-template-columns:1fr;text-align:center;}
-            .hero h1{font-size:2.2rem;}
-            .hero p{margin:0 auto 24px;}
-            .hero-btns{justify-content:center;}
-            .hero-img{max-width:300px;margin:20px auto 0;}
-            .hero-stats{justify-content:center;}
-            .plans{grid-template-columns:1fr;}
-            .classes{grid-template-columns:repeat(2,1fr);}
-            .nav-links{display:none;}
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iron Haven Gym — Build strength, stay for the people</title>
+<meta name="description" content="Iron Haven Gym is a focused strength and conditioning gym in Santurce for beginners, regulars, and people ready to train with purpose.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--coal:#171716;--coal-2:#222220;--paper:#f1eee7;--signal:#e65b3d;--cream:#fbf9f3;--muted:#aaa69c;--line:#3a3935;--display:'Barlow Condensed',Arial,sans-serif;--body:'Barlow',Arial,sans-serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}body{background:var(--coal);color:var(--cream);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}.pilot-bar{background:#0f0f0e;color:#d6d1c8;padding:7px max(24px,calc((100% - 1180px)/2));font-size:.72rem;display:flex;justify-content:space-between;gap:18px}.pilot-bar a{text-decoration:underline;text-underline-offset:3px}.pilot-bar .sample{opacity:.6}.site-nav{background:var(--coal);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font:700 1.55rem/1 var(--display);letter-spacing:.04em;text-transform:uppercase}.brand span{color:var(--signal)}.nav-links{display:flex;align-items:center;gap:28px;font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.nav-links a:hover{color:var(--cream)}.nav-call{border:1px solid var(--line);padding:9px 12px;color:var(--cream)}.nav-call:hover{border-color:var(--signal)!important;color:var(--signal)!important}
+.hero{min-height:690px;display:grid;align-items:stretch;position:relative;overflow:hidden;background:var(--coal)}.hero:before{content:'IRON HAVEN';position:absolute;right:-3vw;top:12%;font:800 clamp(8rem,22vw,20rem)/.8 var(--display);letter-spacing:-.06em;color:rgba(255,255,255,.03);white-space:nowrap;pointer-events:none}.hero-grid{width:min(1180px,calc(100% - 48px));margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:58px;align-items:center;position:relative;z-index:1}.eyebrow{font-size:.76rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--signal);margin-bottom:17px}.hero h1{font:700 clamp(4rem,8vw,8rem)/.82 var(--display);letter-spacing:-.04em;text-transform:uppercase;max-width:540px}.hero h1 span{display:block;color:var(--signal)}.hero-copy{color:#c1bdb4;max-width:400px;margin:25px 0 29px;font-size:1rem}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{min-height:46px;padding:12px 18px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;border:1px solid transparent}.btn-signal{background:var(--signal);color:#fff}.btn-signal:hover{background:#c94b31}.btn-outline{border-color:#67635d;color:#fff}.btn-outline:hover{border-color:var(--signal);color:var(--signal)}.hero-media{position:relative;height:620px;margin:35px 0}.hero-media:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,23,22,.2),transparent 55%,rgba(23,23,22,.08))}.hero-media img{width:100%;height:100%;object-fit:cover}.hero-caption{position:absolute;left:22px;bottom:22px;z-index:2;background:var(--paper);color:var(--coal);padding:10px 14px;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}.training{background:var(--paper);color:var(--coal);padding:96px 0}.training-head{display:flex;justify-content:space-between;gap:30px;align-items:end;border-bottom:2px solid var(--coal);padding-bottom:22px;margin-bottom:28px}.training-head h2,.membership h2,.hours h2,.contact h2{font:700 clamp(2.6rem,5vw,5rem)/.88 var(--display);text-transform:uppercase;letter-spacing:-.03em}.training-head p{max-width:330px;color:#635f58;font-size:.9rem}.programs{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:14px}.program{position:relative;min-height:275px;overflow:hidden;background:#c9c4b9}.program:first-child{min-height:410px}.program img{width:100%;height:100%;object-fit:cover;transition:transform .45s}.program:hover img{transform:scale(1.04)}.program:after{content:'';position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.75))}.program-label{position:absolute;left:18px;bottom:16px;color:#fff;z-index:1}.program-label strong{display:block;font:700 1.45rem/1 var(--display);text-transform:uppercase}.program-label span{font-size:.74rem;color:#e2ddd6}.membership{padding:96px 0;background:var(--coal-2)}.membership-head{display:flex;justify-content:space-between;gap:32px;align-items:end;margin-bottom:28px}.membership-head p{max-width:340px;color:var(--muted);font-size:.9rem}.plans{border-top:1px solid var(--line)}.plan{display:grid;grid-template-columns:1fr auto 260px;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}.plan-name{font:700 1.8rem/1 var(--display);text-transform:uppercase}.plan-price{font:700 2.3rem/1 var(--display);color:var(--signal)}.plan-price small{font:400 .85rem/1 var(--body);color:var(--muted)}.plan p{color:var(--muted);font-size:.82rem}.plan .btn{justify-self:end}.hours{padding:88px 0;background:var(--cream);color:var(--coal)}.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.hours p{color:#655f57;max-width:440px;margin-top:17px}.hours-table{border-top:2px solid var(--coal)}.hours-row{display:flex;justify-content:space-between;gap:18px;padding:14px 0;border-bottom:1px solid #cbc5bb;font-size:.87rem}.hours-row span:last-child{color:#6d675f}.contact{padding:92px 0;background:var(--signal)}.contact-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}.contact h2{max-width:620px}.contact p{color:#f7d7cf;max-width:520px;margin-top:16px}.contact-actions{text-align:right}.contact-actions .btn{background:#fff;color:var(--coal)}.contact-actions .btn:hover{background:var(--paper)}.contact-actions small{display:block;margin-top:12px;color:#f7d7cf}footer{background:#0f0f0e;padding:24px 0;color:#99948b;font-size:.76rem}footer .wrap{display:flex;justify-content:space-between;gap:20px}footer a{color:#fff}
+@media(max-width:760px){.wrap,.hero-grid{width:min(100% - 36px,1180px)}.pilot-bar{padding:7px 18px}.pilot-bar span{display:none}.nav-inner{min-height:66px}.brand{font-size:1.25rem}.nav-links{gap:10px}.nav-links a:not(.nav-call){display:none}.nav-call{font-size:.68rem;padding:9px 10px}.hero{min-height:0;padding:54px 0 0}.hero-grid{grid-template-columns:1fr;gap:34px}.hero:before{font-size:7rem;top:29%;right:-20%}.hero h1{font-size:clamp(3rem,14vw,4.5rem);max-width:100%;width:100%}.hero-copy{font-size:.95rem;margin:20px 0 24px;max-width:100%;width:100%}.hero-media{height:390px;margin:0;width:100%;order:2}.hero-caption{left:12px;bottom:12px}.training,.membership,.hours{padding:68px 0}.training-head,.membership-head{display:block}.training-head p,.membership-head p{margin-top:14px}.programs{grid-template-columns:1fr 1fr;gap:10px}.program:first-child{grid-column:span 2;min-height:280px}.program{min-height:170px}.program-label{left:12px;bottom:12px}.program-label strong{font-size:1.15rem}.program-label span{font-size:.68rem}.plan{grid-template-columns:1fr auto;gap:12px;padding:20px 0}.plan-price{grid-column:2;grid-row:1}.plan p{grid-column:1 / -1}.plan .btn{grid-column:1 / -1;justify-self:stretch}.hours-grid{grid-template-columns:1fr;gap:28px}.contact{padding:70px 0}.contact-grid{grid-template-columns:1fr;gap:25px}.contact-actions{text-align:left}.contact-actions .btn{width:100%}footer .wrap{display:block}footer .sample{display:block;margin-top:7px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.program img{transition:none}}
+</style>
 </head>
 <body>
-    <nav>
-        <div class="nav">
-            <div class="logo">Iron Haven Gym</div>
-            <div class="nav-links">
-                <a href="#classes">Classes</a>
-                <a href="#plans">Plans</a>
-                <a href="#contact" class="btn btn-yellow">Contact Us</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <a href="/demos/" class="back-btn">← Back to Demos</a>
-        <div class="hero-inner">
-            <div>
-                <p class="hero-tag">Strength · Power · Results</p>
-                <h1>Train Hard.<br><span>Look Better.</span></h1>
-                <p>State-of-the-art gym with personal trainers, group classes, and a community that pushes you to be your best.</p>
-                <div class="hero-btns">
-                    <a href="#plans" class="btn btn-yellow">View Plans</a>
-                    <a href="#contact" class="btn btn-outline">Free Trial Day</a>
-                </div>
-                <div class="hero-stats">
-                    <div><div class="n">2k+</div><div class="l">Members</div></div>
-                    <div><div class="n">10k</div><div class="l">SQFT</div></div>
-                    <div><div class="n">15+</div><div class="l">Trainers</div></div>
-                </div>
-            </div>
-            <div class="hero-img">
-                <img src="/demos/assets/fitness/hero.webp?w=800&q=80" alt="Gym workout" loading="eager" width="500" height="500" >
-            </div>
-        </div>
-    </section>
-
-    <section class="sec" id="classes">
-        <div class="sec-inner">
-            <p class="section-tag">What We Offer</p>
-            <h2 class="section-title">Classes & Training</h2>
-            <p class="section-desc">Something for every level</p>
-            <div class="classes">
-                <div class="class-item"><img src="/demos/assets/fitness/crossfit.webp?w=600&q=80" alt="CrossFit" loading="lazy" width="500" height="500" ><span class="class-label">CrossFit</span></div>
-                <div class="class-item"><img src="/demos/assets/fitness/hiit.webp?w=600&q=80" alt="HIIT" loading="lazy" width="500" height="500" ><span class="class-label">HIIT</span></div>
-                <div class="class-item"><img src="/demos/assets/fitness/strength.webp?w=600&q=80" alt="Weights" loading="lazy" width="1023" height="685" ><span class="class-label">Strength</span></div>
-                <div class="class-item"><img src="/demos/assets/fitness/recovery.webp?w=600&q=80" alt="Recovery" loading="lazy" width="500" height="332" ><span class="class-label">Recovery</span></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec" id="plans" style="background:#0d0d0d;">
-        <div class="sec-inner">
-            <p class="section-tag">Pricing</p>
-            <h2 class="section-title">Choose Your Plan</h2>
-            <p class="section-desc">No hidden fees. Cancel anytime.</p>
-            <div class="plans">
-                <div class="plan">
-                    <div class="pname">Basic</div>
-                    <div class="pprice">$29<span>/mo</span></div>
-                    <ul><li>✓ Gym access 6AM–10PM</li><li>✓ Locker room</li><li>✓ Free parking</li></ul>
-                    <button class="btn btn-outline" style="width:100%;">Select Plan</button>
-                </div>
-                <div class="plan popular">
-                    <div class="badge">Most Popular</div>
-                    <div class="pname">Pro</div>
-                    <div class="pprice">$49<span>/mo</span></div>
-                    <ul><li>✓ 24/7 access</li><li>✓ All group classes</li><li>✓ 2 personal training sessions</li><li>✓ Guest pass</li></ul>
-                    <button class="btn btn-yellow" style="width:100%;">Select Plan</button>
-                </div>
-                <div class="plan">
-                    <div class="pname">Elite</div>
-                    <div class="pprice">$79<span>/mo</span></div>
-                    <ul><li>✓ Everything in Pro</li><li>✓ Unlimited PT sessions</li><li>✓ Nutrition plan</li><li>✓ Recovery suite</li></ul>
-                    <button class="btn btn-outline" style="width:100%;">Select Plan</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta" id="contact">
-        <div class="sec-inner">
-            <h2 class="section-title">Ready to Start?</h2>
-            <p>Your first day is free. No commitment.</p>
-            <a href="tel:+17875558765" class="btn" style="padding:14px 32px;">📞 (787) 555-8765</a>
-        </div>
-    </section>
-
-    <footer><p>&copy; 2026 Iron Haven Gym — Demo by <a href="https://pilotsoftware.llc">Pilot Software</a></p></footer>
-    <a href="https://wa.me/17875558765" class="wa" target="_blank" rel="noopener">💬</a>
+<div class="pilot-bar"><a href="/demos/">← All website demos</a><span>One-page website example · $69.99 package</span><span class="sample">Sample business content</span></div>
+<header class="site-nav"><div class="wrap nav-inner"><a class="brand" href="#top">Iron <span>Haven</span></a><nav class="nav-links" aria-label="Primary navigation"><a href="#training">Training</a><a href="#membership">Membership</a><a class="nav-call" href="tel:+17875558765">Ask about a visit</a></nav></div></header>
+<main id="top">
+<section class="hero"><div class="hero-grid"><div><p class="eyebrow">Strength &amp; conditioning · Santurce</p><h1>Build<br><span>capacity.</span></h1><p class="hero-copy">A focused neighborhood gym for getting stronger, moving better, and showing up again next week. No theatrics. Good coaching. Plenty of room.</p><div class="actions"><a class="btn btn-signal" href="#membership">See membership</a><a class="btn btn-outline" href="tel:+17875558765">Call the gym</a></div></div><figure class="hero-media"><img src="/demos/assets/fitness/hero-gym.webp" alt="Bright strength gym with dumbbell rack and members training" width="1200" height="800" fetchpriority="high"><figcaption class="hero-caption">Train with purpose</figcaption></figure></div></section>
+<section class="training" id="training"><div class="wrap"><div class="training-head"><h2>Pick your<br>work.</h2><p>Programs are shown as simple choices, not a fake member portal. A visitor can understand the offer and call to ask a question.</p></div><div class="programs"><figure class="program"><img src="/demos/assets/fitness/deadlift.webp" alt="Athlete preparing for a barbell deadlift" width="1200" height="801" loading="lazy"><figcaption class="program-label"><strong>Strength</strong><span>Barbells · racks · coaching</span></figcaption></figure><figure class="program"><img src="/demos/assets/fitness/squat.webp" alt="Athlete training with a loaded barbell in a gym" width="1200" height="800" loading="lazy"><figcaption class="program-label"><strong>Lift</strong><span>Learn the basics well</span></figcaption></figure><figure class="program"><img src="/demos/assets/fitness/curl.webp" alt="Athlete performing a barbell curl in a weight room" width="1200" height="800" loading="lazy"><figcaption class="program-label"><strong>Condition</strong><span>Work that carries over</span></figcaption></figure></div></div></section>
+<section class="membership" id="membership"><div class="wrap"><div class="membership-head"><h2>Keep it<br>simple.</h2><p>Membership prices shown as sample content. Buttons lead to a conversation—there is no checkout or account system in this one-page example.</p></div><div class="plans"><article class="plan"><div class="plan-name">Open gym</div><div class="plan-price">$39<small>/mo</small></div><p>Use the floor during staffed hours.</p><a class="btn btn-outline" href="tel:+17875558765">Ask about it</a></article><article class="plan"><div class="plan-name">Training</div><div class="plan-price">$69<small>/mo</small></div><p>Open gym plus weekly coached sessions.</p><a class="btn btn-signal" href="tel:+17875558765">Ask about it</a></article><article class="plan"><div class="plan-name">Drop-in</div><div class="plan-price">$12<small>/day</small></div><p>Visiting for a day? Come train.</p><a class="btn btn-outline" href="tel:+17875558765">Call first</a></article></div></div></section>
+<section class="hours"><div class="wrap hours-grid"><div><h2>Find your<br>training hour.</h2><p>Early mornings, after-work sessions, and a Saturday window for people who would rather be here than still thinking about it.</p></div><div class="hours-table"><div class="hours-row"><span>Monday – Friday</span><span>5:30 AM – 9:00 PM</span></div><div class="hours-row"><span>Saturday</span><span>8:00 AM – 2:00 PM</span></div><div class="hours-row"><span>Sunday</span><span>Closed</span></div><div class="hours-row"><span>Location</span><span>Santurce, PR</span></div></div></div></section>
+<section class="contact" id="contact"><div class="wrap contact-grid"><div><h2>Come see if it feels right.</h2><p>Call Iron Haven to ask about a first visit, a coached session, or the membership that fits how you train.</p></div><div class="contact-actions"><a class="btn" href="tel:+17875558765">(787) 555-8765</a><small>Call or text · No online checkout</small></div></div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Iron Haven Gym</span><span class="sample">Demo website by <a href="https://pilotsoftware.llc">Pilot Software</a></span></div></footer>
 </body>
 </html>

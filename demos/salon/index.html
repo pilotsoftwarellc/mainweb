@@ -1,176 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bella Hair Studio — Professional Hair & Beauty Salon</title>
-    <meta name="description" content="Bella Hair Studio — Professional hair styling, coloring, balayage, braids & beauty treatments. Book today.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box;}
-        body{font-family:'Montserrat',system-ui,sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;}
-        a{text-decoration:none;color:inherit;}
-        img{max-width:100%;display:block;}
-
-        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid #f0ede8;}
-        .nav{max-width:1140px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;}
-        .logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:#1a1a1a;}
-        .nav-links{display:flex;align-items:center;gap:36px;}
-        .nav-links a{font-size:.82rem;font-weight:500;color:#8a7e74;text-transform:uppercase;letter-spacing:.08em;transition:color .2s;}
-        .nav-links a:hover{color:#1a1a1a;}
-        .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 24px;border-radius:0;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;transition:all .2s;border:none;cursor:pointer;}
-        .btn-fill{background:#1a1a1a;color:#fff;}
-        .btn-fill:hover{background:#444;}
-        .btn-stroke{border:1px solid #1a1a1a;color:#1a1a1a;background:transparent;}
-        .btn-stroke:hover{background:#1a1a1a;color:#fff;}
-
-        .hero{padding:150px 0 70px;position:relative;}
-        .hero-inner{max-width:1140px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;min-height:85vh;}
-        .hero-tag{font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#c49a6c;margin-bottom:14px;}
-        .hero h1{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:400;line-height:1.05;color:#1a1a1a;margin-bottom:20px;}
-        .hero p{font-size:.95rem;color:#7a6e64;line-height:1.75;max-width:420px;margin-bottom:34px;}
-        .hero-btns{display:flex;gap:12px;}
-
-        .hero-img{border-radius:0;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.1);}
-        .hero-img img{width:100%;aspect-ratio:3/4;object-fit:cover;}
-
-        .sec{padding:80px 0;}
-        .sec-inner{max-width:1140px;margin:0 auto;padding:0 28px;}
-        .section-tag{font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#c49a6c;margin-bottom:10px;}
-        .section-title{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:500;color:#1a1a1a;margin-bottom:10px;}
-        .section-desc{color:#8a7e74;max-width:420px;font-size:.92rem;line-height:1.6;}
-
-        .services{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:44px 0;border:1px solid #ede9e0;}
-        .svc{padding:28px 28px;background:#fff;display:flex;gap:18px;align-items:flex-start;transition:background .2s;}
-        .svc:hover{background:#faf8f5;}
-        .svc-num{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:#c49a6c;min-width:36px;}
-        .svc h4{font-size:.92rem;font-weight:600;color:#1a1a1a;margin-bottom:2px;}
-        .svc .price{color:#c49a6c;font-weight:600;font-size:.9rem;}
-        .svc p{font-size:.82rem;color:#8a7e74;margin-top:2px;}
-
-        .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px;}
-        .gallery-item{aspect-ratio:1;overflow:hidden;position:relative;}
-        .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:grayscale(20%);}
-        .gallery-item:hover img{transform:scale(1.06);filter:grayscale(0);}
-
-        .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;}
-        .review{padding:28px;background:#faf8f5;border:1px solid #f0ede8;}
-        .review .stars{color:#c49a6c;margin-bottom:8px;font-size:.9rem;}
-        .review .txt{font-size:.92rem;color:#555;line-height:1.6;margin-bottom:12px;font-style:italic;}
-        .review .author{font-size:.82rem;font-weight:600;color:#1a1a1a;}
-
-        .cta{padding:80px 0;text-align:center;background:#1a1a1a;color:#fff;}
-        .cta .section-title{color:#fff;margin-bottom:12px;}
-        .cta p{color:rgba(255,255,255,.45);margin-bottom:32px;}
-        .cta .btn{background:#fff;color:#1a1a1a;}
-        .cta .btn:hover{background:#c49a6c;}
-
-        footer{background:#faf8f5;color:#8a7e74;text-align:center;padding:24px 0;font-size:.82rem;}
-        footer a{color:#c49a6c;}
-
-        .wa{position:fixed;bottom:24px;right:24px;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 16px rgba(37,211,102,.3);z-index:99;transition:transform .2s;}
-        .wa:hover{transform:scale(1.1);}
-
-                .back-btn{position:absolute;top:24px;left:28px;font-size:.85rem;font-weight:600;color:#1a1a1a;opacity:.8;transition:opacity .25s;text-decoration:none;z-index:100;display:inline-flex;align-items:center;gap:6px;}
-        .back-btn:hover{opacity:1;}
-        .back-btn::before{content:'←';font-size:1.05rem;}
-
-        @media(max-width:768px){
-            .hero-inner{grid-template-columns:1fr;text-align:center;}
-            .hero h1{font-size:2.4rem;}
-            .hero p{margin:0 auto 28px;}
-            .hero-btns{justify-content:center;}
-            .hero-img{max-width:380px;margin:30px auto 0;}
-            .services{grid-template-columns:1fr;}
-            .gallery{grid-template-columns:repeat(2,1fr);}
-            .reviews{grid-template-columns:1fr;}
-            .nav-links{display:none;}
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bella Hair Studio — Boutique hair in Santurce</title>
+<meta name="description" content="Bella Hair Studio is a boutique salon for thoughtful cuts, color, and finish work in Santurce.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#f5f1eb;--white:#fbfaf7;--ink:#262421;--muted:#706b65;--rose:#ae7a73;--line:#d9d2c9;--serif:'Libre Baskerville',Georgia,serif;--sans:'Work Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}body{background:var(--ivory);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.wrap{width:min(1160px,calc(100% - 48px));margin:auto}.pilot-bar{background:var(--ink);color:#e7dfd6;font-size:.72rem;display:flex;justify-content:space-between;gap:16px;padding:7px max(24px,calc((100% - 1160px)/2));letter-spacing:.03em}.pilot-bar a{text-decoration:underline;text-underline-offset:3px;color:#fff}.pilot-bar .sample{opacity:.65}.site-nav{position:sticky;top:0;z-index:20;background:rgba(245,241,235,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font:700 1.08rem/1 var(--serif);letter-spacing:-.02em}.nav-links{display:flex;align-items:center;gap:26px;font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}.nav-links a:hover{color:var(--rose)}.nav-call{color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:4px}
+.hero{padding:clamp(56px,9vw,112px) 0 100px}.hero-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(40px,8vw,110px);align-items:center}.hero-copy{max-width:490px}.eyebrow{color:var(--rose);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:20px}.hero h1{font:400 clamp(2.65rem,5vw,5rem)/1.12 var(--serif);letter-spacing:-.06em}.hero h1 em{font-style:italic;color:var(--rose)}.hero-copy p{max-width:420px;color:var(--muted);margin:24px 0 28px}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{min-height:46px;padding:12px 19px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:.76rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase}.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{background:var(--rose)}.btn-outline{border:1px solid var(--ink)}.btn-outline:hover{background:var(--ink);color:#fff}.hero-media{position:relative}.hero-media img{width:100%;aspect-ratio:1.28/1;object-fit:cover}.hero-media:after{content:'Bella Hair Studio · Santurce';position:absolute;right:-1px;bottom:-16px;background:var(--rose);color:#fff;padding:10px 14px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}.service-section{background:var(--white);padding:96px 0}.service-intro{display:flex;justify-content:space-between;gap:36px;align-items:end;margin-bottom:24px}.service-intro h2,.work-head h2,.contact-copy h2{font:400 clamp(1.95rem,3.5vw,3.2rem)/1.16 var(--serif);letter-spacing:-.05em}.service-intro p{color:var(--muted);max-width:320px;font-size:.9rem}.service-list{border-top:1px solid var(--line)}.service-row{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:18px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}.service-row .num{font-size:.76rem;color:var(--rose);letter-spacing:.08em}.service-row h3{font:400 1.05rem/1.3 var(--serif);margin-bottom:3px}.service-row p{color:var(--muted);font-size:.78rem}.service-row .price{font-size:.8rem;font-weight:700;color:var(--rose);white-space:nowrap}.work-section{padding:96px 0}.work-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:32px}.work-head p{color:var(--muted);font-size:.88rem;max-width:300px}.gallery{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:260px 260px;gap:14px}.gallery figure{overflow:hidden;background:#e8e1d9}.gallery figure:first-child{grid-row:span 2}.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.gallery figure:hover img{transform:scale(1.035)}.gallery figcaption{position:absolute;left:-9999px}.studio{background:var(--ink);color:#fff;padding:82px 0}.studio-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:center}.studio h2{font:400 clamp(2rem,3.5vw,3.2rem)/1.15 var(--serif);letter-spacing:-.05em}.studio p{color:#c9c0b8;max-width:530px}.studio p+p{margin-top:16px;color:#9f958c;font-size:.82rem}.contact-section{padding:94px 0;background:var(--rose);color:#fff}.contact-grid{display:grid;grid-template-columns:1fr auto;gap:50px;align-items:end}.contact-copy h2{max-width:540px}.contact-copy p{color:#f2deda;max-width:520px;margin-top:16px}.contact-actions{text-align:right}.contact-actions .btn{background:#fff;color:var(--ink)}.contact-actions .btn:hover{background:var(--ivory)}.contact-actions p{font-size:.78rem;color:#f2deda;margin-top:12px}footer{background:var(--ivory);border-top:1px solid var(--line);padding:24px 0;font-size:.76rem;color:var(--muted)}footer .wrap{display:flex;justify-content:space-between;gap:20px}footer a{color:var(--ink)}
+@media(max-width:760px){.wrap{width:min(100% - 36px,1160px)}.pilot-bar{padding:7px 18px}.pilot-bar span{display:none}.nav-inner{min-height:64px}.brand{font-size:.95rem}.nav-links{gap:12px;font-size:.68rem}.nav-links a:not(.nav-call){display:none}.nav-call{padding:9px 11px;border:0;background:var(--ink);color:#fff}.hero{padding:52px 0 70px}.hero-grid{grid-template-columns:1fr;gap:42px}.hero-copy{max-width:100%;width:100%}.hero h1{font-size:clamp(2.35rem,11vw,3.4rem);max-width:100%;width:100%}.hero-copy p{font-size:.94rem;margin:19px 0 24px}.hero-media{order:2}.hero-media:after{right:12px;bottom:12px}.service-section,.work-section{padding:68px 0}.service-intro,.work-head{display:block}.service-intro p,.work-head p{margin-top:13px}.service-row{grid-template-columns:36px minmax(0,1fr);gap:12px;padding:18px 0}.service-row .price{grid-column:2}.service-row h3{font-size:.95rem}.service-row p{font-size:.76rem}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px}.gallery figure:first-child{grid-row:span 1;grid-column:span 2}.studio{padding:66px 0}.studio-grid{grid-template-columns:1fr;gap:24px}.contact-section{padding:70px 0}.contact-grid{grid-template-columns:1fr;gap:26px}.contact-actions{text-align:left}.contact-actions .btn{width:100%}footer .wrap{display:block}footer .sample{display:block;margin-top:7px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gallery img{transition:none}}
+</style>
 </head>
 <body>
-    <nav>
-        <div class="nav">
-            <div class="logo">Bella Hair Studio</div>
-            <div class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#reviews">Reviews</a>
-                <a href="#contact" class="btn btn-fill">Contact Us</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <a href="/demos/" class="back-btn">← Back to Demos</a>
-        <div class="hero-inner">
-            <div>
-                <p class="hero-tag">Professional Styling</p>
-                <h1>Your Look,<br>Our Art</h1>
-                <p>Expert hair care, coloring, and beauty treatments. Walk in as you are, leave feeling beautiful. Licensed stylists, premium products.</p>
-                <div class="hero-btns">
-                    <a href="#services" class="btn btn-fill">View Services</a>
-                    <a href="tel:+17875559876" class="btn btn-stroke">📞 Call Us</a>
-                </div>
-            </div>
-            <div class="hero-img">
-                <img src="/demos/assets/salon/hero.webp?w=800&q=80" alt="Hair salon styling" loading="eager" width="689" height="1024" >
-            </div>
-        </div>
-    </section>
-
-    <section class="sec" id="services">
-        <div class="sec-inner">
-            <p class="section-tag">What We Offer</p>
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-desc">Everything you need for your best look</p>
-            <div class="services">
-                <div class="svc"><div class="svc-num">01</div><div><h4>Haircut & Style <span class="price">from $35</span></h4><p>Women's cut, blowout & styling</p></div></div>
-                <div class="svc"><div class="svc-num">02</div><div><h4>Balayage & Color <span class="price">from $85</span></h4><p>Full color, highlights & balayage</p></div></div>
-                <div class="svc"><div class="svc-num">03</div><div><h4>Braids & Twists <span class="price">from $60</span></h4><p>Box braids, cornrows, goddess twists</p></div></div>
-                <div class="svc"><div class="svc-num">04</div><div><h4>Keratin Treatment <span class="price">from $150</span></h4><p>Smoothing treatment for frizz-free hair</p></div></div>
-                <div class="svc"><div class="svc-num">05</div><div><h4>Manicure & Pedicure <span class="price">from $25</span></h4><p>Classic or gel nail service</p></div></div>
-                <div class="svc"><div class="svc-num">06</div><div><h4>Facial Treatment <span class="price">from $50</span></h4><p>Deep cleansing & hydration facial</p></div></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec" id="gallery" style="background:#faf8f5;">
-        <div class="sec-inner">
-            <p class="section-tag">Portfolio</p>
-            <h2 class="section-title">Our Work</h2>
-            <div class="gallery">
-                <div class="gallery-item"><img src="/demos/assets/salon/hero.webp?w=600&q=80" alt="Hair styling" loading="lazy" width="689" height="1024" ></div>
-                <div class="gallery-item"><img src="/demos/assets/salon/color.webp?w=600&q=80" alt="Hair color" loading="lazy" width="500" height="500" ></div>
-                <div class="gallery-item"><img src="/demos/assets/salon/braids.webp?w=600&q=80" alt="Braids" loading="lazy" width="1024" height="768" ></div>
-                <div class="gallery-item"><img src="/demos/assets/salon/styling.webp?w=600&q=80" alt="Salon" loading="lazy" width="1024" height="768" ></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec" id="reviews">
-        <div class="sec-inner">
-            <p class="section-tag">Testimonials</p>
-            <h2 class="section-title">What Our Clients Say</h2>
-            <div class="reviews">
-                <div class="review"><div class="stars">★★★★★</div><div class="txt">"Best salon in San Juan! My balayage looks exactly like what I showed them."</div><div class="author">— María R.</div></div>
-                <div class="review"><div class="stars">★★★★★</div><div class="txt">"Professional, friendly, and they really listen. I'll always come back."</div><div class="author">— Ana L.</div></div>
-                <div class="review"><div class="stars">★★★★★</div><div class="txt">"Got my box braids done perfectly. They were so careful and fast."</div><div class="author">— Jessica M.</div></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta" id="contact">
-        <div class="sec-inner">
-            <h2 class="section-title">Ready for a New Look?</h2>
-            <p>Book your appointment today and let us make you feel beautiful.</p>
-            <a href="tel:+17875559876" class="btn" style="padding:14px 32px;">📞 (787) 555-9876</a>
-        </div>
-    </section>
-
-    <footer><p>&copy; 2026 Bella Hair Studio — Demo by <a href="https://pilotsoftware.llc">Pilot Software</a></p></footer>
-    <a href="https://wa.me/17875559876" class="wa" target="_blank" rel="noopener">💬</a>
+<div class="pilot-bar"><a href="/demos/">← All website demos</a><span>One-page website example · $69.99 package</span><span class="sample">Sample business content</span></div>
+<header class="site-nav"><div class="wrap nav-inner"><a class="brand" href="#top">Bella Hair Studio</a><nav class="nav-links" aria-label="Primary navigation"><a href="#services">Services</a><a href="#work">Selected work</a><a class="nav-call" href="tel:+17875559876">Call us</a></nav></div></header>
+<main id="top">
+<section class="hero"><div class="wrap hero-grid"><div class="hero-copy"><p class="eyebrow">Cuts · color · finish</p><h1>Hair that feels like <em>you.</em></h1><p>Thoughtful styling in a bright, relaxed studio. Come in with a reference photo or just an idea—we’ll help you find the version that fits.</p><div class="actions"><a class="btn btn-dark" href="#services">View services <span aria-hidden="true">↓</span></a><a class="btn btn-outline" href="tel:+17875559876"><span aria-hidden="true">☎</span> (787) 555-9876</a></div></div><figure class="hero-media"><img src="/demos/assets/salon/hero-stations.webp" alt="Bright boutique salon with mirrors and styling stations" width="1600" height="1200" fetchpriority="high"></figure></div></section>
+<section class="service-section" id="services"><div class="wrap"><div class="service-intro"><h2>A short list.<br>A lot of care.</h2><p>Clear service names and starting prices make a one-page salon site useful before a visitor ever picks up the phone.</p></div><div class="service-list"><article class="service-row"><span class="num">01</span><div><h3>Cut &amp; finish</h3><p>Shape, wash, dry, and style for your everyday look.</p></div><span class="price">from $35</span></article><article class="service-row"><span class="num">02</span><div><h3>Color &amp; gloss</h3><p>Refresh your tone or talk through a new direction.</p></div><span class="price">from $85</span></article><article class="service-row"><span class="num">03</span><div><h3>Braids &amp; texture</h3><p>Protective styles, twists, and event-ready texture.</p></div><span class="price">from $60</span></article><article class="service-row"><span class="num">04</span><div><h3>Smoothing treatment</h3><p>A longer-lasting finish for frizz-prone hair.</p></div><span class="price">from $150</span></article></div><p style="color:var(--muted);font-size:.73rem;margin-top:20px">Starting prices shown as sample content. Final pricing depends on hair length and service time.</p></div></section>
+<section class="work-section" id="work"><div class="wrap"><div class="work-head"><h2>Selected work</h2><p>Texture, movement, and people—not a wall of identical cards.</p></div><div class="gallery"><figure><img src="/demos/assets/salon/styling.webp" alt="Stylist blow-drying a client's hair in the salon" width="1200" height="801" loading="lazy"><figcaption>Styling</figcaption></figure><figure><img src="/demos/assets/salon/team.webp" alt="Three hairstylists posing with professional styling tools" width="1200" height="801" loading="lazy"><figcaption>The team</figcaption></figure><figure><img src="/demos/assets/salon/wash-and-finish.webp" alt="Stylist washing a client's hair at a salon basin" width="1200" height="1797" loading="lazy"><figcaption>Wash and finish</figcaption></figure></div></div></section>
+<section class="studio"><div class="wrap studio-grid"><h2>The appointment starts<br>before the chair.</h2><div><p>We keep the conversation simple: what you like, what you want to change, and how much time you actually have.</p><p>This is a fictional demo business. The layout shows how a small salon can explain its offer, show real work, and make contact easy without an appointment system.</p></div></div></section>
+<section class="contact-section" id="contact"><div class="wrap contact-grid"><div class="contact-copy"><h2>Bring your idea. We’ll talk it through.</h2><p>Call Bella Hair Studio in Santurce to ask about availability and the right service for your hair.</p></div><div class="contact-actions"><a class="btn" href="tel:+17875559876">Call (787) 555-9876</a><p>Mon–Sat · 9:00 AM–6:00 PM</p></div></div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Bella Hair Studio</span><span class="sample">Demo website by <a href="https://pilotsoftware.llc">Pilot Software</a></span></div></footer>
 </body>
 </html>

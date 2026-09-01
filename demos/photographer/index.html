@@ -1,183 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solís Photography — Capturing Life's Most Beautiful Moments</title>
-    <meta name="description" content="Solís Photography — Weddings, portraits, events, and product photography. Professional photographer in San Juan, PR.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box;}
-        body{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;}
-        a{text-decoration:none;color:inherit;}
-        img{max-width:100%;display:block;}
-
-        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #f0f0f0;}
-        .nav{max-width:1140px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;}
-        .logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:500;color:#1a1a1a;}
-        .nav-links{display:flex;align-items:center;gap:32px;}
-        .nav-links a{font-size:.85rem;font-weight:500;color:#888;transition:color .2s;}
-        .nav-links a:hover{color:#1a1a1a;}
-        .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 24px;border-radius:0;font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:all .2s;border:none;cursor:pointer;}
-        .btn-fill{background:#1a1a1a;color:#fff;}
-        .btn-fill:hover{background:#444;}
-        .btn-outline{border:1px solid #1a1a1a;color:#1a1a1a;background:transparent;}
-        .btn-outline:hover{background:#1a1a1a;color:#fff;}
-
-        .hero{padding:140px 0 60px;background:#fafaf9;position:relative;}
-        .hero-inner{max-width:1140px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:85vh;}
-        .hero-tag{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#aaa;margin-bottom:12px;}
-        .hero h1{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:400;line-height:1.1;color:#1a1a1a;margin-bottom:16px;}
-        .hero p{font-size:.98rem;color:#888;line-height:1.75;max-width:400px;margin-bottom:28px;}
-        .hero-btns{display:flex;gap:12px;}
-
-        .hero-gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-        .hero-gallery .big{grid-row:span 2;aspect-ratio:3/4;overflow:hidden;}
-        .hero-gallery .sm{aspect-ratio:1;overflow:hidden;}
-        .hero-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s;}
-        .hero-gallery img:hover{transform:scale(1.03);}
-
-        .sec{padding:80px 0;}
-        .sec-inner{max-width:1140px;margin:0 auto;padding:0 28px;}
-        .section-tag{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#aaa;margin-bottom:10px;}
-        .section-title{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:400;color:#1a1a1a;margin-bottom:10px;}
-        .section-desc{color:#888;max-width:420px;}
-
-        .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;}
-        .port{aspect-ratio:3/4;overflow:hidden;position:relative;}
-        .port img{width:100%;height:100%;object-fit:cover;transition:transform .7s;}
-        .port:hover img{transform:scale(1.05);}
-        .port-label{position:absolute;bottom:16px;left:16px;font-size:.78rem;font-weight:500;color:#fff;background:rgba(0,0,0,.6);padding:6px 12px;border-radius:4px;}
-
-        .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px;}
-        .price-card{border:1px solid #e5e5e5;padding:36px 28px;text-align:center;transition:all .25s;}
-        .price-card:hover{border-color:#1a1a1a;box-shadow:0 8px 32px rgba(0,0,0,.06);}
-        .price-card.featured{border-color:#1a1a1a;background:#1a1a1a;color:#fff;}
-        .price-card.featured .price{color:#fff;}
-        .price-card.featured li{border-color:rgba(255,255,255,.1);}
-        .price-card h4{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:6px;}
-        .price-card .price{font-size:2.6rem;font-weight:600;color:#1a1a1a;margin:16px 0 4px;}
-        .price-card .note{font-size:.82rem;color:#aaa;margin-bottom:20px;}
-        .price-card ul{list-style:none;text-align:left;margin-bottom:24px;}
-        .price-card li{padding:8px 0;font-size:.88rem;color:#555;border-bottom:1px solid #f0f0f0;}
-        .price-card .btn{width:100%;}
-
-        .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;}
-        .review{padding:24px;background:#fafaf9;border:1px solid #f0f0f0;}
-        .review .stars{color:#f59e0b;margin-bottom:8px;font-size:.9rem;}
-        .review .txt{font-size:.92rem;color:#556;line-height:1.6;margin-bottom:12px;font-style:italic;}
-        .review .author{font-size:.82rem;font-weight:600;color:#1a1a1a;}
-
-        .cta{padding:80px 0;text-align:center;background:#1a1a1a;color:#fff;}
-        .cta .section-title{color:#fff;margin-bottom:12px;}
-        .cta p{color:rgba(255,255,255,.4);margin-bottom:28px;}
-        .cta .btn{background:#fff;color:#1a1a1a;}
-        .cta .btn:hover{background:#ccc;}
-
-        footer{background:#f5f5f5;color:#aaa;text-align:center;padding:24px 0;font-size:.82rem;}
-
-        .wa{position:fixed;bottom:24px;right:24px;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 16px rgba(37,211,102,.3);z-index:99;transition:transform .2s;}
-        .wa:hover{transform:scale(1.1);}
-
-                .back-btn{position:absolute;top:24px;left:28px;font-size:.85rem;font-weight:600;color:#1a1a1a;opacity:.8;transition:opacity .25s;text-decoration:none;z-index:100;display:inline-flex;align-items:center;gap:6px;}
-        .back-btn:hover{opacity:1;}
-        .back-btn::before{content:'←';font-size:1.05rem;}
-
-        @media(max-width:768px){
-            .hero-inner{grid-template-columns:1fr;text-align:center;}
-            .hero h1{font-size:2.2rem;}
-            .hero p{margin:0 auto 24px;}
-            .hero-btns{justify-content:center;}
-            .hero-gallery{max-width:320px;margin:20px auto 0;}
-            .portfolio,.pricing,.reviews{grid-template-columns:1fr;}
-            .nav-links{display:none;}
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solís Photography — Weddings and portraits with room to breathe</title>
+<meta name="description" content="Solís Photography documents weddings, couples, and portraits with natural light and an unhurried eye in San Juan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f0eee9;--white:#fbfaf7;--ink:#272522;--muted:#726f69;--line:#d7d3cc;--serif:'Bodoni Moda',Georgia,serif;--sans:'Source Sans 3',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}.pilot-bar{background:var(--ink);color:#e8e5df;padding:7px max(24px,calc((100% - 1180px)/2));font-size:.72rem;display:flex;justify-content:space-between;gap:16px}.pilot-bar a{text-decoration:underline;text-underline-offset:3px;color:#fff}.pilot-bar .sample{opacity:.62}.site-nav{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.nav-inner{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font:400 1.18rem/1 var(--serif);letter-spacing:-.03em}.nav-links{display:flex;align-items:center;gap:28px;font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.nav-links a:hover{color:var(--ink)}.nav-call{border-bottom:1px solid var(--ink);padding-bottom:4px;color:var(--ink)}
+.hero{padding:clamp(40px,7vw,88px) 0 102px}.hero-shell{display:grid;grid-template-columns:1.22fr .78fr;align-items:center}.hero-media{position:relative;z-index:0}.hero-media img{width:100%;aspect-ratio:1.25/1;object-fit:cover}.hero-panel{position:relative;z-index:1;background:var(--white);padding:clamp(32px,5vw,72px) clamp(28px,5vw,68px);margin-left:-74px;box-shadow:14px 16px 0 rgba(39,37,34,.08)}.eyebrow{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:21px}.hero h1{font:400 clamp(2.8rem,5.4vw,5.7rem)/1.02 var(--serif);letter-spacing:-.07em}.hero h1 em{font-style:italic}.hero-copy{color:var(--muted);max-width:390px;margin:24px 0 28px;font-size:1rem}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{min-height:46px;padding:12px 18px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;font-weight:600}.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{background:#56534e}.btn-line{border:1px solid var(--ink)}.btn-line:hover{background:var(--ink);color:#fff}.portfolio-section{background:var(--white);padding:100px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}.section-head h2,.approach h2,.contact h2{font:400 clamp(2.1rem,4vw,4rem)/1.05 var(--serif);letter-spacing:-.06em}.section-head p{max-width:330px;color:var(--muted);font-size:.9rem}.portfolio{display:grid;grid-template-columns:1.2fr .8fr 1fr;grid-template-rows:260px 260px;gap:14px}.portfolio figure{margin:0;overflow:hidden;background:#ddd7ce}.portfolio figure:first-child{grid-row:span 2}.portfolio figure:nth-child(2){grid-column:2;grid-row:span 2}.portfolio img{width:100%;height:100%;object-fit:cover;transition:transform .55s}.portfolio figure:hover img{transform:scale(1.035)}.portfolio figcaption{position:absolute;left:-9999px}.approach{padding:98px 0;background:var(--paper)}.approach-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}.approach h2{max-width:400px}.approach-copy{max-width:560px;color:var(--muted);font-size:1.03rem}.approach-copy p+p{margin-top:18px}.rates{border-top:1px solid var(--line);margin-top:34px}.rate{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding:18px 0}.rate strong{font:400 1.15rem/1 var(--serif)}.rate span{color:var(--ink);font-weight:600;font-size:.9rem}.rate small{display:block;color:var(--muted);font-size:.76rem}.contact{padding:98px 0;background:var(--ink);color:#fff}.contact-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}.contact h2{max-width:650px}.contact p{color:#c9c5bd;max-width:500px;margin-top:17px}.contact-actions{text-align:right}.contact-actions .btn{background:#fff;color:var(--ink)}.contact-actions .btn:hover{background:var(--paper)}.contact-actions small{display:block;color:#aaa59c;margin-top:12px}footer{padding:24px 0;background:var(--white);color:var(--muted);font-size:.76rem}footer .wrap{display:flex;justify-content:space-between;gap:20px}footer a{color:var(--ink)}
+@media(max-width:760px){.wrap{width:min(100% - 36px,1180px)}.pilot-bar{padding:7px 18px}.pilot-bar span{display:none}.nav-inner{min-height:64px}.brand{font-size:1rem}.nav-links{gap:12px;font-size:.66rem}.nav-links a:not(.nav-call){display:none}.nav-call{padding:9px 11px;border:0;background:var(--ink);color:#fff}.hero{padding:42px 0 70px}.hero-shell{display:flex;flex-direction:column}.hero-media{width:100%}.hero-media img{aspect-ratio:1.12/1}.hero-panel{width:calc(100% - 24px);max-width:100%;margin:-22px 12px 0 0;padding:32px 25px;box-shadow:9px 10px 0 rgba(39,37,34,.08)}.hero h1{font-size:clamp(2.6rem,13vw,4rem);max-width:100%;width:100%}.hero-copy{font-size:.94rem;margin:19px 0 24px;max-width:100%;width:100%}.portfolio-section,.approach{padding:68px 0}.section-head,.approach-grid{display:block}.section-head p{margin-top:14px}.portfolio{grid-template-columns:1fr 1fr;grid-template-rows:210px 210px}.portfolio figure:first-child{grid-row:span 1;grid-column:span 2}.portfolio figure:nth-child(2){grid-column:span 1;grid-row:span 1}.approach-copy{margin-top:22px;font-size:.96rem}.rate{gap:10px}.rate strong{font-size:1rem}.rate span{font-size:.82rem}.contact{padding:72px 0}.contact-grid{grid-template-columns:1fr;gap:26px}.contact-actions{text-align:left}.contact-actions .btn{width:100%}footer .wrap{display:block}footer .sample{display:block;margin-top:7px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.portfolio img{transition:none}}
+</style>
 </head>
 <body>
-    <nav>
-        <div class="nav">
-            <div class="logo">Solís Photography</div>
-            <div class="nav-links">
-                <a href="#portfolio">Portfolio</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#reviews">Reviews</a>
-                <a href="#contact" class="btn btn-fill">Contact Us</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <a href="/demos/" class="back-btn">← Back to Demos</a>
-        <div class="hero-inner">
-            <div>
-                <p class="hero-tag">Professional Photographer</p>
-                <h1>Your Story.<br>Beautifully Told.</h1>
-                <p>Weddings, portraits, events & product photography. Every moment captured with artistry and care.</p>
-                <div class="hero-btns">
-                    <a href="#portfolio" class="btn btn-fill">View Portfolio</a>
-                    <a href="#pricing" class="btn btn-outline">Pricing</a>
-                </div>
-            </div>
-            <div class="hero-gallery">
-                <div class="big"><img src="/demos/assets/photographer/hero.webp?w=600&q=80" alt="Wedding photography" loading="eager" width="1024" height="768" ></div>
-                <div class="sm"><img src="/demos/assets/photographer/wedding.webp?w=600&q=80" alt="Wedding ceremony" loading="lazy" width="1000" height="1000" ></div>
-                <div class="sm"><img src="/demos/assets/photographer/portrait.webp?w=600&q=80" alt="Portrait photography" loading="lazy" width="500" height="500" ></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec" id="portfolio">
-        <div class="sec-inner">
-            <p class="section-tag">My Work</p>
-            <h2 class="section-title">Portfolio</h2>
-            <p class="section-desc">A glimpse of moments I've captured</p>
-            <div class="portfolio">
-                <div class="port"><img src="/demos/assets/photographer/portrait.webp?w=600&q=80" alt="Portrait photography" loading="lazy" width="500" height="500" ><span class="port-label">Portraits</span></div>
-                <div class="port"><img src="/demos/assets/photographer/wedding.webp?w=600&q=80" alt="Wedding photography" loading="lazy" width="1000" height="1000" ><span class="port-label">Weddings</span></div>
-                <div class="port"><img src="/demos/assets/photographer/event.webp?w=600&q=80" alt="Event photography" loading="lazy" width="1023" height="713" ><span class="port-label">Events</span></div>
-                <div class="port"><img src="/demos/assets/photographer/celebration.webp?w=600&q=80" alt="Celebration photography" loading="lazy" width="500" height="313" ><span class="port-label">Celebrations</span></div>
-                <div class="port"><img src="/demos/assets/photographer/product.webp?w=600&q=80" alt="Product photography" loading="lazy" width="333" height="500" ><span class="port-label">Product</span></div>
-                <div class="port"><img src="/demos/assets/photographer/portrait.webp?w=600&q=80" alt="Portrait session" loading="lazy" width="500" height="500" ><span class="port-label">Sessions</span></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec" id="pricing" style="background:#fafaf9;">
-        <div class="sec-inner">
-            <p class="section-tag">Investment</p>
-            <h2 class="section-title">Pricing</h2>
-            <p class="section-desc">Packages designed for your needs</p>
-            <div class="pricing">
-                <div class="price-card"><h4>Portrait</h4><div class="price">$299</div><div class="note">One session</div><ul><li>✓ 2-hour session</li><li>✓ 20+ edited photos</li><li>✓ Online gallery</li><li>✓ 1 outfit change</li></ul><a href="#contact" class="btn btn-outline" style="width:100%;">Book</a></div>
-                <div class="price-card featured"><h4>Wedding</h4><div class="price">$1,499</div><div class="note" style="color:rgba(255,255,255,.45)">Full coverage</div><ul><li>✓ 8 hours coverage</li><li>✓ 300+ edited photos</li><li>✓ Engagement session</li><li>✓ Second shooter</li></ul><a href="#contact" class="btn btn-fill" style="background:#fff;color:#1a1a1a;" class="btn btn-fill">Book</a></div>
-                <div class="price-card"><h4>Premium</h4><div class="price">$2,499</div><div class="note">Complete package</div><ul><li>✓ 12 hours coverage</li><li>✓ 500+ edited photos</li><li>✓ Premium album</li><li>✓ Drone footage</li></ul><a href="#contact" class="btn btn-outline" style="width:100%;">Book</a></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec" id="reviews">
-        <div class="sec-inner">
-            <p class="section-tag">Testimonials</p>
-            <h2 class="section-title">What Clients Say</h2>
-            <div class="reviews">
-                <div class="review"><div class="stars">★★★★★</div><div class="txt">"Our wedding photos are absolutely stunning. Every emotion, every detail — perfect."</div><div class="author">— Carlos & Ana</div></div>
-                <div class="review"><div class="stars">★★★★★</div><div class="txt">"Professional and creative. My product photos sold out in a week."</div><div class="author">— María L.</div></div>
-                <div class="review"><div class="stars">★★★★★</div><div class="txt">"He made me feel so comfortable during my portrait session. The results are incredible."</div><div class="author">— Luis R.</div></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta" id="contact">
-        <div class="sec-inner">
-            <h2 class="section-title">Let's Work Together</h2>
-            <p>Ready to capture your moment? Let's talk.</p>
-            <a href="tel:+17875552345" class="btn" style="padding:14px 32px;">📞 (787) 555-2345</a>
-        </div>
-    </section>
-
-    <footer><p>&copy; 2026 Solís Photography — Demo by <a href="https://pilotsoftware.llc">Pilot Software</a></p></footer>
-    <a href="https://wa.me/17875552345" class="wa" target="_blank" rel="noopener">💬</a>
+<div class="pilot-bar"><a href="/demos/">← All website demos</a><span>One-page website example · $69.99 package</span><span class="sample">Sample business content</span></div>
+<header class="site-nav"><div class="wrap nav-inner"><a class="brand" href="#top">Solís Photography</a><nav class="nav-links" aria-label="Primary navigation"><a href="#portfolio">Portfolio</a><a href="#approach">Approach</a><a class="nav-call" href="tel:+17875552345">Check availability</a></nav></div></header>
+<main id="top">
+<section class="hero"><div class="wrap hero-shell"><figure class="hero-media"><img src="/demos/assets/photographer/hero-wedding.webp" alt="Wedding celebration with a couple and guests gathered outdoors" width="1600" height="1068" fetchpriority="high"></figure><div class="hero-panel"><p class="eyebrow">Weddings · couples · portraits</p><h1>The moments<br>you’ll want <em>back.</em></h1><p class="hero-copy">Natural direction, honest color, and a calm presence when the day gets loud. Based in San Juan and available for celebrations across the island.</p><div class="actions"><a class="btn btn-dark" href="#portfolio">See the work <span aria-hidden="true">↓</span></a><a class="btn btn-line" href="tel:+17875552345">Let’s talk</a></div></div></div></section>
+<section class="portfolio-section" id="portfolio"><div class="wrap"><div class="section-head"><h2>A small, careful<br>portfolio.</h2><p>One photographer. Three kinds of work. Plenty of room for the images to do the talking.</p></div><div class="portfolio"><figure><img src="/demos/assets/photographer/couple.webp" alt="Newlywed couple standing together with a wedding bouquet" width="1200" height="800" loading="lazy"><figcaption>Couples</figcaption></figure><figure><img src="/demos/assets/photographer/portrait.webp" alt="Studio portrait of a woman against a soft pink background" width="1200" height="675" loading="lazy"><figcaption>Portraits</figcaption></figure><figure><img src="/demos/assets/photographer/wedding-detail.webp" alt="Hand-lettered wedding sign among leafy outdoor branches" width="1200" height="800" loading="lazy"><figcaption>Details</figcaption></figure></div></div></section>
+<section class="approach" id="approach"><div class="wrap approach-grid"><h2>Good photographs<br>leave space for you.</h2><div class="approach-copy"><p>I’ll help with the parts that need direction and stay out of the way for the parts that don’t. The goal is a gallery that feels like your people, your pace, and your day.</p><p>This is a fictional demo business. The portfolio, packages, and contact details show the kind of content a one-page photographer website can present without a booking system.</p><div class="rates"><div class="rate"><div><strong>Portrait session</strong><small>One location · edited gallery</small></div><span>from $299</span></div><div class="rate"><div><strong>Couples session</strong><small>90 minutes · two locations</small></div><span>from $425</span></div><div class="rate"><div><strong>Wedding coverage</strong><small>Custom timeline · starting conversation</small></div><span>from $1,499</span></div></div></div></div></section>
+<section class="contact" id="contact"><div class="wrap contact-grid"><div><h2>Tell me what you’re planning.</h2><p>Call to check availability, talk through a session, or ask a question about coverage.</p></div><div class="contact-actions"><a class="btn" href="tel:+17875552345">(787) 555-2345</a><small>Calls and messages · San Juan, PR</small></div></div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Solís Photography</span><span class="sample">Demo website by <a href="https://pilotsoftware.llc">Pilot Software</a></span></div></footer>
 </body>
 </html>
